@@ -1,25 +1,25 @@
-# Título do Projeto
+# Finanfy
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas - PUC Minas`
 
-`DISCIPLINA`
+`Desenvolvimento de Aplicação Web Front-End`
 
-`SEMESTRE`
+`2º semestre / 2023`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.
+O objetivo geral deste projeto é a criação de uma aplicação web de fácil acesso e uso que permita aos usuários realizar um controle financeiro simples e eficiente, para que consiga desenvolver hábitos financeiros saudáveis, tomar decisões assertivas, manter uma saúde financeira sólida e sustentável e, consequentemente, melhorar sua qualidade de vida.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Adalberto Guimarães
+* Isabela Neto
+* Leandro Borth
+* Pedro Louzada
+* Rodolfo Almeida
+* Welbert Soares
 
 ## Orientador
 
-* Nome completo do professor
+* Simone Alves Nogueira
 
 # Documentação
 
