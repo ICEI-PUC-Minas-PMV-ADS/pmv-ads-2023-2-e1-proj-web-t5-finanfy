@@ -29,7 +29,7 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 
 O quadro kanban do grupo no GitHub está disponível [neste link](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/595/views/1) e é apresentado, no estado atual, na figura abaixo:
 
-**COLAR PRINT**
+`*** COLAR PRINT ***`
 
 ### Etiquetas
 
@@ -53,9 +53,9 @@ O quadro kanban do grupo no GitHub está disponível [neste link](https://github
 
 As ferramentas empregadas no projeto são:
 
-Editor de código: Microsoft Visual Studio Code
-Ferramentas de comunicação: Microsoft Teams + WhatsApp
-Ferramenta de desenho de tela (wireframing): Figma
+- Editor de código: Microsoft Visual Studio Code
+- Ferramentas de comunicação: Microsoft Teams + WhatsApp
+- Ferramenta de desenho de tela (wireframing): Figma
 
 O editor de código Microsoft Visual Studio Code foi escolhido pois possui integração com o sistema de versionamento (git). As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas e o design da interface, selecionamos o Figma por melhor atender as necessidades deste projeto.
 
