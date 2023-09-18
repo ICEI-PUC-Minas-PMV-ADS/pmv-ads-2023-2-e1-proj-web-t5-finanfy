@@ -29,45 +29,49 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 
 O quadro kanban do grupo no GitHub está disponível [neste link](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/595/views/1) e é apresentado, no estado atual, na figura abaixo:
 
-`*** COLAR PRINT ***`
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/d1f69969-102d-40f9-b586-845136ff60fb)
+
+Figura 2 - Tela do kanban no GitHub utilizada pelo grupo.
 
 ### Etiquetas
 
 <p>As tarefas são, ainda, etiquetadas em função da natureza da atividade e seguem o seguinte esquema de cores/categorias:</p>
 
 <ul>
-  <li>Bug (Erro no código)</li>
-  <li>Desenvolvimento (Development)</li>
-  <li>Documentação (Documentation)</li>
-  <li>Gerência de Projetos (Project Management)</li>
-  <li>Infraestrutura (Infrastructure)</li>
-  <li>Testes (Tests)</li>
+  <li>Bug (Algo não está funcionando / Erro no código)</li>
+  <li>Development (Trabalhando em algo / Em desenvolvimento)</li>
+  <li>Documentation (Melhorias ou acréscimos à documentação)</li>
+  <li>Enhancement (Novo recurso ou solicitação)</li>
+  <li>Infrastructure (Infraestrutura do projeto)</li>
+  <li>Management (Gerência de projetos)</li>
+  <li>Test (Testando funcionalidades da aplicação)</li>
 </ul>
 
-<figure> 
-  <img src="https://user-images.githubusercontent.com/100447878/164068979-9eed46e1-9b44-461e-ab88-c2388e6767a1.png"
-    <figcaption>Figura 3 - Tela do esquema de cores e categorias</figcaption>
-</figure> 
-  
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/ef72505c-7465-4b03-8489-97ee1c70d51a)
+
+Figura 3 - Tela do esquema de etiquetas no GitHub utilizada pelo grupo.
+
 ### Ferramentas
 
 As ferramentas empregadas no projeto são:
 
 - Editor de código: Microsoft Visual Studio Code
-- Ferramentas de comunicação: Microsoft Teams + WhatsApp
-- Ferramenta de desenho de tela (wireframing): Figma
+- Ferramentas para comunicação: Microsoft Teams + WhatsApp
+- Ferramenta para wireframing (userflow): Lucidchart
+- Ferramenta para projeto de interface (design de telas): Figma
 
 O editor de código Microsoft Visual Studio Code foi escolhido pois possui integração com o sistema de versionamento (git). As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas e o design da interface, selecionamos o Figma por melhor atender as necessidades deste projeto.
 
 Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
 
-| AMBIENTE                            | PLATAFORMA                         | LINK DE ACESSO                         |
-|-------------------------------------|------------------------------------|----------------------------------------|
-| Repositório de código fonte         | GitHub                             | http://....                            |
-| Documentos do projeto               | GitHub                             | http://....                            |
-| Projeto de Interface e Wireframing  | Figma                              | http://....                            |
-| Gerenciamento do Projeto            | GitHub Projects                    | http://....                            |
-| Hospedagem                          | GitHub Pages                       | http://....                            |
+| AMBIENTE                               | PLATAFORMA                         | LINK DE ACESSO                         |
+|----------------------------------------|------------------------------------|----------------------------------------|
+| Repositório de código fonte            | GitHub                             | http://....                            |
+| Documentos do projeto                  | GitHub                             | http://....                            |
+| Wireframing (userflow)                 | Lucidchart                         | http://....                            |
+| Projeto de Interface (design de telas) | Figma                              | http://....                            |
+| Gerenciamento do Projeto               | GitHub Projects                    | http://....                            |
+| Hospedagem                             | GitHub Pages                       | http://....                            |
 
 ### Estratégia de Organização de Codificação 
 
