@@ -59,6 +59,7 @@ As ferramentas empregadas no projeto são:
 - Ferramentas para comunicação: Microsoft Teams + WhatsApp
 - Ferramenta para wireframing (userflow): Lucidchart
 - Ferramenta para projeto de interface (design de telas): Figma
+- Ferramentas para versionamento de código e repositório: Git, Github
 
 O editor de código Microsoft Visual Studio Code foi escolhido pois possui integração com o sistema de versionamento (git). As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas e o design da interface, selecionamos o Figma por melhor atender as necessidades deste projeto.
 
