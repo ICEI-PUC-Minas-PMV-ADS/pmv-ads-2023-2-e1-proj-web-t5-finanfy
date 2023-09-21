@@ -55,11 +55,14 @@ Figura 3 - Tela do esquema de etiquetas no GitHub utilizada pelo grupo.
 
 As ferramentas empregadas no projeto são:
 
+- Ferramentas para versionamento de código: Git, GitHub
 - Editor de código: Microsoft Visual Studio Code
 - Ferramentas para comunicação: Microsoft Teams + WhatsApp
-- Ferramenta para wireframing (userflow): Lucidchart
+- Ferramenta para criação de fluxo de usuário: Figma
 - Ferramenta para projeto de interface (design de telas): Figma
-- Ferramentas para versionamento de código e repositório: Git, Github
+- Ferramenta para prototipagem: Figma
+- Ferramenta para gerenciamento do projeto: GitHub Projects
+- Ferramenta de hospedagem: GitHub Pages
 
 O editor de código Microsoft Visual Studio Code foi escolhido pois possui integração com o sistema de versionamento (git). As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas e o design da interface, selecionamos o Figma por melhor atender as necessidades deste projeto.
 
@@ -67,11 +70,12 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 
 | AMBIENTE                               | PLATAFORMA                         | LINK DE ACESSO                         |
 |----------------------------------------|------------------------------------|----------------------------------------|
-| Repositório de código fonte            | GitHub                             | http://....                            |
-| Documentos do projeto                  | GitHub                             | http://....                            |
-| Wireframing (userflow)                 | Lucidchart                         | http://....                            |
+| Repositório de código fonte            | GitHub                             | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte |
+| Documentos do projeto                  | GitHub                             | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/documentos |
+| Fluxo de usuário                       | Figma                              | http://....                            |
 | Projeto de Interface (design de telas) | Figma                              | http://....                            |
-| Gerenciamento do Projeto               | GitHub Projects                    | http://....                            |
+| Prototipagem                           | Figma                              | http://....                            |
+| Gerenciamento do Projeto               | GitHub Projects                    | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/595 |
 | Hospedagem                             | GitHub Pages                       | http://....                            |
 
 ### Estratégia de Organização de Codificação 
