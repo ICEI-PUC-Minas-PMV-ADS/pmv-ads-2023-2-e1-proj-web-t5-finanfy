@@ -11,19 +11,19 @@ A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, 
 
 ### Divisão de Papéis
 
-- `Scrum Master:` Leandro Borth
-- `Product Owner:` Isabela Neto
-- `Equipe de Desenvolvimento:` Adalberto Guimarães, Isabela Neto, Leandro Borth, Pedro Louzada, Rodolfo Almeida, Welbert Soares
-- `Equipe de Design:` Adalberto Guimarães, Pedro Louzada, Rodolfo Almeida, Welbert Soares
+- `Scrum Master` [Leandro Borth](https://github.com/leandroborth)
+- `Product Owner` [Isabela Neto](https://github.com/isabelaCalcavara)
+- `Equipe de Desenvolvimento` [Adalberto Guimarães](https://github.com/BetoErick), [Isabela Neto](https://github.com/isabelaCalcavara), [Leandro Borth](https://github.com/leandroborth), [Pedro Louzada](https://github.com/PedroLouzadas), [Rodolfo Almeida](https://github.com/RodollfoAlmeida), [Welbert Soares](https://github.com/Welbert-Soares)
+- `Equipe de Design` [Adalberto Guimarães](https://github.com/BetoErick), [Pedro Louzada](https://github.com/PedroLouzadas), [Rodolfo Almeida](https://github.com/RodollfoAlmeida), [Welbert Soares](https://github.com/Welbert-Soares)
 
 ### Processo
 
 Para organização e distribuição das tarefas do projeto, a equipe está utilizando o GitHub, estruturado com as seguintes listas:
 
-- `Product Backlog:` Recebe as tarefas a serem trabalhadas e representa o Backlog do Produto. Todas as atividades identificadas no decorrer do projeto são incorporadas a esta lista.
-- `To Do:` Esta lista representa o Sprint Backlog que está sendo trabalhado, e contém as tarefas a serem trabalhadas.
-- `Doing:` Contém as tarefas iniciadas, nas quais estamos trabalhando.
-- `Done:` Nesta lista estão as tarefas concluídas, que passaram pelos testes e controle de qualidade e estão prontas para serem entregues aos usuários.
+- `Product Backlog` Recebe as tarefas a serem trabalhadas e representa o Backlog do Produto. Todas as atividades identificadas no decorrer do projeto são incorporadas a esta lista.
+- `To Do` Esta lista representa o Sprint Backlog que está sendo trabalhado, e contém as tarefas a serem trabalhadas.
+- `Doing` Contém as tarefas iniciadas, nas quais estamos trabalhando.
+- `Done` Nesta lista estão as tarefas concluídas, que passaram pelos testes e controle de qualidade e estão prontas para serem entregues aos usuários.
 
 O quadro kanban do grupo no GitHub está disponível [neste link](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/595/views/1) e é apresentado, no estado atual, na figura abaixo:
 
