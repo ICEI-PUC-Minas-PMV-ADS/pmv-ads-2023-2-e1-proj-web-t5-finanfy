@@ -35,13 +35,13 @@ Figura 2 - Tela do kanban no GitHub utilizada pelo grupo.
 
 As tarefas são, ainda, etiquetadas em função da natureza da atividade e seguem o seguinte esquema de cores/categorias:
 
-- `Bug` (Algo não está funcionando / Erro no código)
-- `Development` (Trabalhando em algo / Em desenvolvimento)
-- `Documentation` (Melhorias ou acréscimos à documentação)
-- `Enhancement` (Novo recurso ou solicitação)
-- `Infrastructure` (Infraestrutura do projeto)
-- `Management` (Gerência de projetos)
-- `Test` (Testando funcionalidades da aplicação)
+- `Bug` Algo não está funcionando / Erro no código
+- `Development` Trabalhando em algo / Em desenvolvimento
+- `Documentation` Melhorias ou acréscimos à documentação
+- `Enhancement` Novo recurso ou solicitação
+- `Infrastructure` Infraestrutura do projeto
+- `Management` Gerência de projetos
+- `Test` Testando funcionalidades da aplicação
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/ef72505c-7465-4b03-8489-97ee1c70d51a)
 
