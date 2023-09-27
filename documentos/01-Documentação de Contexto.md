@@ -30,7 +30,7 @@ O especialista em finanças Guilherme Grillo, explica que isso pode acontecer po
 
 > GRILLO (2022, G1) descreve que "Os motivos para essa falta de controle são que, numa geração na qual redes sociais e vários estímulos ao longo do dia predominam, além de falta de incentivo sobre esses assuntos na própria criação familiar, fazem com que os jovens queiram tudo muito rápido e fácil, e levam isso para a questão do dinheiro também".
 
-Outro fator é que a educação financeira nas escolas é praticamente inexistente, então o jovem acaba não tendo um planejamento financeiro, eles não têm assim os conhecimentos de finanças básicas, e, por isso, acabam entrando em dívidas.
+Outro fator é que a educação financeira nas escolas é praticamente inexistente, então o jovem acaba não tendo um planejamento financeiro, eles não têm assim os conhecimentos de finanças básicas, e, por conta isso, acabam entrando em dívidas.
 
 ## Público-Alvo
 
