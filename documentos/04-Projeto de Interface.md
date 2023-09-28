@@ -51,7 +51,7 @@ Figura 8 - PERFIL - Página de perfil do usuário, que exibe as informações de
 
 ![telas mobile-8](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/fcd9453a-b50a-4e03-b376-b5358700995b)
 
-Figura 9 - Alterar SENHA - Modal que possibilita alteração de senha do usuário.
+Figura 9 - ALTERAR SENHA - Modal que possibilita alteração de senha do usuário.
 
 ![telas mobile-9](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/832ac159-98dc-409f-8732-25820ba9ff54)
 
