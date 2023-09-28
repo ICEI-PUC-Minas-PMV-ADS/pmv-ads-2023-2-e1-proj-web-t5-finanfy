@@ -17,24 +17,22 @@
 <br>
 2. Controlar valores de gastos fixos e variáveis;
 <br>
-3. Criar uma poupança de valores e poder visualizar estimativa de saldo futuro;
+3. Criar uma poupança de valores, poder inserir e excluir valores, e poder visualizar saldo acumulado;
 <br>
-4. Criar limites para gastos;
-<br>
-5. Visualizar valores recebidos, valores gastos e saldo.</td>
+4. Visualizar valores recebidos, valores gastos e saldo.</td>
 </tr>
 </tbody>
 </table>
 
 ## Histórias de Usuários
 
-|EU COMO... `QUEM`   | QUERO/PRECISO ... `O QUE` |PARA ... `PORQUE`                 |
+|EU COMO... `QUEM`   | QUERO/PRECISO... `O QUE` |PARA... `PORQUE`                 |
 |--------------------|---------------------------|----------------------------------|
 | Como jovem aprendiz | preciso poder lançar o valor do meu salário | para saber quanto dinheiro tenho disponível para gastar. |
 | Como jovem aprendiz | preciso poder lançar meus gastos | para controlar minhas despesas fixas e variáveis. |
-| Como estagiário | preciso poupar parte do meu dinheiro e conseguir visualizar quanto tenho guardado e quanto terei em um determinado período | para planejar o meu futuro. |
-| Como estudante | preciso poder visualizar meus gastos totais e por categoria | para poder melhorar minha gestão financeira. |
-| Como estagiário | preciso poder colocar um limite para meus gastos | para que eu possa guardar parte do meu dinheiro para o futuro. |
+| Como estagiário | preciso poupar parte do meu dinheiro e conseguir visualizar quanto tenho guardado | para planejar o meu futuro. |
+| Como estudante | preciso poder visualizar minhas receitas totais e por categoria | para saber quanto tenho disponível para gastar. |
+| Como estagiário | preciso poder visualizar meus gastos totais e por categoria | para poder melhorar minha gestão financeira. |
 | Como estudante | preciso ter uma visão geral das minhas finanças | para poder visualizar o total de receitas, o total de gastos e meu saldo atual. |
 
 ## Requisitos do Projeto
@@ -44,26 +42,25 @@
 |ID    | Descrição                | Prioridade |
 |-------|---------------------------------|----|
 | RF-01 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com data, descrição e forma de recebimento. | ALTA | 
-| RF-02 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir categorias de receitas. | ALTA | 
+| RF-02 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir sub-categorias de receitas. | ALTA | 
 | RF-03 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com data, descrição e forma de pagamento. | ALTA | 
-| RF-04 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir categorias de despesas. | ALTA | 
+| RF-04 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir sub-categorias de despesas. | ALTA | 
 | RF-05 | A aplicação deve permitir ao usuário visualizar o valor total de suas receitas. | ALTA | 
-| RF-06 | A aplicação deve permitir ao usuário visualizar o valor total de suas receitas por categoria. | MÉDIA | 
+| RF-06 | A aplicação deve permitir ao usuário visualizar o valor total de suas receitas por sub-categoria. | MÉDIA | 
 | RF-07 | A aplicação deve permitir ao usuário visualizar o valor total de suas receitas por data. | MÉDIA | 
-| RF-08 | A aplicação deve permitir ao usuário visualizar o valor total de suas receitas por forma de recebimento. | MÉDIA | 
+| RF-08 | A aplicação deve permitir ao usuário visualizar o valor total de suas receitas por forma de recebimento. | BAIXA | 
 | RF-09 | A aplicação deve permitir ao usuário visualizar o valor total de suas despesas. | ALTA | 
-| RF-10 | A aplicação deve permitir ao usuário visualizar o valor total de suas despesas por categoria. | MÉDIA | 
+| RF-10 | A aplicação deve permitir ao usuário visualizar o valor total de suas despesas por sub-categoria. | MÉDIA | 
 | RF-11 | A aplicação deve permitir ao usuário visualizar o valor total de suas despesas por data. | MÉDIA | 
-| RF-12 | A aplicação deve permitir ao usuário visualizar o valor total de suas despesas por forma de pagamento. | MÉDIA | 
+| RF-12 | A aplicação deve permitir ao usuário visualizar o valor total de suas despesas por forma de pagamento. | BAIXA | 
 | RF-13 | A aplicação deve permitir ao usuário visualizar seu saldo atual. | ALTA | 
-| RF-14 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir limites para gastos totais. | MÉDIA | 
-| RF-15 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir limites para gastos por categoria. | MÉDIA | 
-| RF-16 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir seções para poupança de valores. | BAIXA | 
-| RF-17 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança criada. | BAIXA | 
-| RF-18 | A aplicação deve permitir ao usuário visualizar seu saldo atual em poupança. | BAIXA | 
-| RF-19 | A aplicação deve permitir ao usuário visualizar estimativa de saldo futuro de sua poupança, para um determinado período. | BAIXA | 
+| RF-14 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir limites para gastos totais. | BAIXA | 
+| RF-15 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir limites para gastos por categoria. | BAIXA | 
+| RF-16 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança. | ALTA | 
+| RF-17 | A aplicação deve permitir ao usuário visualizar seu saldo acumulado em poupança. | BAIXA | 
+| RF-18 | A aplicação deve permitir ao usuário visualizar estimativa de saldo futuro de sua poupança, para um determinado período. | BAIXA | 
 
-**Prioridade: Alta / Média / Baixa. 
+** Prioridade: Alta / Média / Baixa. 
 
 ### Requisitos não Funcionais
 
@@ -78,5 +75,5 @@
 | RNF-07 | A aplicação deve ser compatível com os principais navegadores do mercado: Google Chrome, Safari, Firefox, Opera e Microsoft Edge. | MÉDIA | 
 | RNF-08 | A aplicação deve ser responsiva, permitindo a visualização em dispositivos diversos de forma adequada. | MÉDIA | 
 
-**Prioridade: Alta / Média / Baixa.
+** Prioridade: Alta / Média / Baixa.
 
