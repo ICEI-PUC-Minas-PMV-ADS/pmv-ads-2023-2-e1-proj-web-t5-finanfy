@@ -71,9 +71,9 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 |----------------------------------------|------------------------------------|----------------------------------------|
 | Repositório de código fonte            | GitHub                             | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte |
 | Documentos do projeto                  | GitHub                             | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/documentos |
-| Fluxo de usuário                       | Lucidchart                         | https://lucid.app/users/registerOrLogin/free?showLogin=false&invitationId=inv_1edcfc31-fc3d-4896-bb2e-884b75b21930&productOpt=chart&invitationType=documentAcceptance&returnUrlOverride=%2Flucidchart%2Fef52eb77-5665-45a9-aca9-d6b2bd7eb325%2Fedit%3Fviewport_loc%3D-554%252C266%252C2220%252C946%252C0_0%26invitationId%3Dinv_1edcfc31-fc3d-4896-bb2e-884b75b21930 |
-| Projeto de Interface (design de telas) | Figma                              | https://www.figma.com/file/lgsNQ9gKcEb7RMU52G9YcX/Finanfy-1.0?type=design&node-id=0%3A1&mode=design&t=8diBQruEABMgkD48-1 |
-| Prototipagem                           | Figma                              | https://www.figma.com/proto/lgsNQ9gKcEb7RMU52G9YcX/Finanfy-1.0?page-id=209%3A637&node-id=209-668&starting-point-node-id=209%3A668&t=768D22IdcF6IemvV-1 |
+| Fluxo de usuário                       | Lucidchart                         | https://lucid.app/lucidchart/ef52eb77-5665-45a9-aca9-d6b2bd7eb325/edit?invitationId=inv_1edcfc31-fc3d-4896-bb2e-884b75b21930&page=0_0# |
+| Projeto de Interface (design de telas) | Figma                              | https://www.figma.com/file/lgsNQ9gKcEb7RMU52G9YcX/Finanfy?type=design&node-id=0%3A1&mode=design&t=u7M9xsrm0DOovIIg-1 |
+| Prototipagem                           | Figma                              | https://www.figma.com/proto/lgsNQ9gKcEb7RMU52G9YcX/Finanfy?page-id=498%3A877&type=design&node-id=519-733&viewport=422%2C281%2C0.2&t=FkkSr8RXuNm5JSAU-1&scaling=min-zoom&starting-point-node-id=519%3A733&mode=design |
 | Gerenciamento do Projeto               | GitHub Projects                    | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/595 |
 | Hospedagem                             | GitHub Pages                       | http://....                            |
 
