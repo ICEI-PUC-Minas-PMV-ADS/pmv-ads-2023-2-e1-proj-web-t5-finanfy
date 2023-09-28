@@ -10,7 +10,7 @@ O objetivo geral deste projeto é a criação de uma aplicação web de fácil a
 
 ## Integrantes
 
-* [Adalberto Guimarães](https://github.com/BetoErick)
+* [Adalberto Guimarães](https://github.com/BetoErick) .
 * [Isabela Neto](https://github.com/isabelaCalcavara)
 * [Leandro Borth](https://github.com/leandroborth)
 * [Pedro Louzada](https://github.com/PedroLouzadas)
