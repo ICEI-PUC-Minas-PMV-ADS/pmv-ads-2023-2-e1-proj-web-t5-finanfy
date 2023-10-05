@@ -13,8 +13,8 @@ A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, 
 
 - `Scrum Master` [Leandro Borth](https://github.com/leandroborth)
 - `Product Owner` [Isabela Neto](https://github.com/isabelaCalcavara)
-- `Equipe de Desenvolvimento` [Adalberto Guimarães](https://github.com/BetoErick), [Isabela Neto](https://github.com/isabelaCalcavara), [Leandro Borth](https://github.com/leandroborth), [Pedro Louzada](https://github.com/PedroLouzadas), [Rodolfo Almeida](https://github.com/RodollfoAlmeida), [Welbert Soares](https://github.com/Welbert-Soares)
-- `Equipe de Design` [Adalberto Guimarães](https://github.com/BetoErick), [Pedro Louzada](https://github.com/PedroLouzadas), [Rodolfo Almeida](https://github.com/RodollfoAlmeida), [Welbert Soares](https://github.com/Welbert-Soares)
+- `Equipe de Desenvolvimento` ~~Adalberto Guimarães~~, [Isabela Neto](https://github.com/isabelaCalcavara), [Leandro Borth](https://github.com/leandroborth), [Pedro Louzada](https://github.com/PedroLouzadas), [Rodolfo Almeida](https://github.com/RodollfoAlmeida), [Welbert Soares](https://github.com/Welbert-Soares)
+- `Equipe de Design` ~~Adalberto Guimarães~~, [Pedro Louzada](https://github.com/PedroLouzadas), [Rodolfo Almeida](https://github.com/RodollfoAlmeida), [Welbert Soares](https://github.com/Welbert-Soares)
 
 ### Processo
 
