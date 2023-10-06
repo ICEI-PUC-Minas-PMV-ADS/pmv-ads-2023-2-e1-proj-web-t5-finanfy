@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="editarTransacoes.css" />
+    <title>Editar / Excluir | finanfy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="divCloseIcon">
+      <a href=""><img class="icons" id="iconClose" src="/pmv-ads-2023-2-e1-proj-web-t5-finanfy/codigo-fonte/assets/iconClose.svg" /></a>
+    </div>
+    <div class="divTexto">
+      <p>
+        Você pode editar suas transações, ou excluir clicando no botão abaixo.
+      </p>
+    </div>
+    <div class="divBotaoExcluir">
+      <button id="botaoExcluir">Excluir transação</button>
+    </div>
+    <div class="divCategoria">
+      <h2>Categoria</h2>
+      <select class="entrada">
+        <option value="receitas">Receitas</option>
+        <option value="despesas">Despesas</option>
+        <option value="poupanca">Poupança</option>
+      </select>
+    </div>
+    <div class="divTipo">
+      <h2>Tipo</h2>
+      <select class="entrada">
+        <!-- se receita ou poupança -->
+        <option value="entrada">Entrada</option>
+        <!-- se despesa ou poupança -->
+        <option value="saida">Saída</option>
+      </select>
+    </div>
+    <div class="divData">
+      <h2>Data</h2>
+      <input class="entrada" type="date" value="2023-10-05" />
+    </div>
+    <div class="divValor">
+      <h2>Valor</h2>
+      <input id="valor" type="number" value="200.00" step="0.01" min="0.01" />
+    </div>
+    <div class="divSubCategoria">
+      <h2>Sub-categoria</h2>
+      <select class="entrada">
+        <!-- se receita -->
+        <option value="salario">Salário</option>
+        <option value="mesada">Mesada</option>
+        <option value="bonus">Bônus</option>
+        <option value="segundo-emprego">Segundo emprego</option>
+        <option value="renda-extra">Renda extra</option>
+        <option value="ferias">Férias</option>
+        <option value="hora-extra">Hora extra</option>
+        <option value="outros-rendimentos">Outros rendimentos</option>
+        <!-- se despesa -->
+        <option value="poupanca">Poupança</option>
+        <option value="alimentacao">Alimentação</option>
+        <option value="roupas">Roupas</option>
+        <option value="cosmeticos">Cosméticos</option>
+        <option value="entretenimento">Entretenimento</option>
+        <option value="saude">Saúde</option>
+        <option value="educacao">Educação</option>
+        <option value="transporte">Transporte</option>
+        <option value="moradia">Moradia</option>
+        <option value="comunicacao">Comunicação</option>
+      </select>
+    </div>
+    <div class="divDescricao">
+      <h2>Descrição</h2>
+      <input id="descricao" class="entrada" type="text" value="Decrição exemplo" />
+    </div>
+    <div class="divSendButton">
+      <a href=""><img src="/pmv-ads-2023-2-e1-proj-web-t5-finanfy/codigo-fonte/assets/iconSend.png" /></a>
+    </div>
+  </body>
+</html>

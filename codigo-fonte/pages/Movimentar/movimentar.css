@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  background-color: #000040;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  text-align: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #b9b2c4;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+.divCloseIcon {
+  padding-top: 50px;
+}
+
+#iconClose {
+  filter: invert(100%);
+  width: 40px;
+}
+
+.divTitle {
+  padding-top: 40px;
+}
+
+/* Provisório */
+p {
+  font-size: 32px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.divSaldo {
+  padding: 30px;
+}
+
+#iconVisibility {
+  filter: invert(100%);
+  width: 40px;
+  padding-top: 15px;
+}
+
+.entrada {
+  background-color: #000040;
+  color: #ffffff;
+  border-style: none;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  text-align: center;
+}
+
+/* .divCategoria {
+} */
+
+/* .divTipo {
+} */
+
+/* .divData {
+} */
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* .divValor {
+} */
+
+#valor {
+  background-color: #000040;
+  color: #ffffff;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #b9b2c4;
+  border-radius: 30px;
+}
+
+/* .divSubCategoria {
+} */
+
+/* .divDescricao {
+} */
+
+#descricao {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #b9b2c4;
+  border-radius: 30px;
+}
+
+.divSendButton {
+  padding: 40px;
+}
+
+select {
+  appearance: none;
+}
