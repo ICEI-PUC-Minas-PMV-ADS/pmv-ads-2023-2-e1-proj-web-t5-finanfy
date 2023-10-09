@@ -33,7 +33,142 @@ background-image: url("../../assets/background.jpg");
 .divPage, .divPage * {
   background-image: none;
 }
+/* parte do Pedro acima!! */
 
+.fistsHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 30px;
+}
+
+.mainTitle {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.iconNavigation {
+  display: flex;
+  width: 300px;
+  height: 85px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.divIconRecipes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 90px;
+}
+
+.divIconExpenses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 90px;
+}
+
+.divIconSavings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 90px;
+}
+
+.iconRecipes {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.iconExpense {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.iconSavings {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.iconDescription {
+  display: flex;
+  width: 300px;
+  height: 45px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.generalDescription {
+  font-size: 16px;
+  color: #fff;
+  font-weight: normal;
+  text-align: center;
+  width: 90px;
+  height: 45px;
+}
+
+.divTotalSavings {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 450px;
+  height: 30px;
+}
+
+.titleTotalSavings {
+  font-size: 16px;
+  color: #fff;
+  font-weight: normal;
+  width: 133px;
+}
+
+.lineAmount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 450px;
+  height: 38px;
+  margin-bottom: 25px;
+}
+ 
+.resultTotalSavings {
+  display: flex;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  width: 203px;
+  height: 38px;
+  gap: 10px;
+}
+.divIconVisibilityWhite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.iconVisibilityWhite {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.iconVisibilityWhite:hover {
+ opacity: 1;
+}
+
+/* parte do Pedro abaixo!! */
 .title {
   font-size: 20px;
   color: #fff;
@@ -198,6 +333,23 @@ ul::-webkit-scrollbar-thumb:hover {
   .navigationBar {
     width: 300px;
   }
+  /* @media Pedro acima!!*/
+  /* @media Welbert abaixo!!*/
+  .mainTitle {
+    font-size: 26px;
+  }
+  .iconNavigation {
+    width: 260px;
+  }
+  .iconDescription {
+    width: 260px;
+  }
+  .divTotalSavings {
+    width: 300px;
+  }
+  .lineAmount {
+    width: 300px;
+  }
 }
 
 @media (min-width: 450px) {
@@ -208,6 +360,23 @@ ul::-webkit-scrollbar-thumb:hover {
     width: 290px;
   }
   .navigationBar {
+    width: 350px;
+  }
+  /* @media Pedro acima!!*/
+  /* @media Welbert abaixo!!*/
+  .mainTitle {
+    font-size: 30px;
+  }
+  .iconNavigation {
+    width: 310px;
+  }
+  .iconDescription {
+    width: 310px;
+  }
+  .divTotalSavings {
+    width: 350px;
+  }
+  .lineAmount {
     width: 350px;
   }
 }
@@ -237,6 +406,23 @@ ul::-webkit-scrollbar-thumb:hover {
   .navigationBar {
     width: 400px;
   }
+   /* @media Pedro acima!!*/
+  /* @media Welbert abaixo!!*/
+  .mainTitle {
+    font-size: 35px;
+  }
+  .iconNavigation {
+    width: 360px;
+  }
+  .iconDescription {
+    width: 360px;
+  }
+  .divTotalSavings {
+    width: 400px;
+  }
+  .lineAmount {
+    width: 400px;
+  }
 }
 
 @media (min-width: 750px) {
@@ -247,6 +433,23 @@ ul::-webkit-scrollbar-thumb:hover {
     width: 390px;
   }
   .navigationBar {
+    width: 450px;
+  }
+  /* @media Pedro acima!!*/
+  /* @media Welbert abaixo!!*/
+  .mainTitle {
+    font-size: 38px;
+  }
+  .iconNavigation {
+    width: 410px;
+  }
+  .iconDescription {
+    width: 370px;
+  }
+  .divTotalSavings {
+    width: 450px;
+  }
+  .lineAmount {
     width: 450px;
   }
 }
@@ -261,6 +464,23 @@ ul::-webkit-scrollbar-thumb:hover {
   .navigationBar {
     width: 500px;
   }
+  /* @media Pedro acima!!*/
+  /* @media Welbert abaixo!!*/
+  .mainTitle {
+    font-size: 43px;
+  }
+  .iconNavigation {
+    width: 460px;
+  }
+  .iconDescription {
+    width: 410px;
+  }
+  .divTotalSavings {
+    width: 500px;
+  }
+  .lineAmount {
+    width: 500px;
+  }
 }
 
 @media (min-width: 1050px) {
@@ -271,6 +491,23 @@ ul::-webkit-scrollbar-thumb:hover {
     width: 490px;
   }
   .navigationBar {
+    width: 550px;
+  }
+  /* @media Pedro acima!!*/
+  /* @media Welbert abaixo!!*/
+  .mainTitle {
+    font-size: 45px;
+  }
+  .iconNavigation {
+    width: 490px;
+  }
+  .iconDescription {
+    width: 430px;
+  }
+  .divTotalSavings {
+    width: 550px;
+  }
+  .lineAmount {
     width: 550px;
   }
 }
