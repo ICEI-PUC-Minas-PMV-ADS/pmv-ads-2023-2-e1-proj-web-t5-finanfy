@@ -1,5 +1,5 @@
 * {
-background-image: url("../../assets/background.jpg");
+  background-image: url("../../assets/background.jpg");
 }
 
 .container {
@@ -14,7 +14,7 @@ background-image: url("../../assets/background.jpg");
   flex-direction: row;
   top: 0;
   left: 0;
-  
+
   background-size: cover;
 }
 
@@ -25,12 +25,13 @@ background-image: url("../../assets/background.jpg");
   min-width: 600px;
   width: 41%;
   background-image: none;
-  background-color: #000040; 
+  background-color: #000040;
   align-items: center;
   flex-direction: column;
 }
 
-.divPage, .divPage * {
+.divPage,
+.divPage * {
   background-image: none;
 }
 /* parte do Pedro acima!! */
@@ -51,57 +52,42 @@ background-image: url("../../assets/background.jpg");
 
 .iconNavigation {
   display: flex;
-  width: 300px;
+  width: 240px;
   height: 85px;
   justify-content: space-between;
   align-items: center;
 }
 
-.divIconRecipes {
+.divIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30%;
-  height: 90px;
-}
-
-.divIconExpenses {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30%;
-  height: 90px;
-}
-
-.divIconSavings {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   width: 30%;
   height: 90px;
 }
 
 .iconRecipes {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
 }
 
 .iconExpense {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
 }
 
 .iconSavings {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
 }
 
 .iconDescription {
   display: flex;
-  width: 300px;
+  width: 240px;
   height: 45px;
   justify-content: space-between;
   align-items: center;
@@ -112,15 +98,19 @@ background-image: url("../../assets/background.jpg");
   color: #fff;
   font-weight: normal;
   text-align: center;
+  margin: 0;
+  margin-top: 5px;
   width: 90px;
   height: 45px;
 }
+  
 
 .divTotalSavings {
   display: flex;
   align-items: center;
   justify-content: left;
-  width: 450px;
+  margin-top: 30px;
+  width: 240px;
   height: 30px;
 }
 
@@ -135,11 +125,11 @@ background-image: url("../../assets/background.jpg");
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 450px;
+  width: 240px;
   height: 38px;
   margin-bottom: 25px;
 }
- 
+
 .resultTotalSavings {
   display: flex;
   color: #fff;
@@ -165,7 +155,7 @@ background-image: url("../../assets/background.jpg");
 }
 
 .iconVisibilityWhite:hover {
- opacity: 1;
+  opacity: 1;
 }
 
 /* parte do Pedro abaixo!! */
@@ -406,7 +396,7 @@ ul::-webkit-scrollbar-thumb:hover {
   .navigationBar {
     width: 400px;
   }
-   /* @media Pedro acima!!*/
+  /* @media Pedro acima!!*/
   /* @media Welbert abaixo!!*/
   .mainTitle {
     font-size: 35px;
@@ -422,6 +412,23 @@ ul::-webkit-scrollbar-thumb:hover {
   }
   .lineAmount {
     width: 400px;
+  }
+  .iconRecipes {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+  }
+
+  .iconExpense {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+  }
+
+  .iconSavings {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
   }
 }
 
