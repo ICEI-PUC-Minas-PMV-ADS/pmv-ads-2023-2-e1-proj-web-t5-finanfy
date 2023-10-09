@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Trigger/Open The Modal */
+#openButton {
+  text-align: center;
+  padding-top: 5%;
+}
+
+#myBtn {
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  border-style: solid;
+  border-color: #000040;
+  color: #000040;
+  border-radius: 50px;
+  padding: 15px 100px 15px 100px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #ffffff;
+  float: inherit;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content {
+  background-color: #000040;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  text-align: center;
+  align-items: center;
+  max-width: 400px;
+}
+
+* {
+  margin: 0;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #b9b2c4;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+#iconClose {
+  filter: invert(100%);
+  width: 40px;
+}
+
+.divTitle {
+  padding-top: 40px;
+}
+
+p {
+  font-size: 32px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.divSaldo {
+  padding: 30px;
+}
+
+#iconVisibility {
+  filter: invert(100%);
+  width: 40px;
+  padding-top: 15px;
+}
+
+.entrada {
+  background-color: #000040;
+  color: #ffffff;
+  border-style: none;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  text-align: center;
+  width: 90%;
+  align-items: center;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+#valor {
+  background-color: #000040;
+  color: #ffffff;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #b9b2c4;
+  border-radius: 30px;
+}
+
+#descricao {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #b9b2c4;
+  border-radius: 30px;
+}
+
+.divSendButton {
+  padding: 40px;
+}
+
+select {
+  appearance: none;
+}
