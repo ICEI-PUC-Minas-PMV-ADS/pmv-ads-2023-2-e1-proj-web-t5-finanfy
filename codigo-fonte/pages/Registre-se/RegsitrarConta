@@ -23,10 +23,10 @@
 
      <select id="Pergunta de segurança">
       <option value=""></option>
-      <option value="Nome da Mãe">Qual o Nome da Sua Mãe?</option>
-      <option value="Nome do Pai">Qual o Nome da Sua Pai?</option>
-      <option value="Sua idade">Qual a Sua idade?</option>
+      <option value="Nome da Mãe">Qual o Nome da sua Mãe?</option>
+      <option value="Nome do Pai">Qual o Nome do seu Pai?</option>
       <option value="Time que voce Torce">Para Qual Time voce Torce?</option>
+      <option value="Data de Nascimento">Qual a sua data de nascimento?</option>      
     </select>
 
      <p><strong>Resposta de segurança</strong></p>
