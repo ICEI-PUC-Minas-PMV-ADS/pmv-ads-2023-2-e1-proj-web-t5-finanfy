@@ -1,39 +1,36 @@
-* {
-  background-image: url("../../assets/background.jpg");
-}
-
-.container {
+html, body {
   font-family: "Rubik", sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  position: fixed;
+  background-image: url("../../assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   flex-direction: row;
   top: 0;
   left: 0;
-
-  background-size: cover;
 }
-.leftBack {
-  background-image: url("../../assets/Group\ 44.png");
-  background-size: cover;
-  height: 100%;
-  width: 30%;
-}
-
 .divPage {
   padding: 16px;
   display: flex;
-  height: 100%;
+  height: max-content;
+  min-height: 100%;
   min-width: 600px;
   width: 41%;
   background-image: none;
   background-color: #000040;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 50px;
 }
 
 .divPage,
