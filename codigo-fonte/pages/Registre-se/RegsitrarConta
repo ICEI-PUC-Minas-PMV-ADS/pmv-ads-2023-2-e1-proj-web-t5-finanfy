@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head> <title>Registre-se</title>
+       <meta charset="utf-8"> </head>
+       <link href="style.css" rel="stylesheet">
+<body>
+     <h1><strong>Registre-se</strong></h1>
+     <p>Nome</p>
+     <textarea></textarea>
+     <p>Sobrenome</p>
+     <textarea></textarea>
+     <p>E-mail</p>
+     <textarea></textarea>
+     <p>Senha</p>
+     <textarea></textarea>
+     <p>Confirme sua senha</p>
+     <textarea></textarea>
+     <P>Em caso de você esquecer sua senha, cadastre
+        uma pergunta e uma resposta de segurança
+        para liberar a recuperação de sua senha.</P>
+
+     <p><strong>Pergunta de segurança</strong></p>
+
+     <select id="Pergunta de segurança">
+      <option value=""></option>
+      <option value="Nome da Mãe">Qual o Nome da Sua Mãe?</option>
+      <option value="Nome do Pai">Qual o Nome da Sua Pai?</option>
+      <option value="Sua idade">Qual a Sua idade?</option>
+      <option value="Time que voce Torce">Para Qual Time voce Torce?</option>
+    </select>
+
+     <p><strong>Resposta de segurança</strong></p>
+        <textarea></textarea>    
+</body>
+</html>
+
+
+
