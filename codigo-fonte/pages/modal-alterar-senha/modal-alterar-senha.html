@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="modal-alterar-senha.css" />
+    <title>Alterar senha | finanfy</title>
+  </head>
+  <body>
+    <!-- Abrir modal -->
+    <div id="openButton">
+      <button id="myBtn">Open Modal</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <!-- Conteúdo modal -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="divTitle">
+            <h1>Alterar senha</h1>
+          </div>
+          <div class="divSenhaAtual">
+            <input
+              id="senha-atual"
+              class="entrada"
+              type="text"
+              placeholder="Senha atual"
+            />
+          </div>
+          <div class="divNovaSenha">
+            <input
+              id="nova-senha"
+              class="entrada"
+              type="text"
+              placeholder="Nova senha"
+            />
+          </div>
+          <div class="divConfirmaNovaSenha">
+            <input
+              id="confirma-nova-senha"
+              class="entrada"
+              type="text"
+              placeholder="Confirme sua nova senha"
+            />
+          </div>
+          <div class="divSendButton">
+            <a href=""
+              ><img
+                src="/pmv-ads-2023-2-e1-proj-web-t5-finanfy/codigo-fonte/assets/icon-send.png"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="modal-alterar-senha.js"></script>
+  </body>
+</html>
