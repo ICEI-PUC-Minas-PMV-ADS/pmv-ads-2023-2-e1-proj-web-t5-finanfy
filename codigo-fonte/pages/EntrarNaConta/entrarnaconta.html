@@ -7,10 +7,13 @@
     </head>
          <body>
             <h1  id="entrar">Entrar na Conta</h1>
-            <p>E-mail</p> <input E-mail value="">
-            <p>Senha</p>  <input Senha value="">
-            <p><button> -></button></p>
-            <p><small>Esqueceu sua senha?</small></p>
-            <a href="recuperar senha.html"><p><button><strong><small>Recupere <ins>aqui</ins></small></strong></button></p></a>
+            <form name="form_login" action="do_login.html" method="POST">
+                E-mail: <input type="email" name="E-mail" value=""><br><br>
+                Senha:  <input type="password" name="Senha" value=""><br><br>
+                        <input type="submit" value="OK">
+            </form>           
+            <a href="recuperarsenha.html"><p><button><strong><small>Recupere <ins>aqui</ins></small></strong></button></p></a>
+
+            
          </body>
 </html>
