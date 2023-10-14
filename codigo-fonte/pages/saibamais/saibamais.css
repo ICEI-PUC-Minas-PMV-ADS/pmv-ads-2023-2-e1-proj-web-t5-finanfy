@@ -7,8 +7,6 @@ body {
     color: white;
     text-align: center;
     
-   
-
 }
 
 .botao{
@@ -20,8 +18,7 @@ body {
     border-radius: 45px;
     color: white;
     box-sizing: border-box;
-    font-size: large;
-    
+    font-size: large;    
 }
 
 #aqui {
