@@ -9,6 +9,37 @@ body{
     background-size: cover;
     background-attachment: fixed;
     color: white;
+    text-align: center;
+    position: relative;
+
+}
+
+.areaText {  
+
+    width: 388px;
+    height: 66px;
+    left: 20px;
+    top: 682px;
+    background: linear-gradient(180deg, #20204D 0%, #1D1D55 100%);
+    border-radius: 45px;
+    color: white;
+    box-sizing: border-box;
+    font-size: large;  
+
+
+    
+}
+#aqui {
+    color: white;
+ }
+
+#botaoentrar {
+   
+    
+    background: url("../../assets/icon-send.png");
+    mix-blend-mode: soft-light;
+    opacity: 0.2;
+    
 }
 
 

@@ -6,13 +6,18 @@
         <link rel="stylesheet" href="EntrarnaConta.css">    
     </head>
          <body>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
             <h1  id="entrar">Entrar na Conta</h1>
-            <form name="form_login" action="do_login.html" method="POST">
-                E-mail: <input type="email" name="E-mail" value=""><br><br>
-                Senha:  <input type="password" name="Senha" value=""><br><br>
-                        <input type="submit" value="OK">
-            </form>           
-            <a href="../recuperarsenha/recuperarsenha.html"><p><button><strong><small>Recupere <ins>aqui</ins></small></strong></button></p></a>
+            <form name="form_login"  method="POST">
+                <input placeholder="E-mail" class="areaText" type="email" name="E-mail" value="">  <br><br>
+                <input placeholder="Senha" class="areaText" type="password" name="Senha" value=""><br><br>
+                        <button > Entrar <img src=(../../assets/icon-send.png) alt="">  </button>
+            </form> 
+             
+            <p><small>Esqueceu sua senha?</small></p> 
+            <p><strong><small>Recupere <ins> <a id="aqui" href="../recuperarsenha/recuperarsenha.html">aqui. </ins></small></strong></p></a>
+
+            
 
             
          </body>
