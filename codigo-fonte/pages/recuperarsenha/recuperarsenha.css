@@ -11,6 +11,7 @@ body{
 
 }
 
+
 .areaText {  
 
     width: 388px;
@@ -19,13 +20,13 @@ body{
     background: linear-gradient(180deg, #20204D 0%, #1D1D55 100%);
     border-radius: 45px;
     box-sizing: border-box;
-    font-size: large;  
-    
-
-
-    
+    font-size: large; 
+    text-align: center; 
 }
-#aqui {
-    color: white;
- }
 
+
+
+.perguntas {
+   
+    color:white
+}
