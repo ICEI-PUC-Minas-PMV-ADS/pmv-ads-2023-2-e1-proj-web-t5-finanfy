@@ -14,40 +14,44 @@
     <!-- <div class="leftBack"></div> -->
     <div class="divPage">
         <div class="profileHeader">
-            <h1 class="mainTitle">Perfil</h1>
+            <h1 id="mainTitle">Perfil</h1>
         </div>
-        <div class="divIconHomeProfile">
+        <div class="divIconProfile">
             <img
               src="../../assets/iconHomeProfilePhoto.svg"
-              alt="Icon Home Profile Photo"
-              class="iconHomeProfilePhoto"
+              alt="Icon Profile Photo"
+              class="iconProfilePhoto"
             />
         </div>
         <div class="profileInfo">
             <p class="pInfo">
                 <label for="nameInfo">Nome</label>
             </p>
-            <span id="nameInfo">Simone</span>
+            <span id="nameInfo"  class="spanInfo">Simone</span>
             <!-- nameInfo = Simone (test name) -->
             <!-- nameInfo = none (default name) -->
 
             <p class="pInfo">
                 <label for="lastNameInfo">Sobrenome</label>
             </p>
-            <span id="lastNameInfo">Nogueira</span>
+            <span id="lastNameInfo" class="spanInfo">Nogueira</span>
             <!-- lastNameInfo = Nogueira (test name) -->
             <!-- lastNameInfo = none (default name) -->
 
             <p class="pInfo">
                 <label for="emailInfo">E-mail</label>
             </p>
-            <span id="emailInfo">simonenogueira@teste.com</span>
+            <span id="emailInfo" class="spanInfo">simonenogueira@teste.com</span>
             <!-- emailInfo = simonenogueira@teste.com (test name) -->
             <!-- emailInfo = none (default name) -->
         </div>
         <div class="profileButtons">
-            <button>Alterar senha</button>
-            <button>Sair da conta</button>
+            <div class="buttonKey">
+                <span id="changePassword">Mudar senha</span>
+            </div>
+            <div class="buttonLogOut">
+                <span id="logOutAccount">Sair da conta</span>
+            </div>
         </div>
         <script src="perfil.js"></script>
     </div>

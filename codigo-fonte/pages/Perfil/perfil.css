@@ -37,3 +37,89 @@ html, body {
   .divPage * {
     background-image: none;
   }
+
+  .profileHeader {
+    display: flex;
+    width: 240px;
+    height: 115px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  #mainTitle {
+    display: flex;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  .divIconProfile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 116px;
+    height: 116px;
+  }
+  .iconProfilePhoto {
+    width: 116px;
+    height: 100%;
+    cursor: pointer;
+  }
+  .profileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .pInfo {
+    display: flex;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 100;
+    height: 19px;
+    opacity: 0.9;
+    margin-bottom: 0px;
+  }
+  .spanInfo {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .profileButtons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  .buttonKey {
+    display: flex;
+    justify-content: center;
+    background-color: #383467;
+    border-radius: 30px;
+    width: 388px;
+    height: 66px;
+    cursor: pointer;
+  }
+  .buttonLogOut {
+    display: flex;
+    justify-content: center;
+    background-color: #982626;
+    border-radius: 30px;
+    width: 388px;
+    height: 66px;
+    cursor: pointer;
+  }
+  #changePassword {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color:#fff;
+    align-items: center;
+  }
+  #logOutAccount {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color:#fff;
+    align-items: center;
+  }
+  
