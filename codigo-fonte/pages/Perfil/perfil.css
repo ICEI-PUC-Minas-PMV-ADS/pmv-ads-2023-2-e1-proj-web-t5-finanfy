@@ -93,8 +93,9 @@ html, body {
   .buttonKey {
     display: flex;
     justify-content: center;
-    background-color: #383467;
+    background-color: #20204D;
     border-radius: 30px;
+    border: 1px solid #383467;
     width: 388px;
     height: 66px;
     cursor: pointer;
@@ -104,6 +105,7 @@ html, body {
     justify-content: center;
     background-color: #982626;
     border-radius: 30px;
+    border: 1px solid #383467;
     width: 388px;
     height: 66px;
     cursor: pointer;
