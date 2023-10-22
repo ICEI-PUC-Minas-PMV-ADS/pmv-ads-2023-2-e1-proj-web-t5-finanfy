@@ -9,6 +9,15 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script src="../Login/login.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Verifica se o usuário já está logado e, se não estiver, redireciona para a tela de login
+        if (!usuarioCorrente.email) {
+          window.location.href = "../Login/login.html";
+        }
+      });
+    </script>
   </head>
   <body class="container">
     <div class="divPage">
@@ -20,7 +29,7 @@
           <!-- personalNameHome = Simone Nogueira (test name) -->
           <!-- personalNameHome = none (default name) -->
         </div>
-        <div class="divIconHomeProfile">
+        <div class="divIconHomeProfile" id="profileLink">
           <img
             src="../../assets/iconHomeProfilePhoto.svg"
             alt="Icon Home Profile Photo"
@@ -108,6 +117,16 @@
           />
         </div>
       </div>
+
+      <script>
+        const profileLink = document.getElementById("profileLink");
+
+        // Adicione um evento de clique à imagem
+        profileLink.addEventListener("click", function () {
+          // Redirecione o usuário para outra página
+          window.location.href = "../Perfil/perfil.html";
+        });
+      </script>
 
       <script src="telaprincipal.js"></script>
     </div>

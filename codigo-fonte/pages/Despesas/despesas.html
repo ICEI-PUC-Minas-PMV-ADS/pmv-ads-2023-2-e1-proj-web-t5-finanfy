@@ -9,11 +9,19 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script src="../Login/login.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Verifica se o usuário já está logado e, se não estiver, redireciona para a tela de login
+        if (!usuarioCorrente.email) {
+          window.location.href = "../Login/login.html";
+        }
+      });
+    </script>
   </head>
   <body class="container">
     <!-- <div class="leftBack"></div> -->
     <div class="divPage">
-
       <!--minha parte abaixo!!-->
       <div class="firtsHeader">
         <h1 class="mainTitle">Despesas</h1>
@@ -48,18 +56,19 @@
         <h1 class="titleTotalExpense">Total de despesas</h1>
       </div>
       <div class="lineAmount">
-          <div class="resultTotalExpense">
-            <span>R$</span>
-            <span id="valueTotalExpense">555</span>
-              <!-- valueTotalExpense = 555 (test value) -->
-              <!-- valueTotalExpense = 0 (default value) -->
-          </div>
-          <div class="divIconVisibilityWhite">
-            <img
-            src="../../assets/iconVisibilityWhite.svg" alt="Icon Visibility Off"
+        <div class="resultTotalExpense">
+          <span>R$</span>
+          <span id="valueTotalExpense">555</span>
+          <!-- valueTotalExpense = 555 (test value) -->
+          <!-- valueTotalExpense = 0 (default value) -->
+        </div>
+        <div class="divIconVisibilityWhite">
+          <img
+            src="../../assets/iconVisibilityWhite.svg"
+            alt="Icon Visibility Off"
             class="iconVisibilityWhite"
-            />
-          </div>
+          />
+        </div>
       </div>
 
       <!--Parte pedro abaixo!!!-->
@@ -82,7 +91,11 @@
         </div>
 
         <div class="divIconPlus">
-          <img src="../../assets/iconAdd.png" alt="Icon Plus" class="iconPlus" />
+          <img
+            src="../../assets/iconAdd.png"
+            alt="Icon Plus"
+            class="iconPlus"
+          />
         </div>
 
         <div class="divIconProfile">

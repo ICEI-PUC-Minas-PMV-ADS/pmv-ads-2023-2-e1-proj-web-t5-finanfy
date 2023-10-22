@@ -115,9 +115,11 @@ function loginUser(email, senha) {
 
 // Apaga os dados do usuário corrente no sessionStorage
 function logoutUser() {
+  console.log("ENTROU AQUI");
   usuarioCorrente = {};
   sessionStorage.setItem("usuarioCorrente", JSON.stringify(usuarioCorrente));
-  window.location = LOGIN_URL;
+
+  window.location.href = "../Login/login.html";
 }
 
 function addUser(nome, sobrenome, email, senha, respSecurity) {
