@@ -1,34 +1,89 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recuperar Senha</title>
-    <link href="recuperarsenha.css" rel="stylesheet">
-</head>
-<body>
-    <H1><strong>Recuperar senha</strong></H1>
-    <br><br>
+    <link href="recuperarsenha.css" rel="stylesheet" />
+  </head>
+  <body>
+    <form id="recoveryForm">
+      <h1><strong>Recuperar senha</strong></h1>
+      <br /><br />
 
-   
-    
-    <select class="areaText">
+      <input placeholder="Email" class="areaText" id="email" />
+
+      <select class="areaText">
         <option value="Pergunta de segurança">Pergunta de segurança</option>
         <option value="Nome da Mãe">Qual o Nome da sua Mãe?</option>
         <option value="Nome do Pai">Qual o Nome do seu Pai?</option>
         <option value="Time que voce Torce">Para Qual Time voce Torce?</option>
-        <option value="Data de Nascimento">Qual a sua data de nascimento?</option>      
+        <option value="Data de Nascimento">
+          Qual a sua data de nascimento?
+        </option>
       </select>
-      
-    <br><br>
-    <input placeholder="Resposta de segurança" class="areaText" value="">
-    <br><br>
-    <input placeholder="Nova senha" class="areaText" value="">
-    <br><br>
-    <input placeholder="Confirme sua nova senha" class="areaText" value=""> 
-    <P><a href="../EntrarNaConta/entrarnaconta.html"> <img src="../../assets/icon-send.png" > </a></P> 
 
-    
-</body>
+      <br /><br />
+      <input
+        placeholder="Resposta de segurança"
+        class="areaText"
+        id="securityAnswer"
+      />
+      <br /><br />
+      <input placeholder="Nova senha" class="areaText" id="newPassword" />
+      <br /><br />
+      <input
+        placeholder="Confirme sua nova senha"
+        id="confirmNewPassword"
+        class="areaText"
+      />
+      <button type="button" onclick="changePassword()">
+        <img src="../../assets/icon-send.png" />
+      </button>
+    </form>
+
+    <script>
+      function changePassword() {
+        const email = document.getElementById("email").value;
+        const securityAnswer = document.getElementById("securityAnswer").value;
+        const newPassword = document.getElementById("newPassword").value;
+        const confirmNewPassword =
+          document.getElementById("confirmNewPassword").value;
+
+        if (!email || email === "") {
+          return alert("É necessário preencher o email");
+        }
+        if (!securityAnswer || securityAnswer === "") {
+          return alert("É necessário preencher a resposta de segurança");
+        }
+        if (!newPassword || newPassword === "") {
+          return alert("É necessário preencher a nova senha");
+        }
+        if (!confirmNewPassword || confirmNewPassword === "") {
+          return alert("É necessário preencher a confirmação de senha");
+        }
+        if (confirmNewPassword !== newPassword) {
+          return alert("As senhas não conferem");
+        }
+
+        const users = JSON.parse(localStorage.getItem("db_usuarios")) || [];
+        console.log("ENTROU AQUI1", users);
+        for (const element of users.usuarios) {
+          console.log("ENTROU AQUI2");
+          if (
+            element.email === email &&
+            element.respSecurity === securityAnswer
+          ) {
+            element.senha = newPassword;
+            localStorage.setItem("db_usuarios", JSON.stringify(users));
+            alert("Senha alterada com sucesso.");
+            return;
+          }
+        }
+
+        alert("Email ou resposta de segurança incorretos. Tente novamente.");
+      }
+    </script>
+  </body>
 </html>

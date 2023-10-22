@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entrar na Conta</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <h1 id="entrar">Entrar na Conta</h1>
+    <form
+      id="login-form"
+      class="form"
+      method="post"
+      onsubmit="loginUser (this)"
+    >
+      <input
+        placeholder="   E-mail"
+        class="areaText"
+        type="email"
+        id="email"
+        name="E-mail"
+      />
+      <br /><br />
+      <input
+        placeholder="   Senha"
+        class="areaText"
+        type="password"
+        name="password"
+        id="password"
+      /><br /><br />
+      <button type="submit" name="submit" value="submit">
+        <img src="../../assets/icon-send.png" />
+      </button>
+    </form>
+
+    <p><small>Esqueceu sua senha?</small></p>
+    <p>
+      <strong
+        ><small
+          >Recupere
+          <a id="aqui" href="../recuperarsenha/recuperarsenha.html"
+            >aqui.</a
+          ></small
+        ></strong
+      >
+    </p>
+
+    <script src="login.js"></script>
+    <script>
+      // Declara uma função para processar o formulário de login
+      function processaFormLogin(event) {
+        // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+        event.preventDefault();
+
+        // Obtem os dados de login e senha a partir do formulário de login
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        if (!email || email === "") {
+          return alert("É necessário preencher o email");
+        }
+        if (!password || password === "") {
+          return alert("É necessário preencher a senha");
+        }
+
+        // Valida login e se estiver ok, redireciona para tela inicial da aplicação
+        let resultadoLogin = loginUser(email, password);
+        if (resultadoLogin) {
+          window.location.href = "../TelaPrincipal/telaprincipal.html";
+        } else {
+          // Se login falhou, avisa ao usuário
+          alert("Usuário ou senha incorretos");
+        }
+      }
+
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", processaFormLogin);
+    </script>
+  </body>
+</html>
