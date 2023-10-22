@@ -37,6 +37,7 @@ const dadosIniciais = {
       nome: "Administrador do Sistema",
       sobrenome: "Teste",
       email: "admin@abc.com",
+      questionSecurity: "3",
       respSecurity: "123",
     },
     {
@@ -45,6 +46,7 @@ const dadosIniciais = {
       nome: "Usuario Comum",
       sobrenome: "Teste",
       email: "user@abc.com",
+      questionSecurity: "1",
       respSecurity: "123",
     },
   ],
@@ -97,6 +99,7 @@ function loginUser(email, senha) {
       usuarioCorrente.email = usuario.email;
       usuarioCorrente.nome = usuario.nome;
       usuarioCorrente.sobrenome = usuario.sobrenome;
+      usuarioCorrente.questionSecurity = usuario.questionSecurity;
       usuarioCorrente.respSecurity = usuario.respSecurity;
       // Salva os dados do usuário corrente no Session Storage, mas antes converte para string
       sessionStorage.setItem(
@@ -122,7 +125,7 @@ function logoutUser() {
   window.location.href = "../Login/login.html";
 }
 
-function addUser(nome, sobrenome, email, senha, respSecurity) {
+function addUser(nome, sobrenome, email, senha, questionSecurity, respSecurity) {
   console.log("Entrou addUser");
   // Cria um objeto de usuario para o novo usuario
   let newId = generateUUID();
@@ -132,6 +135,7 @@ function addUser(nome, sobrenome, email, senha, respSecurity) {
     sobrenome: sobrenome,
     email: email,
     senha: senha,
+    questionSecurity: questionSecurity,
     respSecurity: respSecurity,
   };
 

@@ -14,12 +14,16 @@
 
       <input placeholder="Email" class="areaText" id="email" />
 
-      <select class="areaText">
-        <option value="Pergunta de segurança">Pergunta de segurança</option>
-        <option value="Nome da Mãe">Qual o Nome da sua Mãe?</option>
-        <option value="Nome do Pai">Qual o Nome do seu Pai?</option>
-        <option value="Time que voce Torce">Para Qual Time voce Torce?</option>
-        <option value="Data de Nascimento">
+      <select class="areaText" id="perguntaSeguranca">
+        <option value="   Pergunta de segurança" id="0">
+          Pergunta de segurança
+        </option>
+        <option value="Nome da Mãe" id="1">Qual o Nome da sua Mãe?</option>
+        <option value="Nome do Pai" id="2">Qual o Nome do seu Pai?</option>
+        <option value="Time que voce Torce" id="3">
+          Para Qual Time voce Torce?
+        </option>
+        <option value="Data de Nascimento" id="4">
           Qual a sua data de nascimento?
         </option>
       </select>
@@ -46,6 +50,10 @@
     <script>
       function changePassword() {
         const email = document.getElementById("email").value;
+        const divQuestionSecurity =
+          document.getElementById("perguntaSeguranca");
+        const questionSecurity =
+          divQuestionSecurity.options[divQuestionSecurity.selectedIndex].id;
         const securityAnswer = document.getElementById("securityAnswer").value;
         const newPassword = document.getElementById("newPassword").value;
         const confirmNewPassword =
@@ -53,6 +61,9 @@
 
         if (!email || email === "") {
           return alert("É necessário preencher o email");
+        }
+        if (questionSecurity === "0") {
+          return alert("É necessário selecionar uma pergunta de segurança");
         }
         if (!securityAnswer || securityAnswer === "") {
           return alert("É necessário preencher a resposta de segurança");
@@ -73,16 +84,18 @@
           console.log("ENTROU AQUI2");
           if (
             element.email === email &&
-            element.respSecurity === securityAnswer
+            element.respSecurity === securityAnswer &&
+            element.questionSecurity === questionSecurity
           ) {
             element.senha = newPassword;
             localStorage.setItem("db_usuarios", JSON.stringify(users));
             alert("Senha alterada com sucesso.");
+            window.location.href = "../Login/login.html";
             return;
           }
         }
 
-        alert("Email ou resposta de segurança incorretos. Tente novamente.");
+        alert("Email, pergunta ou resposta de segurança incorretos. Tente novamente.");
       }
     </script>
   </body>
