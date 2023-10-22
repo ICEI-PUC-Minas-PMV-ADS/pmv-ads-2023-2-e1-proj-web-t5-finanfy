@@ -1,0 +1,126 @@
+html, body {
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  .container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+  }
+  .divPage {
+    padding: 16px;
+    display: flex;
+    height: max-content;
+    min-height: 100%;
+    min-width: 600px;
+    width: 41%;
+    background-image: none;
+    background-color: #000040;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+  }
+  
+  .divPage,
+  .divPage * {
+    background-image: none;
+  }
+
+  .profileHeader {
+    display: flex;
+    width: 240px;
+    height: 115px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  #mainTitle {
+    display: flex;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  .divIconProfile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 116px;
+    height: 116px;
+  }
+  .iconProfilePhoto {
+    width: 116px;
+    height: 100%;
+    cursor: pointer;
+  }
+  .profileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .pInfo {
+    display: flex;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 100;
+    height: 19px;
+    opacity: 0.9;
+    margin-bottom: 0px;
+  }
+  .spanInfo {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .profileButtons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  .buttonKey {
+    display: flex;
+    justify-content: center;
+    background-color: #20204D;
+    border-radius: 30px;
+    border: 2px solid #383467;
+    width: 388px;
+    height: 66px;
+    cursor: pointer;
+  }
+  .buttonLogOut {
+    display: flex;
+    justify-content: center;
+    background-color: #982626;
+    border-radius: 30px;
+    border: 2px solid #383467;
+    width: 388px;
+    height: 66px;
+    cursor: pointer;
+  }
+  #changePassword {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color:#fff;
+    align-items: center;
+  }
+  #logOutAccount {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color:#fff;
+    align-items: center;
+  }
