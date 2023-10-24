@@ -34,24 +34,24 @@
           </div>
           <div class="divCategoria">
             <h2>Categoria</h2>
-            <select class="entrada">
-              <option value="receitas">Receitas</option>
-              <option value="despesas">Despesas</option>
-              <option value="poupanca">Poupança</option>
+            <select class="entrada" id="categoriaEntrada">
+              <option value="receitas" id="receitas">Receitas</option>
+              <option value="despesas" id="despesas">Despesas</option>
+              <option value="poupanca" id="poupanca">Poupança</option>
             </select>
           </div>
           <div class="divTipo">
             <h2>Tipo</h2>
-            <select class="entrada">
+            <select class="entrada" id="tipoEntrada">
               <!-- se receita ou poupança -->
-              <option value="entrada">Entrada</option>
+              <option value="entrada" id="entrada">Entrada</option>
               <!-- se despesa ou poupança -->
-              <option value="saida">Saída</option>
+              <option value="saida" id="saida">Saída</option>
             </select>
           </div>
           <div class="divData">
             <h2>Data</h2>
-            <input class="entrada" type="date" />
+            <input class="entrada" type="date" id="data" />
           </div>
           <div class="divValor">
             <h2>Valor</h2>
@@ -65,34 +65,40 @@
           </div>
           <div class="divSubCategoria">
             <h2>Sub-categoria</h2>
-            <select class="entrada">
+            <select class="entrada" id="subCategoriaEntrada">
               <!-- se receita -->
-              <option value="salario">Salário</option>
-              <option value="mesada">Mesada</option>
-              <option value="bonus">Bônus</option>
-              <option value="segundo-emprego">Segundo emprego</option>
-              <option value="renda-extra">Renda extra</option>
-              <option value="ferias">Férias</option>
-              <option value="hora-extra">Hora extra</option>
-              <option value="outros-rendimentos">Outros rendimentos</option>
+              <option value="salario" id="salario">Salário</option>
+              <option value="mesada" id="mesada">Mesada</option>
+              <option value="bonus" id="bonus">Bônus</option>
+              <option value="segundo-emprego" id="segundoEmprego">
+                Segundo emprego
+              </option>
+              <option value="renda-extra" id="rendaExtra">Renda extra</option>
+              <option value="ferias" id="ferias">Férias</option>
+              <option value="hora-extra" id="horaExtra">Hora extra</option>
+              <option value="outros-rendimentos" id="outrosRendimentos">
+                Outros rendimentos
+              </option>
               <!-- se despesa -->
-              <option value="poupanca">Poupança</option>
-              <option value="alimentacao">Alimentação</option>
-              <option value="roupas">Roupas</option>
-              <option value="cosmeticos">Cosméticos</option>
-              <option value="entretenimento">Entretenimento</option>
-              <option value="saude">Saúde</option>
-              <option value="educacao">Educação</option>
-              <option value="transporte">Transporte</option>
-              <option value="moradia">Moradia</option>
-              <option value="comunicacao">Comunicação</option>
+              <option value="poupanca" id="poupanca">Poupança</option>
+              <option value="alimentacao" id="alimentacao">Alimentação</option>
+              <option value="roupas" id="roupas">Roupas</option>
+              <option value="cosmeticos" id="cosmeticos">Cosméticos</option>
+              <option value="entretenimento" id="entretenimento">
+                Entretenimento
+              </option>
+              <option value="saude" id="saude">Saúde</option>
+              <option value="educacao" id="educacao">Educação</option>
+              <option value="transporte" id="transporte">Transporte</option>
+              <option value="moradia" id="moradia">Moradia</option>
+              <option value="comunicacao" id="comunicacao">Comunicação</option>
             </select>
           </div>
           <div class="divDescricao">
             <h2>Descrição</h2>
             <input id="descricao" class="entrada" type="text" />
           </div>
-          <div class="divSendButton">
+          <div class="divSendButton" id="sendButton">
             <a href=""
               ><img
                 src="/pmv-ads-2023-2-e1-proj-web-t5-finanfy/codigo-fonte/assets/icon-send.png"
@@ -102,5 +108,42 @@
       </div>
     </div>
     <script src="modal-movimentar.js"></script>
+    <script src="../CRUD_TRANSACOES/crudTransacoes.js"></script>
+    <script>
+      function salvarTransacao(event) {
+        event.preventDefault();
+
+        let categoriaEntrada = document.getElementById("categoriaEntrada");
+
+        let categoriaEntradaOption =
+          categoriaEntrada.options[categoriaEntrada.selectedIndex].id;
+        let tipoEntrada = document.getElementById("tipoEntrada");
+        let tipoEntradaOption =
+          tipoEntrada.options[tipoEntrada.selectedIndex].id;
+
+        let data = document.getElementById("data").value;
+        let valor = document.getElementById("valor").value;
+        let subCategoriaEntrada = document.getElementById(
+          "subCategoriaEntrada"
+        );
+        let subCategoriaEntradaOption =
+          subCategoriaEntrada.options[subCategoriaEntrada.selectedIndex].id;
+
+        let descricao = document.getElementById("descricao").value;
+        postReceitas(
+          categoriaEntradaOption,
+          tipoEntradaOption,
+          data,
+          valor,
+          subCategoriaEntradaOption,
+          descricao
+        );
+        console.log(subCategoriaEntradaOption);
+      }
+
+      document
+        .getElementById("sendButton")
+        .addEventListener("click", salvarTransacao);
+    </script>
   </body>
 </html>
