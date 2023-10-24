@@ -40,11 +40,25 @@ html, body {
 
   .profileHeader {
     display: flex;
-    width: 240px;
-    height: 115px;
+    flex-direction: column;
+    width: 500px;
+    height: auto;
     justify-content: center;
     align-items: center;
     
+    
+  }
+  .divIconBack {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 500px;
+    height: 115px
+  }
+  .iconBtnBack {
+    display: flex;
+    width: 30px;
+    height: 30px;
   }
   #mainTitle {
     display: flex;
