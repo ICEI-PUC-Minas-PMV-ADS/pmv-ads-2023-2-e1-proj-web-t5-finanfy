@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cadastro de Transações</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body onload="init()">
+    <h1>Cadastro de Transações (CRUD)</h1>
+
+    <div class="container">
+      <div class="row">
+        <div id="msg" class="col-sm-10 offset-sm-1">
+          <!--<div class="alert alert-warning">Transação não encontrado.</div>-->
+        </div>
+      </div>
+
+      <form id="form-transacao">
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <label for="inputId">Id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputId"
+              placeholder="ID"
+              disabled
+            />
+          </div>
+          <div class="col-sm-8">
+            <label for="inputCategoria">Categoria</label>
+            <select type="text" class="form-control" id="inputCategoria">
+              <option value="" disabled selected>
+                Selecione a categoria da transação
+              </option>
+              <option value="receitas" id="categoriaReceitas">Receitas</option>
+              <option value="despesas" id="categoriaDespesas">Despesas</option>
+              <option value="poupanca" id="categoriaPoupanca">Poupança</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-5">
+            <label for="inputTipo">Tipo</label>
+            <select type="text" class="form-control" id="inputTipo">
+              <option value="" disabled selected>
+                Selecione o tipo da transação
+              </option>
+              <!-- se receita ou poupança -->
+              <option value="entrada" id="tipoEntrada">Entrada</option>
+              <!-- se despesa ou poupança -->
+              <option value="saida" id="tipoSaida">Saída</option>
+            </select>
+          </div>
+          <div class="col-sm-7">
+            <label for="inputData">Data</label>
+            <input type="date" class="form-control" id="inputData" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <label for="inputValor">Valor</label>
+            <input
+              type="number"
+              class="form-control"
+              id="inputValor"
+              placeholder="Informe o valor da transação"
+            />
+          </div>
+          <div class="col-sm-6">
+            <label for="inputSubCategoria">Sub-categoria</label>
+            <select type="text" class="form-control" id="inputSubCategoria">
+              <option value="" disabled selected>
+                Selecione a sub-categoria da transação
+              </option>
+              <!-- se receita -->
+              <option value="salario" id="subCategoriaSalario">Salário</option>
+              <option value="mesada" id="subCategoriaMesada">Mesada</option>
+              <option value="bonus" id="subCategoriaBonus">Bônus</option>
+              <option value="segundo-emprego" id="subCategoriaSeguroDesemprego">Segundo emprego</option>
+              <option value="renda-extra" id="subCategoriaRendaExtra">Renda extra</option>
+              <option value="ferias" id="subCategoriaFerias">Férias</option>
+              <option value="hora-extra" id="subCategoriaHoraExtra">Hora extra</option>
+              <option value="outros-rendimentos" id="subCategoriaOutrosRendimentos">Outros rendimentos</option>
+              <!-- se despesa -->
+              <option value="poupanca" id="subCategoriaPoupanca">Poupança</option>
+              <option value="alimentacao" id="subCategoriaAlimentacao">Alimentação</option>
+              <option value="roupas" id="subCategoriaRoupas">Roupas</option>
+              <option value="cosmeticos" id="subCategoriaCosmeticos">Cosméticos</option>
+              <option value="entretenimento" id="subCategoriaEntretenimento">Entretenimento</option>
+              <option value="saude" id="subCategoriaSaude">Saúde</option>
+              <option value="educacao" id="subCategoriaEducacao">Educação</option>
+              <option value="transporte" id="subCategoriaTransporte">Transporte</option>
+              <option value="moradia" id="subCategoriaMoradia">Moradia</option>
+              <option value="comunicacao" id="subCategoriaComunicacao">Comunicação</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <label for="inputDescricao">Descrição</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputDescricao"
+              placeholder="Informe uma descrição para a transação"
+            />
+          </div>
+        </div>
+        <br />
+        <div id="saldoAtual">
+          <p>Seu saldo atual é de: R$ 250,00</p>
+        </div>
+        <div id="saldoPoupança">
+          <p>Você possui R$ 100,00 guardados em sua poupança</p>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <input
+              type="button"
+              class="btn btn-outline-success"
+              id="btnInsert"
+              value="Inserir"
+            />
+            <input
+              type="button"
+              class="btn btn-outline-warning"
+              id="btnUpdate"
+              value="Alterar"
+            />
+            <input
+              type="button"
+              class="btn btn-outline-danger"
+              id="btnDelete"
+              value="Excluir"
+            />
+            <input
+              type="button"
+              class="btn btn-outline-secondary"
+              id="btnClear"
+              value="Limpar Formulário"
+            />
+            <a href="lista_transacoes.html"
+              ><input
+                type="button"
+                class="btn btn-outline-info"
+                id="btnClear"
+                value="Pesquisar Transações"
+            /></a>
+          </div>
+        </div>
+        <br />
+      </form>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <table id="grid-transacoes" class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Data</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Sub-categoria</th>
+                <th scope="col">Descrição</th>
+              </tr>
+            </thead>
+            <tbody id="table-transacoes">
+              <tr>
+                <td scope="row">1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+      function exibeTransacoes() {
+        tableTransacoes = document.getElementById("table-transacoes");
+
+        // Remove todas as linhas do corpo da tabela
+        tableTransacoes.innerHTML = "";
+
+        readTransacao((dados) => {
+          // Popula a tabela com os registros do banco de dados
+          for (i = 0; i < dados.length; i++) {
+            let transacoes = dados[i];
+            tableTransacoes.innerHTML += `<tr><td scope="row">${transacoes.id}</td>
+                                                    <td>${transacoes.categoria}</td>
+                                                    <td>${transacoes.tipo}</td>
+                                                    <td>${transacoes.data}</td>
+                                                    <td>${transacoes.valor}</td>
+                                                    <td>${transacoes.subCategoria}</td>
+                                                    <td>${transacoes.descricao}</td>
+                                                </tr>`;
+          }
+        });
+      }
+
+      function init() {
+        // Define uma variável para o formulário de transações
+        formTransacao = document.getElementById("form-transacao");
+
+        // Adiciona funções para tratar os eventos
+        btnInsert = document.getElementById("btnInsert");
+        btnInsert.addEventListener("click", function () {
+          // Verifica se o formulário está preenchido corretamente
+          if (!formTransacao.checkValidity()) {
+            displayMessage("Preencha o formulário corretamente.");
+            return;
+          }
+
+          // Obtem os valores dos campos do formulário
+          let campoCategoria = document.getElementById("inputCategoria").value;
+          let campoTipo = document.getElementById("inputTipo").value;
+          let campoData = document.getElementById("inputData").value;
+          let campoValor = document.getElementById("inputValor").value;
+          let campoSubCategoria =
+            document.getElementById("inputSubCategoria").value;
+          let campoDescricao = document.getElementById("inputDescricao").value;
+
+          // Cria um objeto com os dados da transação
+          let transacao = {
+            categoria: campoCategoria,
+            tipo: campoTipo,
+            data: campoData,
+            valor: campoValor,
+            subCategoria: campoSubCategoria,
+            descricao: campoDescricao,
+          };
+
+          // Cria a transação no banco de dados
+          createTransacao(transacao, exibeTransacoes);
+
+          // Limpa o formulario
+          formTransacao.reset();
+        });
+
+        // Trata o click do botão Alterar
+        btnUpdate = document.getElementById("btnUpdate");
+        btnUpdate.addEventListener("click", function () {
+          // Obtem os valores dos campos do formulário
+          let campoId = document.getElementById("inputId").value;
+          if (campoId == "") {
+            displayMessage("Selecione antes uma transação para ser alterada.");
+            return;
+          }
+
+          // Obtem os valores dos campos do formulário
+          let campoCategoria = document.getElementById("inputCategoria").value;
+          let campoTipo = document.getElementById("inputTipo").value;
+          let campoData = document.getElementById("inputData").value;
+          let campoValor = document.getElementById("inputValor").value;
+          let campoSubCategoria =
+            document.getElementById("inputSubCategoria").value;
+          let campoDescricao = document.getElementById("inputDescricao").value;
+
+          // Cria um objeto com os dados da transação
+          let categoria = {
+            categoria: campoCategoria,
+            tipo: campoTipo,
+            data: campoData,
+            valor: campoValor,
+            subCategoria: campoSubCategoria,
+            descricao: campoDescricao,
+          };
+
+          // Altera a transação no banco de dados
+          updateTransacao(parseInt(campoId), transacao, exibeTransacoes);
+
+          // Limpa o formulario
+          formTransacao.reset();
+        });
+
+        // Trata o click do botão Excluir
+        btnDelete = document.getElementById("btnDelete");
+        btnDelete.addEventListener("click", function () {
+          let campoId = document.getElementById("inputId").value;
+          if (campoId == "") {
+            displayMessage("Selecione uma transação a ser excluída.");
+            return;
+          }
+
+          // Exclui a transação no banco de dados
+          deleteTransacao(parseInt(campoId), exibeTransacoes);
+
+          // Limpa o formulario
+          formTransacao.reset();
+        });
+
+        // Trata o click do botão Listar Transações
+        btnClear = document.getElementById("btnClear");
+        btnClear.addEventListener("click", function () {
+          formTransacao.reset();
+        });
+
+        // Oculta a mensagem de aviso após alguns 5 segundos
+        msg = document.getElementById("msg");
+        msg.addEventListener("DOMSubtreeModified", function (e) {
+          if (e.target.innerHTML == "") return;
+          setTimeout(function () {
+            alert = msg.getElementsByClassName("alert");
+            alert[0].remove();
+          }, 5000);
+        });
+
+        // Preenche o formulário quando o usuario clicar em uma linha da tabela
+        gridTransacoes = document.getElementById("grid-transacoes");
+        gridTransacoes.addEventListener("click", function (e) {
+          if (e.target.tagName == "TD") {
+            // Obtem as colunas da linha selecionada na tabela
+            let linhaTransacao = e.target.parentNode;
+            colunas = linhaTransacao.querySelectorAll("td");
+
+            // Preenche os campos do formulário com os dados da linha selecionada na tabela
+            document.getElementById("inputId").value = colunas[0].innerText;
+            document.getElementById("inputCategoria").value =
+              colunas[1].innerText;
+            document.getElementById("inputTipo").value = colunas[2].innerText;
+            document.getElementById("inputData").value = colunas[3].innerText;
+            document.getElementById("inputValor").value = colunas[4].innerText;
+            document.getElementById("inputSubCategoria").value =
+              colunas[5].innerText;
+            document.getElementById("inputDescricao").value =
+              colunas[6].innerText;
+          }
+        });
+
+        exibeTransacoes();
+      }
+    </script>
+  </body>
+</html>

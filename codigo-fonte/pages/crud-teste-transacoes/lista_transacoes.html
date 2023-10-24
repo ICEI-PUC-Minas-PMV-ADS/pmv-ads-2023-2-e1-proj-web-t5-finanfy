@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cadastro de Transações</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>Listagem de Transações</h1>
+
+    <div class="container">
+      <div class="row">
+        <div id="msg" class="col-sm-10 offset-sm-1">
+          <!--<div class="alert alert-warning">Transação não encontrado.</div>-->
+        </div>
+      </div>
+
+      <div class="row"></div>
+
+      <div id="btn">
+        <a href="index.html"
+          ><input
+            type="button"
+            class="btn btn-outline-warning"
+            id="btnVoltar"
+            value="Voltar"
+        /></a>
+      </div>
+      <br />
+      <form id="form-transacao">
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <select
+              name="filtro_categoria"
+              id="filtro_categoria"
+              onchange="ListaTransacoes()"
+              class="form-control"
+            >
+              <option value="" selected>Selecione a categoria</option>
+              <option value="receitas">Receitas</option>
+              <option value="despesas">Despesas</option>
+              <option value="poupanca">Poupança</option>
+            </select>
+          </div>
+          <div class="col-sm-8">
+            <select
+              name="filtro_subCategoria"
+              id="filtro_subCategoria"
+              onchange="ListaTransacoes()"
+              class="form-control"
+            >
+              <option value="" selected>Selecione a sub-categoria</option>
+              <!-- se receita -->
+              <option value="salario">Salário</option>
+              <option value="mesada">Mesada</option>
+              <option value="bonus">Bônus</option>
+              <option value="segundo-emprego">Segundo emprego</option>
+              <option value="renda-extra">Renda extra</option>
+              <option value="ferias">Férias</option>
+              <option value="hora-extra">Hora extra</option>
+              <option value="outros-rendimentos">Outros rendimentos</option>
+              <!-- se despesa -->
+              <option value="poupanca">Poupança</option>
+              <option value="alimentacao">Alimentação</option>
+              <option value="roupas">Roupas</option>
+              <option value="cosmeticos">Cosméticos</option>
+              <option value="entretenimento">Entretenimento</option>
+              <option value="saude">Saúde</option>
+              <option value="educacao">Educação</option>
+              <option value="transporte">Transporte</option>
+              <option value="moradia">Moradia</option>
+              <option value="comunicacao">Comunicação</option>
+            </select>
+          </div>
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <table id="grid-transacoes" class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Data</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Sub-categoria</th>
+                <th scope="col">Descrição</th>
+              </tr>
+            </thead>
+            <tbody id="table-transacoes"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+      // carrega os dados a partir da API JSONServer
+      var db = [];
+      readTransacao((dados) => {
+        db = dados;
+        ListaTransacoes();
+      });
+
+      // função para listar na tabela as transações que estão associadas aos filtros
+      function ListaTransacoes() {
+        // Obtem os dados informados pelo usuário nos filtros
+        let fc = document.getElementById("filtro_categoria").value;
+        let fcg = document.getElementById("filtro_subCategoria").value;
+
+        // limpa a lista de transações apresentadas
+        tableTransacoes = document.getElementById("table-transacoes");
+        tableTransacoes.innerHTML = "";
+
+        // Popula a tabela com os registros do banco de dados
+        for (let index = 0; index < db.length; index++) {
+          const transacao = db[index];
+
+          // Verifica se os dados da transação batem com os filtros
+          if (
+            (transacao.categoria == fc || fc == "") &&
+            (transacao.subCategoria == fcg || fcg == "")
+          ) {
+            // Inclui a transação na tabela
+            tableTransacoes.innerHTML += `<tr><td scope="row">${transacao.id}</td>
+                                                    <td>${transacao.categoria}</td>
+                                                    <td>${transacao.tipo}</td>
+                                                    <td>${transacao.data}</td>
+                                                    <td>${transacao.valor}</td>
+                                                    <td>${transacao.subCategoria}</td>
+                                                    <td>${transacao.descricao}</td>
+                                                </tr>`;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
