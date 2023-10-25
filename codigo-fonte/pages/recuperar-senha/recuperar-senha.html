@@ -4,15 +4,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recuperar Senha</title>
-    <link href="recuperarsenha.css" rel="stylesheet" />
+    <title>Recuperar Senha | finanfy</title>
+    <link href="recuperar-senha.css" rel="stylesheet" />
   </head>
   <body>
     <form id="recoveryForm">
       <h1><strong>Recuperar senha</strong></h1>
-      <br><br>
+      <br /><br />
 
-      <input placeholder="Email" class="areaText" id="email"/><br><br>
+      <input placeholder="Email" class="areaText" id="email" /><br /><br />
 
       <select class="areaText" id="perguntaSeguranca">
         <option value="   Pergunta de segurança" id="0">
@@ -28,20 +28,20 @@
         </option>
       </select>
 
-      <br><br>
+      <br /><br />
       <input
         placeholder="Resposta de segurança"
         class="areaText"
         id="securityAnswer"
       />
-      <br><br>
+      <br /><br />
       <input placeholder="Nova senha" class="areaText" id="newPassword" />
-      <br><br>
+      <br /><br />
       <input
         placeholder="Confirme sua nova senha"
         id="confirmNewPassword"
         class="areaText"
-      /><br><br>
+      /><br /><br />
       <button type="button" onclick="changePassword()">
         <img src="../../assets/icon-send.png" />
       </button>
@@ -95,7 +95,9 @@
           }
         }
 
-        alert("Email, pergunta ou resposta de segurança incorretos. Tente novamente.");
+        alert(
+          "Email, pergunta ou resposta de segurança incorretos. Tente novamente."
+        );
       }
     </script>
   </body>
