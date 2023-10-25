@@ -106,6 +106,7 @@
             src="../../assets/iconAdd.png"
             alt="Icon Plus"
             class="iconPlus"
+            id="movimentar"
           />
         </div>
 
@@ -165,6 +166,14 @@
         profile.addEventListener("click", function () {
           // Redirecione o usuário para outra página
           window.location.href = "../Perfil/perfil.html";
+        });
+
+        const movimentar = document.getElementById("movimentar");
+
+        // Adicione um evento de clique à imagem
+        movimentar.addEventListener("click", function () {
+          // Redirecione o usuário para outra página
+          window.location.href = "../movimentar/movimentar.html";
         });
       </script>
 
