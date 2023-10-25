@@ -95,6 +95,7 @@
             src="../../assets/iconAdd.png"
             alt="Icon Plus"
             class="iconPlus"
+            id="movimentar"
           />
         </div>
 
@@ -139,7 +140,7 @@
         // Adicione um evento de clique à imagem
         home.addEventListener("click", function () {
           // Redirecione o usuário para outra página
-          window.location.href = "../TelaPrincipal/telaprincipal.html";
+          window.location.href = "../tela-principal/tela-principal.html";
         });
 
         const profile = document.getElementById("profile");
@@ -148,6 +149,14 @@
         profile.addEventListener("click", function () {
           // Redirecione o usuário para outra página
           window.location.href = "../Perfil/perfil.html";
+        });
+
+        const movimentar = document.getElementById("movimentar");
+
+        // Adicione um evento de clique à imagem
+        movimentar.addEventListener("click", function () {
+          // Redirecione o usuário para outra página
+          window.location.href = "../movimentar/movimentar.html";
         });
       </script>
 
