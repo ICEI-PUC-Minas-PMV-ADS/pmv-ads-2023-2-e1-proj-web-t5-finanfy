@@ -12,7 +12,7 @@
 
 const arrayDeObjetos = [
   {
-    titulo: "Dribble",
+    titulo: "Dribblee",
     valor: "- R$ 102,24",
     data: "13 jan 22",
     hora: "3:24 PM",
