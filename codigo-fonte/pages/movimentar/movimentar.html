@@ -10,7 +10,7 @@
     <div id="myModal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <span class="close">&times;</span>
+          <span class="close" id="closeMovimentar">&times;</span>
         </div>
         <div class="modal-body">
           <div class="divTitle">
@@ -98,6 +98,15 @@
       </div>
     </div>
 
+    <script>
+      const closeMovimentar = document.getElementById("closeMovimentar");
+
+      // Adicione um evento de clique à imagem
+      closeMovimentar.addEventListener("click", function () {
+        // Redirecione o usuário para outra página
+        window.location.href = "../tela-principal/tela-principal.html";
+      });
+    </script>
     <script src="../crud-transacoes/crud-transacoes.js"></script>
     <script>
       function salvarTransacao(event) {
