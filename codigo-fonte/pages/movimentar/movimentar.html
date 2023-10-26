@@ -46,6 +46,10 @@
             <h2>Data</h2>
             <input class="entrada" type="date" id="data" />
           </div>
+          <div class="divHora">
+            <h2>Hora</h2>
+            <input class="entrada" type="time" id="hora" />
+          </div>
           <div class="divValor">
             <h2>Valor</h2>
             <input
@@ -108,7 +112,9 @@
       });
     </script>
     <script src="../crud-transacoes/crud-transacoes.js"></script>
+    <script src="../Login/login.js"></script>
     <script>
+      console.log("UsuarioCorrente: ", usuarioCorrente);
       function salvarTransacao(event) {
         event.preventDefault();
 
@@ -121,6 +127,7 @@
           tipoEntrada.options[tipoEntrada.selectedIndex].id;
 
         let data = document.getElementById("data").value;
+        let hora = document.getElementById("hora").value;
         let valor = document.getElementById("valor").value;
         let subCategoriaEntrada = document.getElementById(
           "subCategoriaEntrada"
@@ -130,9 +137,11 @@
 
         let descricao = document.getElementById("descricao").value;
         postReceitas(
+          usuarioCorrente.id,
           categoriaEntradaOption,
           tipoEntradaOption,
           data,
+          hora,
           valor,
           subCategoriaEntradaOption,
           descricao
