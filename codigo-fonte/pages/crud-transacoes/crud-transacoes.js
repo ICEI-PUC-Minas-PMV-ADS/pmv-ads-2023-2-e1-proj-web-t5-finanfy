@@ -21,7 +21,7 @@ function postReceitas(
     return alert("É necessário preencher uma data");
   }
   if (!hora || hora === "") {
-    return alert("É necessário preencher um valor");
+    return alert("É necessário preencher uma hora");
   }
 
   let transacoesJson = localStorage.getItem("db_transacoes");
