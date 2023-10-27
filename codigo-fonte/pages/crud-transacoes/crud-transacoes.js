@@ -8,6 +8,22 @@ function postReceitas(
   idSubcategoria,
   descricao
 ) {
+  if (!idUsuario || idUsuario === "") {
+    return alert("Login expirado. Logue novamente!");
+  }
+  if (!valor || valor === "") {
+    return alert("É necessário preencher um valor");
+  }
+  if (!descricao || descricao === "") {
+    return alert("É necessário preencher uma descrição");
+  }
+  if (!data || data === "") {
+    return alert("É necessário preencher uma data");
+  }
+  if (!hora || hora === "") {
+    return alert("É necessário preencher um valor");
+  }
+
   let transacoesJson = localStorage.getItem("db_transacoes");
   let transacoesObj = [];
 
@@ -140,4 +156,53 @@ function postReceitas(
 
     alert("Poupança cadastrada com sucesso!");
   }
+  calcularTotais(idUsuario);
+}
+
+function calcularTotais(idUsuario) {
+  let receitasJson = localStorage.getItem("db_receitas");
+  let despesasJson = localStorage.getItem("db_despesas");
+  let poupancaJson = localStorage.getItem("db_poupanca");
+
+  let totalReceitas = 0;
+  let totalDespesas = 0;
+  let totalPoupanca = 0;
+
+  if (receitasJson) {
+    const receitasObj = JSON.parse(receitasJson);
+    for (const receita of receitasObj) {
+      if (receita.idUsuario === idUsuario) {
+        totalReceitas += parseFloat(receita.valor);
+      }
+    }
+  }
+
+  if (despesasJson) {
+    const despesasObj = JSON.parse(despesasJson);
+    for (const despesa of despesasObj) {
+      if (despesa.idUsuario === idUsuario) {
+        totalDespesas += parseFloat(despesa.valor);
+      }
+    }
+  }
+
+  if (poupancaJson) {
+    const poupancaObj = JSON.parse(poupancaJson);
+    for (const poupanca of poupancaObj) {
+      if (poupanca.idUsuario === idUsuario) {
+        totalPoupanca += parseFloat(poupanca.valor);
+      }
+    }
+  }
+
+  const saldoGeral = totalReceitas - totalDespesas - totalPoupanca;
+
+  const totalObj = {
+    totalReceitas,
+    totalDespesas,
+    totalPoupanca,
+    saldoGeral,
+  };
+
+  localStorage.setItem("db_total", JSON.stringify(totalObj));
 }
