@@ -160,6 +160,9 @@ function postReceitas(
 }
 
 function calcularTotais(idUsuario) {
+  let totalJson = localStorage.getItem("db_total");
+  let totalObj = totalJson ? JSON.parse(totalJson) : {};
+
   let receitasJson = localStorage.getItem("db_receitas");
   let despesasJson = localStorage.getItem("db_despesas");
   let poupancaJson = localStorage.getItem("db_poupanca");
@@ -197,7 +200,7 @@ function calcularTotais(idUsuario) {
 
   const saldoGeral = totalReceitas - totalDespesas - totalPoupanca;
 
-  const totalObj = {
+  totalObj[idUsuario] = {
     totalReceitas,
     totalDespesas,
     totalPoupanca,
