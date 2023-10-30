@@ -19,6 +19,7 @@
       });
     </script>
   </head>
+
   <body class="container">
     <div class="divPage">
       <!--minha parte abaixo!!-->
@@ -85,7 +86,7 @@
       <!--Parte pedro abaixo!!!-->
       <div class="headerForm">
         <h1 class="title">Transações</h1>
-        <h1 class="subtitle">Ver tudo</h1>
+        <h1 class="subtitle" id="verTudo">Ver tudo</h1>
       </div>
 
       <div class="divDespesas">
@@ -118,66 +119,71 @@
           />
         </div>
       </div>
-
-      <script>
-        const profileLink = document.getElementById("profileLink");
-
-        // Adicione um evento de clique à imagem
-        profileLink.addEventListener("click", function () {
-          // Redirecione o usuário para outra página
-          window.location.href = "../Perfil/perfil.html";
-        });
-
-        const receitas = document.getElementById("receitas");
-
-        // Adicione um evento de clique à imagem
-        receitas.addEventListener("click", function () {
-          // Redirecione o usuário para outra página
-          window.location.href = "../Receitas/receitas.html";
-        });
-
-        const despesas = document.getElementById("despesas");
-
-        // Adicione um evento de clique à imagem
-        despesas.addEventListener("click", function () {
-          // Redirecione o usuário para outra página
-          window.location.href = "../Despesas/despesas.html";
-        });
-
-        const poupanca = document.getElementById("poupanca");
-
-        // Adicione um evento de clique à imagem
-        poupanca.addEventListener("click", function () {
-          // Redirecione o usuário para outra página
-          window.location.href = "../Poupanca/poupanca.html";
-        });
-
-        const home = document.getElementById("home");
-
-        // Adicione um evento de clique à imagem
-        home.addEventListener("click", function () {
-          // Redirecione o usuário para outra página
-          window.location.href = "../tela-principal/tela-principal.html";
-        });
-
-        const profile = document.getElementById("profile");
-
-        // Adicione um evento de clique à imagem
-        profile.addEventListener("click", function () {
-          // Redirecione o usuário para outra página
-          window.location.href = "../Perfil/perfil.html";
-        });
-
-        const movimentar = document.getElementById("movimentar");
-
-        // Adicione um evento de clique à imagem
-        movimentar.addEventListener("click", function () {
-          // Redirecione o usuário para outra página
-          window.location.href = "../movimentar/movimentar.html";
-        });
-      </script>
-
-      <script src="tela-principal.js"></script>
     </div>
+
+    <script src="tela-principal.js"></script>
+    <script>
+      const profileLink = document.getElementById("profileLink");
+
+      // Adicione um evento de clique à imagem
+      profileLink.addEventListener("click", function () {
+        // Redirecione o usuário para outra página
+        window.location.href = "../Perfil/perfil.html";
+      });
+
+      const receitas = document.getElementById("receitas");
+
+      // Adicione um evento de clique à imagem
+      receitas.addEventListener("click", function () {
+        // Redirecione o usuário para outra página
+        window.location.href = "../Receitas/receitas.html";
+      });
+
+      const despesas = document.getElementById("despesas");
+
+      // Adicione um evento de clique à imagem
+      despesas.addEventListener("click", function () {
+        // Redirecione o usuário para outra página
+        window.location.href = "../Despesas/despesas.html";
+      });
+
+      const poupanca = document.getElementById("poupanca");
+
+      // Adicione um evento de clique à imagem
+      poupanca.addEventListener("click", function () {
+        // Redirecione o usuário para outra página
+        window.location.href = "../Poupanca/poupanca.html";
+      });
+
+      const home = document.getElementById("home");
+
+      // Adicione um evento de clique à imagem
+      home.addEventListener("click", function () {
+        // Redirecione o usuário para outra página
+        window.location.href = "../tela-principal/tela-principal.html";
+      });
+
+      const profile = document.getElementById("profile");
+
+      // Adicione um evento de clique à imagem
+      profile.addEventListener("click", function () {
+        // Redirecione o usuário para outra página
+        window.location.href = "../Perfil/perfil.html";
+      });
+
+      const movimentar = document.getElementById("movimentar");
+
+      // Adicione um evento de clique à imagem
+      movimentar.addEventListener("click", function () {
+        // Redirecione o usuário para outra página
+        window.location.href = "../movimentar/movimentar.html";
+      });
+
+      const verTudo = document.getElementById("verTudo");
+
+      verTudo.addEventListener("click", function () {
+        window.location.href = "../transacoes/transacoes.html";
+      });
+    </script>
   </body>
 </html>

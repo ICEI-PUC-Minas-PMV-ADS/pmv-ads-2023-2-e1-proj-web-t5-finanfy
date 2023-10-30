@@ -26,6 +26,7 @@
           src="../../assets/returnIcon.svg"
           alt="Icon Return"
           class="iconReturn"
+          id="returnIcon"
         />
         <h1 class="title">Transações</h1>
         <img
@@ -40,6 +41,13 @@
       </div>
 
       <script src="transacoes.js"></script>
+      <script>
+        const returnIcon = document.getElementById("returnIcon");
+
+        returnIcon.addEventListener("click", function () {
+          window.location.href = "../tela-principal/tela-principal.html";
+        });
+      </script>
     </div>
   </body>
 </html>

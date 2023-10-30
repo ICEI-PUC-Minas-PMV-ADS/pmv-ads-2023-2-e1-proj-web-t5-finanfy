@@ -19,6 +19,7 @@
       });
     </script>
   </head>
+
   <body class="container">
     <div class="divPage">
       <!--minha parte abaixo!!-->
@@ -73,7 +74,7 @@
       <!--Parte pedro abaixo!!!-->
       <div class="headerForm">
         <h1 class="title">Transações</h1>
-        <h1 class="subtitle">Ver tudo</h1>
+        <h1 class="subtitle" id="verTudo">Ver tudo</h1>
       </div>
 
       <div class="divDespesas">
@@ -108,7 +109,6 @@
       </div>
 
       <script src="poupanca.js"></script>
-
       <script>
         const receitas = document.getElementById("receitas");
 
@@ -156,6 +156,12 @@
         movimentar.addEventListener("click", function () {
           // Redirecione o usuário para outra página
           window.location.href = "../movimentar/movimentar.html";
+        });
+
+        const verTudo = document.getElementById("verTudo");
+
+        verTudo.addEventListener("click", function () {
+          window.location.href = "../transacoes/transacoes.html";
         });
       </script>
     </div>
