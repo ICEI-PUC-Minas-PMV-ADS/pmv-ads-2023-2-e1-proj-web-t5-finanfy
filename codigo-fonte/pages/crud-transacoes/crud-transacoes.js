@@ -117,44 +117,85 @@ function postReceitas(
 
     alert("Despesa cadastrada com sucesso!");
   } else if (idCategoria === "poupanca") {
-    let poupancaJson = localStorage.getItem("db_poupanca");
-    let poupancaObj = [];
+    if (idTipo === "entrada") {
+      let poupancaInJson = localStorage.getItem("db_poupancaIn");
+      let poupancaInObj = [];
 
-    if (poupancaJson) {
-      poupancaObj = JSON.parse(poupancaJson);
-    }
-
-    let maiorIdPoupanca = 0;
-    for (const poupanca of poupancaObj) {
-      if (poupanca.idPoupanca > maiorIdPoupanca) {
-        maiorIdPoupanca = poupanca.idPoupanca;
+      if (poupancaInJson) {
+        poupancaInObj = JSON.parse(poupancaInJson);
       }
+
+      let maiorIdPoupancaIn = 0;
+      for (const poupancaIn of poupancaInObj) {
+        if (poupancaIn.idPoupancaIn > maiorIdPoupancaIn) {
+          maiorIdPoupancaIn = poupancaIn.idPoupancaIn;
+        }
+      }
+
+      const maiorIdPoupancaInIncrementado = maiorIdPoupancaIn + 1;
+
+      const poupancaIn = {
+        idTransacao: maiorIdTransacoesIncrementado,
+        idUsuario,
+        idPoupancaIn: maiorIdPoupancaInIncrementado,
+        idTipo,
+        idCategoria,
+        idSubcategoria,
+        data,
+        hora,
+        valor,
+        descricao,
+      };
+
+      poupancaInObj.push(poupancaIn);
+
+      localStorage.setItem("db_poupancaIn", JSON.stringify(poupancaInObj));
+
+      transacoesObj.push(poupancaIn);
+
+      localStorage.setItem("db_transacoes", JSON.stringify(transacoesObj));
+
+      alert("Poupança de entrada cadastrada com sucesso!");
+    } else if (idTipo === "saida") {
+      let poupancaOutJson = localStorage.getItem("db_poupancaOut");
+      let poupancaOutObj = [];
+
+      if (poupancaOutJson) {
+        poupancaOutObj = JSON.parse(poupancaOutJson);
+      }
+
+      let maiorIdPoupancaOut = 0;
+      for (const poupancaOut of poupancaOutObj) {
+        if (poupancaOut.idPoupancaOut > maiorIdPoupancaOut) {
+          maiorIdPoupancaOut = poupancaOut.idPoupancaOut;
+        }
+      }
+
+      const maiorIdPoupancaOutIncrementado = maiorIdPoupancaOut + 1;
+
+      const poupancaOut = {
+        idTransacao: maiorIdTransacoesIncrementado,
+        idUsuario,
+        idPoupancaOut: maiorIdPoupancaOutIncrementado,
+        idTipo,
+        idCategoria,
+        idSubcategoria,
+        data,
+        hora,
+        valor,
+        descricao,
+      };
+
+      poupancaOutObj.push(poupancaOut);
+
+      localStorage.setItem("db_poupancaOut", JSON.stringify(poupancaOutObj));
+
+      transacoesObj.push(poupancaOut);
+
+      localStorage.setItem("db_transacoes", JSON.stringify(transacoesObj));
+
+      alert("Poupança de saída cadastrada com sucesso!");
     }
-
-    const maiorIdPoupancaIncrementado = maiorIdPoupanca + 1;
-
-    const poupanca = {
-      idTransacao: maiorIdTransacoesIncrementado,
-      idUsuario,
-      idPoupanca: maiorIdPoupancaIncrementado,
-      idTipo,
-      idCategoria,
-      idSubcategoria,
-      data,
-      hora,
-      valor,
-      descricao,
-    };
-
-    poupancaObj.push(poupanca);
-
-    localStorage.setItem("db_poupanca", JSON.stringify(poupancaObj));
-
-    transacoesObj.push(poupanca);
-
-    localStorage.setItem("db_transacoes", JSON.stringify(transacoesObj));
-
-    alert("Poupança cadastrada com sucesso!");
   }
   calcularTotais(idUsuario);
 }
@@ -165,11 +206,13 @@ function calcularTotais(idUsuario) {
 
   let receitasJson = localStorage.getItem("db_receitas");
   let despesasJson = localStorage.getItem("db_despesas");
-  let poupancaJson = localStorage.getItem("db_poupanca");
+  let poupancaInJson = localStorage.getItem("db_poupancaIn");
+  let poupancaOutJson = localStorage.getItem("db_poupancaOut");
 
   let totalReceitas = 0;
   let totalDespesas = 0;
-  let totalPoupanca = 0;
+  let totalPoupancaIn = 0;
+  let totalPoupancaOut = 0;
 
   if (receitasJson) {
     const receitasObj = JSON.parse(receitasJson);
@@ -189,21 +232,32 @@ function calcularTotais(idUsuario) {
     }
   }
 
-  if (poupancaJson) {
-    const poupancaObj = JSON.parse(poupancaJson);
-    for (const poupanca of poupancaObj) {
-      if (poupanca.idUsuario === idUsuario) {
-        totalPoupanca += parseFloat(poupanca.valor);
+  if (poupancaInJson) {
+    const poupancaInObj = JSON.parse(poupancaInJson);
+    for (const poupancaIn of poupancaInObj) {
+      if (poupancaIn.idUsuario === idUsuario) {
+        totalPoupancaIn += parseFloat(poupancaIn.valor);
       }
     }
   }
 
-  const saldoGeral = totalReceitas - totalDespesas - totalPoupanca;
+  if (poupancaOutJson) {
+    const poupancaOutObj = JSON.parse(poupancaOutJson);
+    for (const poupancaOut of poupancaOutObj) {
+      if (poupancaOut.idUsuario === idUsuario) {
+        totalPoupancaOut += parseFloat(poupancaOut.valor);
+      }
+    }
+  }
+
+  const saldoGeral =
+    totalReceitas - totalDespesas - totalPoupancaIn + totalPoupancaOut;
 
   totalObj[idUsuario] = {
     totalReceitas,
     totalDespesas,
-    totalPoupanca,
+    totalPoupancaIn,
+    totalPoupancaOut,
     saldoGeral,
   };
 
