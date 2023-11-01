@@ -14,12 +14,16 @@
   flex-direction: row;
   top: 0;
   left: 0;
-
   background-size: cover;
 }
 
 .headerForm {
   padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+  height: 30px;
 }
 
 .divPage {
@@ -81,14 +85,6 @@ select {
 
 .subtitle:hover {
   color: #cbc6d3;
-}
-
-.headerForm {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 240px;
-  height: 30px;
 }
 
 .divDespesas {

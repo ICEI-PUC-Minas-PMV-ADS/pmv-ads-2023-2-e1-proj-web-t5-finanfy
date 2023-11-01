@@ -1,52 +1,68 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recuperar Senha | finanfy</title>
-    <link href="recuperar-senha.css" rel="stylesheet" />
+    <link rel="stylesheet" href="recuperar-senha.css" />
+    <title>Recuperar senha | finanfy</title>
   </head>
+
   <body>
-    <form id="recoveryForm">
-      <h1><strong>Recuperar senha</strong></h1>
-      <br /><br />
+    <div class="container">
+      <div class="divPageHeader">
+        <div class="divBtnBack">
+          <a href="../index/index.html">
+            <img src="../../assets/iconBtnBack.svg" alt="Voltar" />
+          </a>
+        </div>
+        <div class="divTitle">
+          <h1>Recuperar senha</h1>
+        </div>
+        <div class="divNone">
+          <p></p>
+        </div>
+      </div>
 
-      <input placeholder="Email" class="areaText" id="email" /><br /><br />
-
+      <!-- <form id="recoveryForm"></form> -->
+      <p>
+        <input placeholder="Email" class="areaText" id="email" />
+      </p>
       <select class="areaText" id="perguntaSeguranca">
-        <option value="   Pergunta de segurança" id="0">
+        <option value="Pergunta de segurança" id="0">
           Pergunta de segurança
         </option>
-        <option value="Nome da Mãe" id="1">Qual o Nome da sua Mãe?</option>
-        <option value="Nome do Pai" id="2">Qual o Nome do seu Pai?</option>
-        <option value="Time que voce Torce" id="3">
-          Para Qual Time voce Torce?
-        </option>
-        <option value="Data de Nascimento" id="4">
+        <option value="nomeMae" id="1">Qual o nome de sua mãe?</option>
+        <option value="nomePai" id="2">Qual o nome de seu pai?</option>
+        <option value="timeQueTorce" id="3">Para qual time você torce?</option>
+        <option value="dataNascimento" id="4">
           Qual a sua data de nascimento?
         </option>
       </select>
 
-      <br /><br />
-      <input
-        placeholder="Resposta de segurança"
-        class="areaText"
-        id="securityAnswer"
-      />
-      <br /><br />
-      <input placeholder="Nova senha" class="areaText" id="newPassword" />
-      <br /><br />
-      <input
-        placeholder="Confirme sua nova senha"
-        id="confirmNewPassword"
-        class="areaText"
-      /><br /><br />
-      <button type="button" onclick="changePassword()">
-        <img src="../../assets/icon-send.png" />
-      </button>
-    </form>
-
+      <p>
+        <input
+          placeholder="Resposta de segurança"
+          class="areaText"
+          id="securityAnswer"
+        />
+      </p>
+      <p>
+        <input placeholder="Nova senha" class="areaText" id="newPassword" />
+      </p>
+      <p>
+        <input
+          placeholder="Confirme sua nova senha"
+          id="confirmNewPassword"
+          class="areaText"
+        />
+      </p>
+      <div class="btnSubmit">
+        <button type="button" onclick="changePassword()">
+          <img src="../../assets/icon-send.png" />
+        </button>
+      </div>
+      <!-- </form> -->
+    </div>
     <script>
       function changePassword() {
         const email = document.getElementById("email").value;
@@ -60,22 +76,22 @@
           document.getElementById("confirmNewPassword").value;
 
         if (!email || email === "") {
-          return alert("É necessário preencher o email");
+          return alert("É necessário preencher o E-MAIL");
         }
         if (questionSecurity === "0") {
-          return alert("É necessário selecionar uma pergunta de segurança");
+          return alert("É necessário selecionar uma PERGUNTA DE SEGURANÇA");
         }
         if (!securityAnswer || securityAnswer === "") {
-          return alert("É necessário preencher a resposta de segurança");
+          return alert("É necessário preencher a RESPOSTA DE SEGURANÇA");
         }
         if (!newPassword || newPassword === "") {
-          return alert("É necessário preencher a nova senha");
+          return alert("É necessário preencher a NOVA SENHA");
         }
         if (!confirmNewPassword || confirmNewPassword === "") {
-          return alert("É necessário preencher a confirmação de senha");
+          return alert("É necessário preencher a CONFIRMAÇÃO DE SENHA");
         }
         if (confirmNewPassword !== newPassword) {
-          return alert("As senhas não conferem");
+          return alert("As senhas não conferem!");
         }
 
         const users = JSON.parse(localStorage.getItem("db_usuarios")) || [];
@@ -89,7 +105,7 @@
           ) {
             element.senha = newPassword;
             localStorage.setItem("db_usuarios", JSON.stringify(users));
-            alert("Senha alterada com sucesso.");
+            alert("Senha alterada com sucesso!");
             window.location.href = "../Login/login.html";
             return;
           }

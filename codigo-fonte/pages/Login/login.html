@@ -1,54 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="login.css">
     <title>Login | finanfy</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <h1 id="entrar">Entrar na Conta</h1>
-    <form
-      id="login-form"
-      class="form"
-      method="post"
-      onsubmit="loginUser (this)"
-    >
-      <input
-        placeholder="   E-mail"
-        class="areaText"
-        type="email"
-        id="email"
-        name="E-mail"
-      />
-      <br /><br />
-      <input
-        placeholder="   Senha"
-        class="areaText"
-        type="password"
-        name="password"
-        id="password"
-      /><br /><br />
-      <button type="submit" name="submit" value="submit">
-        <img src="../../assets/icon-send.png" />
-      </button>
-    </form>
-
-    <p><small>Esqueceu sua senha?</small></p>
-    <p>
-      <strong
-        ><small
-          >Recupere
-          <a id="aqui" href="../recuperar-senha/recuperar-senha.html"
-            >aqui.</a
-          ></small
-        ></strong
-      >
-    </p> 
     
-    <p><small>Não possui uma conta?</small></p>
-    <p><strong><small>Registre-se <ins> <a id="aqui" href="../Cadastro/cadastro.html">aqui. </ins></small></strong></p></a>
+    <div class="container">
+      <div class="divPageHeader">
+        <div class="divBtnBack">
+          <a href="../index/index.html">
+            <img
+            src="../../assets/iconBtnBack.svg"
+            alt="Voltar"/>
+          </a>
+        </div>
+        <div class="divTitle">
+          <h1>Entrar na conta</h1>
+        </div>
+        <div class="divNone">
+          <p></p>
+        </div>
+      </div>
+
+      <form
+        id="login-form"
+        class="form"
+        method="post"
+        onsubmit="loginUser (this)"
+      >
+        <input
+          placeholder="E-mail"
+          class="areaText"
+          type="email"
+          id="email"
+          name="E-mail"
+        />
+        <br /><br />
+        <input
+          placeholder="Senha"
+          class="areaText"
+          type="password"
+          name="password"
+          id="password"
+        /><br /><br />
+        <div class="btnSubmit">
+          <button type="submit" name="submit" value="submit">
+            <img src="../../assets/icon-send.png" />
+          </button>
+        </div>
+      </form>
+
+      <div class="divRegistrar">
+        <p><small>Esqueceu sua senha?</small></p>
+        <p><strong><small>Recupere <ins> <a id="aqui" href="../recuperar-senha/recuperar-senha.html">aqui. </ins></small></strong></p></a>
+        
+        <p><small>Não possui uma conta?</small></p>
+        <p><strong><small>Registre-se <ins> <a id="aqui" href="../cadastro/cadastro.html">aqui. </ins></small></strong></p></a>
+      </div>
+    </div>
 
     <script src="login.js"></script>
     <script>
