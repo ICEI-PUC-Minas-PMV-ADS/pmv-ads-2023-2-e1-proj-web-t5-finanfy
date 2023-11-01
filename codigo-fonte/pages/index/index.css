@@ -2,19 +2,24 @@
 
 * {
   margin: 0;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
 }
 
 body {
-  font-family: "Rubik", Arial, Helvetica, sans-serif;
   background-image: url("../../assets/bg-finanfy-1-low.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  margin: 0;
-  padding: 0;
-
-  color: white;
+  background-position: center;
+  color: #fff;
   text-align: center;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  padding-bottom: 20px;
 }
 
 .divTitle {
@@ -27,9 +32,9 @@ body {
   margin: auto;
   padding-top: 40px;
   padding-bottom: 60px;
-  max-width: 40%;
+  max-width: 50%;
   font-weight: 500;
-  font-size: 40px;
+  font-size: 45px;
   text-align: center;
 }
 
@@ -40,18 +45,17 @@ body {
   border-style: solid;
   border-radius: 45px;
   border-color: #383467;
-  font-size: 18px;
-  font-weight: 800;
-  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
 }
 
 .divRegistrar {
   padding-top: 30px;
-  padding-bottom: 40px;
-  color: #ffffff;
+  color: #fff;
   font-size: 16px;
 }
 
 a {
-  color: #ffffff;
+  color: #fff;
 }

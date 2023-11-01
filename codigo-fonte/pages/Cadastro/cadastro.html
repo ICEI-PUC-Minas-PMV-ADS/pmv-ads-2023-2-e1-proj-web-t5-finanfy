@@ -1,149 +1,166 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
-    <title>Registre-se | finanfy</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cadastro.css" />
+    <title>Cadastro | finanfy</title>
   </head>
-  <link href="cadastro.css" rel="stylesheet" />
 
   <body>
-    <h1><strong>Registre-se</strong></h1>
+    <div class="container">
+      <div class="divPageHeader">
+        <div class="divBtnBack">
+          <a href="../index/index.html">
+            <img src="../../assets/iconBtnBack.svg" alt="Voltar" />
+          </a>
+        </div>
+        <div class="divTitle">
+          <h1>Cadastrar conta</h1>
+        </div>
+        <div class="divNone">
+          <p></p>
+        </div>
+      </div>
 
-    <form name="Cadastrar" action="do_login.html" method="POST"></form>
+      <!-- <form name="Cadastrar" action="do_login.html" method="POST"></form> -->
 
-    <br /><input
-      placeholder="   Nome:"
-      type="text"
-      name="txt_nome"
-      id="txt_nome"
-      class="areaText"
-    /><br />
-    <br /><input
-      placeholder="   Sobrenome:"
-      type="text"
-      name="txt_sobrenome"
-      id="txt_sobrenome"
-      class="areaText"
-    /><br />
-    <br /><input
-      placeholder="   E-mail"
-      type="email"
-      name="txt_email"
-      id="txt_email"
-      class="areaText"
-    /><br />
-    <br /><input
-      placeholder="   Senha"
-      type="password"
-      name="txt_senha"
-      id="txt_senha"
-      class="areaText"
-    /><br />
-    <br /><input
-      placeholder="   Confirme sua senha"
-      type="password"
-      name="txt_senha2"
-      id="txt_senha2"
-      class="areaText"
-    /><br />
-
-    <p>
-      Em caso de você esquecer sua senha, cadastre <br />
-      uma pergunta e uma resposta de segurança para <br />liberar a recuperação
-      de sua senha.
-    </p>
-
-    <p><strong>Pergunta de segurança</strong></p>
-
-    <select class="areaText" id="perguntaSeguranca">
-      <option value="   Pergunta de segurança" id="0">
-        Pergunta de segurança
-      </option>
-      <option value="Nome da Mãe" id="1">Qual o Nome da sua Mãe?</option>
-      <option value="Nome do Pai" id="2">Qual o Nome do seu Pai?</option>
-      <option value="Time que voce Torce" id="3">
-        Para Qual Time voce Torce?
-      </option>
-      <option value="Data de Nascimento" id="4">
-        Qual a sua data de nascimento?
-      </option>
-    </select>
-    <p>
       <input
-        placeholder="   Resposta de segurança"
+        placeholder="Nome"
         type="text"
-        name="txt_respsecurity"
-        id="txt_respsecurity"
+        name="txt_nome"
+        id="txt_nome"
         class="areaText"
       />
-    </p>
-    <button type="button" id="btn_salvar">
-      <a href="../Login/login.html">
-        <img src="../../assets/icon-send.png" />
-      </a>
-    </button>
+      <input
+        placeholder="Sobrenome"
+        type="text"
+        name="txt_sobrenome"
+        id="txt_sobrenome"
+        class="areaText"
+      />
+      <input
+        placeholder="E-mail"
+        type="email"
+        name="txt_email"
+        id="txt_email"
+        class="areaText"
+      />
+      <input
+        placeholder="Senha"
+        type="password"
+        name="txt_senha"
+        id="txt_senha"
+        class="areaText"
+      />
+      <input
+        placeholder="Confirme sua senha"
+        type="password"
+        name="txt_senha2"
+        id="txt_senha2"
+        class="areaText"
+      />
+
+      <div class="divText">
+        <p>
+          Em caso de você esquecer sua senha, cadastre <br />
+          uma pergunta e uma resposta de segurança para <br />liberar a
+          recuperação de sua senha.
+        </p>
+      </div>
+
+      <select class="areaText" id="perguntaSeguranca">
+        <option value="Pergunta de segurança" id="0">
+          Pergunta de segurança
+        </option>
+        <option value="nomeMae" id="1">Qual o nome de sua mãe?</option>
+        <option value="nomePai" id="2">Qual o nome de seu pai?</option>
+        <option value="timeQueTorce" id="3">Para qual time você torce?</option>
+        <option value="dataNascimento" id="4">
+          Qual a sua data de nascimento?
+        </option>
+      </select>
+      <p>
+        <input
+          placeholder="Resposta de segurança"
+          type="text"
+          name="txt_respsecurity"
+          id="txt_respsecurity"
+          class="areaText"
+        />
+      </p>
+      <div class="btnSubmit">
+        <button type="button" id="btn_salvar">
+          <a href="../Login/login.html">
+            <img src="../../assets/icon-send.png" />
+          </a>
+        </button>
+      </div>
+    </div>
+
+    <script src="../Login/login.js"></script>
+    <script>
+      function salvaLogin(event) {
+        // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+        event.preventDefault();
+
+        // Obtenha o ID da opção selecionada
+
+        let divQuestionSecurity = document.getElementById("perguntaSeguranca");
+
+        let nome = document.getElementById("txt_nome").value;
+        let sobrenome = document.getElementById("txt_sobrenome").value;
+        let email = document.getElementById("txt_email").value;
+        let senha = document.getElementById("txt_senha").value;
+        let senha2 = document.getElementById("txt_senha2").value;
+        let questionSecurity =
+          divQuestionSecurity.options[divQuestionSecurity.selectedIndex].id;
+
+        let respSecurity = document.getElementById("txt_respsecurity").value;
+        if (senha != senha2) {
+          alert("As senhas informadas não conferem.");
+          return;
+        }
+
+        if (!nome || nome === "") {
+          return alert("É necessário preencher o NOME");
+        }
+        if (!sobrenome || sobrenome === "") {
+          return alert("É necessário preencher o SOBRENOME");
+        }
+        if (!email || email === "") {
+          return alert("É necessário preencher o E-MAIL");
+        }
+        if (!senha || senha === "") {
+          return alert("É necessário preencher a SENHA");
+        }
+        if (!senha2 || senha2 === "") {
+          return alert("É necessário preencher a CONFIRMAÇÃO DE SENHA");
+        }
+        if (senha2 !== senha) {
+          return alert("As senhas não conferem...");
+        }
+        if (questionSecurity === "0") {
+          return alert("É necessário selecionar uma PERGUNTA DE SEGURANÇA");
+        }
+        if (!respSecurity || respSecurity === "") {
+          return alert("É necessário preencher a RESPOSTA DE SEGURANÇA");
+        }
+
+        // Adiciona o usuário no banco de dados
+        addUser(nome, sobrenome, email, senha, questionSecurity, respSecurity);
+        alert("Cadastro realizado com sucesso!");
+        window.location.href = "../Login/login.html";
+
+        // Oculta a div modal do login
+        //document.getElementById ('loginModal').style.display = 'none';
+        $("#loginModal").modal("hide");
+      }
+
+      // Associar salvamento ao botao
+      document
+        .getElementById("btn_salvar")
+        .addEventListener("click", salvaLogin);
+    </script>
   </body>
-
-  <script src="../Login/login.js"></script>
-  <script>
-    function salvaLogin(event) {
-      // Cancela a submissão do formulário para tratar sem fazer refresh da tela
-      event.preventDefault();
-
-      // Obtenha o ID da opção selecionada
-
-      let divQuestionSecurity = document.getElementById("perguntaSeguranca");
-
-      let nome = document.getElementById("txt_nome").value;
-      let sobrenome = document.getElementById("txt_sobrenome").value;
-      let email = document.getElementById("txt_email").value;
-      let senha = document.getElementById("txt_senha").value;
-      let senha2 = document.getElementById("txt_senha2").value;
-      let questionSecurity =
-        divQuestionSecurity.options[divQuestionSecurity.selectedIndex].id;
-
-      let respSecurity = document.getElementById("txt_respsecurity").value;
-      if (senha != senha2) {
-        alert("As senhas informadas não conferem.");
-        return;
-      }
-
-      if (!nome || nome === "") {
-        return alert("É necessário preencher o nome");
-      }
-      if (!sobrenome || sobrenome === "") {
-        return alert("É necessário preencher o sobrenome");
-      }
-      if (!email || email === "") {
-        return alert("É necessário preencher o email");
-      }
-      if (!senha || senha === "") {
-        return alert("É necessário preencher a senha");
-      }
-      if (!senha2 || senha2 === "") {
-        return alert("É necessário preencher a confirmação de senha");
-      }
-      if (senha2 !== senha) {
-        return alert("As senhas não conferem");
-      }
-      if (questionSecurity === "0") {
-        return alert("É necessário selecionar uma pergunta de segurança");
-      }
-      if (!respSecurity || respSecurity === "") {
-        return alert("É necessário preencher a resposta de segurança");
-      }
-
-      // Adiciona o usuário no banco de dados
-      addUser(nome, sobrenome, email, senha, questionSecurity, respSecurity);
-      alert("Usuário salvo com sucesso.");
-      window.location.href = "../Login/login.html";
-
-      // Oculta a div modal do login
-      //document.getElementById ('loginModal').style.display = 'none';
-      $("#loginModal").modal("hide");
-    }
-
-    // Associar salvamento ao botao
-    document.getElementById("btn_salvar").addEventListener("click", salvaLogin);
-  </script>
 </html>
