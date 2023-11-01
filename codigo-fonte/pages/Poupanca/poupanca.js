@@ -1,27 +1,60 @@
 let poupancaOutJs = localStorage.getItem("db_poupancaOut");
 let poupancaOutObj = JSON.parse(poupancaOutJs);
-console.log(`teste poupa:`, poupancaOutObj);
+
+let poupancaInJs = localStorage.getItem("db_poupancaIn");
+let poupancaInObj = JSON.parse(poupancaInJs);
 
 let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
 let userCurrentObj = JSON.parse(userCurrentJs);
 let usuarioLogado = userCurrentObj.id;
 
-let filtroPoupançaOut = [];
+let filtroPoupancaOut = []; 
+let filtroPoupancaIn = [];
 
   for (const poupancaOut of poupancaOutObj) {
-    // Condição para filtrar as receitas do usuário logado
     if (poupancaOut.idUsuario === usuarioLogado) {
-      filtroPoupançaOut.push(poupancaOut);
+      filtroPoupancaOut.push(poupancaOut);
     }
   }
+  // Condição para filtrar as receitas do usuário logado
 
+  for (const poupancaIn of poupancaInObj) {
+    if (poupancaIn.idUsuario === usuarioLogado) {
+      filtroPoupancaIn.push(poupancaIn);
+    }
+  }
+  // Condição para filtrar as receitas do usuário logado
 
+  function calcularTotal(x, y) {
+    let total = 0;
+    x.forEach((objeto) => {
+      total = total + parseFloat(objeto.valor);
+    });
+    y.forEach((objeto) => {
+      total = total - parseFloat(objeto.valor);
+    });
+    return total;
+  }
+  // função para calcular a subtração do total de poupança
 
+  let totalPoupanca = calcularTotal(filtroPoupancaIn, filtroPoupancaOut);
+ 
+  
+  let totalPoupancaFormatado = totalPoupanca.toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  });
+  // formata o valor total de poupança para o padrão brasileiro
+  
+  document.querySelector("#valueTotalSavings").innerHTML = totalPoupancaFormatado;
+  // insere o valor total de poupança no html
+6
 
+const filtroPoupanca = filtroPoupancaOut.concat(filtroPoupancaIn)
 
 const lista = document.getElementById("lista");
 
-filtroPoupançaOut.forEach((objeto) => {
+filtroPoupanca.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
@@ -34,7 +67,7 @@ filtroPoupançaOut.forEach((objeto) => {
 
   const dataP = document.createElement("p");
   dataP.classList.add("dateLabelList");
-  dataP.textContent = objeto.data;
+  dataP.textContent = new Date(objeto.data).toLocaleDateString("pt-BR")
 
   leftDiv.appendChild(tituloP);
   leftDiv.appendChild(dataP);
@@ -44,7 +77,17 @@ filtroPoupançaOut.forEach((objeto) => {
 
   const valorP = document.createElement("p");
   valorP.classList.add("valueLabelList");
-  valorP.textContent = objeto.valor;
+    if (filtroPoupancaOut.includes(objeto)) {
+      valorP.textContent = parseFloat(-objeto.valor).toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      });
+    } else {
+      valorP.textContent = parseFloat(objeto.valor).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      });
+    }
 
   const horaP = document.createElement("p");
   horaP.classList.add("hourLabelList");
