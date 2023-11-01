@@ -1,19 +1,31 @@
-
-  
-
 let receitasJs = localStorage.getItem("db_receitas");
 let receitasObj = JSON.parse(receitasJs);
-let userCurrent = '';
+
+let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
+let userCurrentObj = JSON.parse(userCurrentJs);
+let usuarioLogado = userCurrentObj.id;
+
 let filtroReceitas = [];
-    for (const receita of receitasObj) {
-      if (receita.idUsuario === userCurrent) {
-        filtroReceitas.push(receita);
-      }
-    }
+
+for (const receita of receitasObj) {
+  if (receita.idUsuario === usuarioLogado) {
+    filtroReceitas.push(receita);
+  }
+}
+
+function calcularTotal(lancamentos) {
+  let total = 0;
+  for (let i = 0; i < lancamentos.length; i++) {
+    total += parseFloat(lancamentos[i].valor);
+  }
+  return total;
+}
+let totalReceitas = calcularTotal(filtroReceitas);
+document.getElementById("valueTotalRecipes").innerHTML = totalReceitas;
 
 const lista = document.getElementById("lista");
 
-  filtroReceitas.forEach((objeto) => {
+filtroReceitas.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
