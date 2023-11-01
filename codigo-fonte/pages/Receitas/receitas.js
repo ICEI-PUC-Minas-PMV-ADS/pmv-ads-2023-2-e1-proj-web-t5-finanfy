@@ -1,64 +1,19 @@
 
-const arrayDeObjetos = [
-  {
-    titulo: "Dribble",
-    valor: "- R$ 102,24",
-    data: "13 jan 22",
-    hora: "3:24 PM",
-  },
-  {
-    titulo: "Amazon",
-    valor: "- R$ 32,24",
-    data: "9 jan 22",
-    hora: "2:35 PM",
-  },
-  {
-    titulo: "YouTube TV",
-    valor: "- R$ 10,17",
-    data: "7 jan 22",
-    hora: "6:10 PM",
-  },
-  {
-    titulo: "Dribble",
-    valor: "- R$ 102,24",
-    data: "13 jan 22",
-    hora: "3:24 PM",
-  },
-  {
-    titulo: "Amazon",
-    valor: "- R$ 32,24",
-    data: "9 jan 22",
-    hora: "2:35 PM",
-  },
-  {
-    titulo: "YouTube TV",
-    valor: "- R$ 10,17",
-    data: "7 jan 22",
-    hora: "6:10 PM",
-  },
-  {
-    titulo: "Dribble",
-    valor: "- R$ 102,24",
-    data: "13 jan 22",
-    hora: "3:24 PM",
-  },
-  {
-    titulo: "Amazon",
-    valor: "- R$ 32,24",
-    data: "9 jan 22",
-    hora: "2:35 PM",
-  },
-  {
-    titulo: "YouTube TV",
-    valor: "- R$ 10,17",
-    data: "7 jan 22",
-    hora: "6:10 PM",
-  },
-];
+  
+
+let receitasJs = localStorage.getItem("db_receitas");
+let receitasObj = JSON.parse(receitasJs);
+let userCurrent = '';
+let filtroReceitas = [];
+    for (const receita of receitasObj) {
+      if (receita.idUsuario === userCurrent) {
+        filtroReceitas.push(receita);
+      }
+    }
 
 const lista = document.getElementById("lista");
 
-arrayDeObjetos.forEach((objeto) => {
+  filtroReceitas.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
@@ -67,7 +22,7 @@ arrayDeObjetos.forEach((objeto) => {
 
   const tituloP = document.createElement("p");
   tituloP.classList.add("titleLabelList");
-  tituloP.textContent = objeto.titulo;
+  tituloP.textContent = objeto.descricao;
 
   const dataP = document.createElement("p");
   dataP.classList.add("dateLabelList");
