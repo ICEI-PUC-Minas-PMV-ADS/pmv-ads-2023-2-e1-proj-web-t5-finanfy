@@ -1,64 +1,61 @@
+let poupancaOutJs = localStorage.getItem("db_poupancaOut");
+let poupancaOutObj = JSON.parse(poupancaOutJs);
 
-const arrayDeObjetos = [
-  {
-    titulo: "Dribble",
-    valor: "- R$ 102,24",
-    data: "13 jan 22",
-    hora: "3:24 PM",
-  },
-  {
-    titulo: "Amazon",
-    valor: "- R$ 32,24",
-    data: "9 jan 22",
-    hora: "2:35 PM",
-  },
-  {
-    titulo: "YouTube TV",
-    valor: "- R$ 10,17",
-    data: "7 jan 22",
-    hora: "6:10 PM",
-  },
-  {
-    titulo: "Dribble",
-    valor: "- R$ 102,24",
-    data: "13 jan 22",
-    hora: "3:24 PM",
-  },
-  {
-    titulo: "Amazon",
-    valor: "- R$ 32,24",
-    data: "9 jan 22",
-    hora: "2:35 PM",
-  },
-  {
-    titulo: "YouTube TV",
-    valor: "- R$ 10,17",
-    data: "7 jan 22",
-    hora: "6:10 PM",
-  },
-  {
-    titulo: "Dribble",
-    valor: "- R$ 102,24",
-    data: "13 jan 22",
-    hora: "3:24 PM",
-  },
-  {
-    titulo: "Amazon",
-    valor: "- R$ 32,24",
-    data: "9 jan 22",
-    hora: "2:35 PM",
-  },
-  {
-    titulo: "YouTube TV",
-    valor: "- R$ 10,17",
-    data: "7 jan 22",
-    hora: "6:10 PM",
-  },
-];
+let poupancaInJs = localStorage.getItem("db_poupancaIn");
+let poupancaInObj = JSON.parse(poupancaInJs);
+
+let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
+let userCurrentObj = JSON.parse(userCurrentJs);
+let usuarioLogado = userCurrentObj.id;
+
+let filtroPoupancaOut = []; 
+let filtroPoupancaIn = [];
+
+  for (const poupancaOut of poupancaOutObj) {
+    if (poupancaOut.idUsuario === usuarioLogado) {
+      filtroPoupancaOut.push(poupancaOut);
+    }
+  }
+  // Condição para filtrar a poupancaOut do usuário logado
+
+  for (const poupancaIn of poupancaInObj) {
+    if (poupancaIn.idUsuario === usuarioLogado) {
+      filtroPoupancaIn.push(poupancaIn);
+    }
+  }
+  // Condição para filtrar a poupancaIn do usuário logado
+
+  function calcularTotal(a, b) {
+    let total = 0;
+    a.forEach((objeto) => {
+      total += parseFloat(objeto.valor);
+    });
+    b.forEach((objeto) => {
+      total -= parseFloat(objeto.valor);
+    });
+    return total;
+  }
+  // função para calcular a subtração do total de poupança
+
+  let totalPoupanca = calcularTotal(filtroPoupancaIn, filtroPoupancaOut);
+ //valor total de poupança
+  
+  let totalPoupancaFormatado = totalPoupanca.toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  });
+  // formata o valor total de poupança para o padrão brasileiro
+  
+  document.querySelector("#valueTotalSavings").innerHTML = totalPoupancaFormatado;
+  // insere o valor total de poupança no html
+
+
+const filtroPoupanca = filtroPoupancaOut.concat(filtroPoupancaIn)
+// concatena os arrays de poupancaIn e poupancaOut
 
 const lista = document.getElementById("lista");
 
-arrayDeObjetos.forEach((objeto) => {
+filtroPoupanca.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
@@ -67,11 +64,11 @@ arrayDeObjetos.forEach((objeto) => {
 
   const tituloP = document.createElement("p");
   tituloP.classList.add("titleLabelList");
-  tituloP.textContent = objeto.titulo;
+  tituloP.textContent = objeto.descricao;
 
   const dataP = document.createElement("p");
   dataP.classList.add("dateLabelList");
-  dataP.textContent = objeto.data;
+  dataP.textContent = new Date(objeto.data).toLocaleDateString("pt-BR")
 
   leftDiv.appendChild(tituloP);
   leftDiv.appendChild(dataP);
@@ -81,7 +78,17 @@ arrayDeObjetos.forEach((objeto) => {
 
   const valorP = document.createElement("p");
   valorP.classList.add("valueLabelList");
-  valorP.textContent = objeto.valor;
+    if (filtroPoupancaOut.includes(objeto)) {
+      valorP.textContent = parseFloat(-objeto.valor).toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      });
+    } else {
+      valorP.textContent = parseFloat(objeto.valor).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      });
+    }
 
   const horaP = document.createElement("p");
   horaP.classList.add("hourLabelList");

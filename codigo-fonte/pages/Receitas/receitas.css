@@ -401,19 +401,19 @@ ul::-webkit-scrollbar-thumb:hover {
   /* @media Pedro acima!!*/
   /* @media Welbert abaixo!!*/
   .mainTitle {
-    font-size: 30px;
+    font-size: 35px;
   }
   .iconNavigation {
-    width: 310px;
+    width: 360px;
   }
   .iconDescription {
-    width: 310px;
+    width: 360px;
   }
   .divTotalRecipes {
-    width: 350px;
+    width: 400px;
   }
   .lineAmount {
-    width: 350px;
+    width: 400px;
   }
   .iconRecipes {
     width: 80px;

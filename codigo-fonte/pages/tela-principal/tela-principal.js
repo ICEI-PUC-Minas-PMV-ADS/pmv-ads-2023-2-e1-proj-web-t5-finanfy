@@ -1,64 +1,98 @@
+let receitasJs = localStorage.getItem("db_receitas");
+let receitasObj = JSON.parse(receitasJs);
+// Pega as receitas do localStorage e transforma em objeto
 
-const arrayDeObjetos = [
-  {
-    titulo: "Dribble",
-    valor: "- R$ 102,24",
-    data: "13 jan 22",
-    hora: "3:24 PM",
-  },
-  {
-    titulo: "Amazon",
-    valor: "- R$ 32,24",
-    data: "9 jan 22",
-    hora: "2:35 PM",
-  },
-  {
-    titulo: "YouTube TV",
-    valor: "- R$ 10,17",
-    data: "7 jan 22",
-    hora: "6:10 PM",
-  },
-  {
-    titulo: "Dribble",
-    valor: "- R$ 102,24",
-    data: "13 jan 22",
-    hora: "3:24 PM",
-  },
-  {
-    titulo: "Amazon",
-    valor: "- R$ 32,24",
-    data: "9 jan 22",
-    hora: "2:35 PM",
-  },
-  {
-    titulo: "YouTube TV",
-    valor: "- R$ 10,17",
-    data: "7 jan 22",
-    hora: "6:10 PM",
-  },
-  {
-    titulo: "Dribble",
-    valor: "- R$ 102,24",
-    data: "13 jan 22",
-    hora: "3:24 PM",
-  },
-  {
-    titulo: "Amazon",
-    valor: "- R$ 32,24",
-    data: "9 jan 22",
-    hora: "2:35 PM",
-  },
-  {
-    titulo: "YouTube TV",
-    valor: "- R$ 10,17",
-    data: "7 jan 22",
-    hora: "6:10 PM",
-  },
-];
+let despesasJs = localStorage.getItem("db_despesas");
+let despesasObj = JSON.parse(despesasJs);
+// Pega as despesas do localStorage e transforma em objeto
+
+let poupancaOutJs = localStorage.getItem("db_poupancaOut");
+let poupancaOutObj = JSON.parse(poupancaOutJs);
+// Pega as poupancaOut do localStorage e transforma em objeto
+
+let poupancaInJs = localStorage.getItem("db_poupancaIn");
+let poupancaInObj = JSON.parse(poupancaInJs);
+// Pega as poupancaIn do localStorage e transforma em objeto
+
+let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
+let userCurrentObj = JSON.parse(userCurrentJs);
+let usuarioLogado = userCurrentObj.id;
+// Pega o usuário logado no sessionStorage e transforma em objeto
+
+filtroReceitas = [];
+filtroDespesas = [];
+filtroPoupancaOut = [];
+filtroPoupancaIn = [];
+
+for (const receita of receitasObj) {
+  if (receita.idUsuario === usuarioLogado) {
+    filtroReceitas.push(receita);
+  }
+}
+// Condição para filtrar as receitas do usuário logado
+
+for (const despesa of despesasObj) {
+  if (despesa.idUsuario === usuarioLogado) {
+    filtroDespesas.push(despesa);
+  }
+}
+// Condição para filtrar as despesas do usuário logado
+
+for (const poupancaOut of poupancaOutObj) {
+  if (poupancaOut.idUsuario === usuarioLogado) {
+    filtroPoupancaOut.push(poupancaOut);
+  }
+}
+// Condição para filtrar a poupancaOut do usuário logado
+
+for (const poupancaIn of poupancaInObj) {
+  if (poupancaIn.idUsuario === usuarioLogado) {
+    filtroPoupancaIn.push(poupancaIn);
+  }
+}
+// Condição para filtrar a poupancaIn do usuário logado
+
+function calcularTotal(a, b, c, d) {
+  let total = 0;
+  a.forEach((objeto) => {
+    total += parseFloat(objeto.valor);
+  });
+  b.forEach((objeto) => {
+    total += parseFloat(objeto.valor);
+  });
+  c.forEach((objeto) => {
+    total -= parseFloat(objeto.valor);
+  });
+  d.forEach((objeto) => {
+    total -= parseFloat(objeto.valor);
+  });
+  return total;
+}
+// função para calcular a subtração do total de Geral
+
+const totalGeral = calcularTotal(
+  filtroReceitas,
+  filtroPoupancaOut,
+  filtroDespesas,
+  filtroPoupancaIn
+);
+//valor total de Geral
+
+let totalGeralFormatado = totalGeral.toLocaleString("pt-br", {
+  style: "currency",
+  currency: "BRL",
+});
+//valor total de Geral formatado
+
+document.querySelector("#valueTotalBalance").innerHTML = totalGeralFormatado;
+// insere o valor total de Geral no html
+
+const filtroGeral = filtroReceitas.concat(filtroPoupancaOut, filtroDespesas, filtroPoupancaIn);
+// concatena os arrays de receitas, poupancaOut, despesas e poupancaIn
 
 const lista = document.getElementById("lista");
 
-arrayDeObjetos.forEach((objeto) => {
+filtroGeral.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
@@ -67,11 +101,11 @@ arrayDeObjetos.forEach((objeto) => {
 
   const tituloP = document.createElement("p");
   tituloP.classList.add("titleLabelList");
-  tituloP.textContent = objeto.titulo;
+  tituloP.textContent = objeto.descricao;
 
   const dataP = document.createElement("p");
   dataP.classList.add("dateLabelList");
-  dataP.textContent = objeto.data;
+  dataP.textContent = new Date(objeto.data).toLocaleDateString("pt-br");
 
   leftDiv.appendChild(tituloP);
   leftDiv.appendChild(dataP);
@@ -81,7 +115,23 @@ arrayDeObjetos.forEach((objeto) => {
 
   const valorP = document.createElement("p");
   valorP.classList.add("valueLabelList");
-  valorP.textContent = objeto.valor;
+  if (filtroDespesas.includes(objeto)) {
+    valorP.textContent = parseFloat(-objeto.valor).toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    });
+  } else if (filtroPoupancaIn.includes(objeto)){
+    valorP.textContent = parseFloat(-objeto.valor).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+  
+  } else {
+      valorP.textContent = parseFloat(objeto.valor).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      });
+  }
 
   const horaP = document.createElement("p");
   horaP.classList.add("hourLabelList");
