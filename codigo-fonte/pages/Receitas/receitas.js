@@ -6,6 +6,10 @@ let poupancaOutJs = localStorage.getItem("db_poupancaOut");
 let poupancaOutObj = JSON.parse(poupancaOutJs);
 // Pega as poupancaOut do localStorage e transforma em objeto
 
+let poupancaInJs = localStorage.getItem("db_poupancaIn");
+let poupancaInObj = JSON.parse(poupancaInJs);
+// Pega as poupancaIn do localStorage e transforma em objeto
+
 let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
 let userCurrentObj = JSON.parse(userCurrentJs);
 let usuarioLogado = userCurrentObj.id;
@@ -13,6 +17,7 @@ let usuarioLogado = userCurrentObj.id;
 
 let filtroReceitas = []; 
 let filtropoupancaOut = [];
+let filtropoupancaIn = [];
 
 for (const poupancaOut of poupancaOutObj) {
   if (poupancaOut.idUsuario === usuarioLogado) {
@@ -28,19 +33,30 @@ for (const receita of receitasObj) {
 }
 // Condição para filtrar as receitas do usuário logado
 
-function calcularTotal(x, y) {
+for (const poupancaIn of poupancaInObj) {
+  if (poupancaIn.idUsuario === usuarioLogado) {
+    filtropoupancaIn.push(poupancaIn);
+  }
+}
+// Condição para filtrar a poupancaIn do usuário logado
+
+function calcularTotal(a, b, c) {
   let total = 0;
-  x.forEach((objeto) => {
+  a.forEach((objeto) => {
     total += parseFloat(objeto.valor);
   });
-  y.forEach((objeto) => {
+  b.forEach((objeto) => {
     total += parseFloat(objeto.valor);
+  });
+  c.forEach((objeto) => {
+    total -= parseFloat(objeto.valor);
   });
   return total;
+
 }
 // função para calcular a subtração do total de poupança
 
-const totalReceitas = calcularTotal(filtroReceitas, filtropoupancaOut);
+const totalReceitas = calcularTotal(filtroReceitas, filtropoupancaOut, filtropoupancaIn);
 //valor total de receitas
 
 let totalReceitasFormatado = totalReceitas.toLocaleString("pt-br", {
@@ -54,6 +70,7 @@ document.querySelector("#valueTotalRecipes").innerHTML = totalReceitasFormatado;
 
 const filtroReceitasGeral = filtroReceitas.concat(filtropoupancaOut);
 // concatena os arrays de receitas e poupancaOut
+
 const lista = document.getElementById("lista");
 
 filtroReceitasGeral.forEach((objeto) => {

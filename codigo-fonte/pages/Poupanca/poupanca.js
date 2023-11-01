@@ -25,12 +25,12 @@ let filtroPoupancaIn = [];
   }
   // Condição para filtrar a poupancaIn do usuário logado
 
-  function calcularTotal(x, y) {
+  function calcularTotal(a, b) {
     let total = 0;
-    x.forEach((objeto) => {
+    a.forEach((objeto) => {
       total += parseFloat(objeto.valor);
     });
-    y.forEach((objeto) => {
+    b.forEach((objeto) => {
       total -= parseFloat(objeto.valor);
     });
     return total;
