@@ -18,6 +18,17 @@
         }
       });
     </script>
+    <script>
+      // Função para abrir os filtros
+      function abrirFiltros() {
+        var filtros = document.getElementById("filtros");
+        if (filtros.style.display === "none") {
+          filtros.style.display = "flex";
+        } else {
+          filtros.style.display = "none";
+        }
+      }
+    </script>
   </head>
   <body class="container">
     <div class="divPage">
@@ -33,19 +44,71 @@
           src="../../assets/filterIcon.svg"
           alt="Icon Filter"
           class="iconFilter"
+          onclick="abrirFiltros()"
         />
+      </div>
+
+      <!-- Filtros -->
+      <div class="filtros" id="filtros" style="display: none">
+        <select
+          name="filtro_categoria"
+          id="filtro_categoria"
+          onchange="ListaTransacoes()"
+          class="form-control"
+        >
+          <option value="" selected>Selecione a categoria</option>
+          <option value="receitas">Receitas</option>
+          <option value="despesas">Despesas</option>
+          <option value="poupanca">Poupança</option>
+        </select>
+        <br />
+        <select
+          name="filtro_subCategoria"
+          id="filtro_subCategoria"
+          onchange="ListaTransacoes()"
+          class="form-control"
+        >
+          <option value="" selected>Selecione a sub-categoria</option>
+          <!-- se receita -->
+          <option value="salario">Salário</option>
+          <option value="mesada">Mesada</option>
+          <option value="bonus">Bônus</option>
+          <option value="segundo-emprego">Segundo emprego</option>
+          <option value="renda-extra">Renda extra</option>
+          <option value="ferias">Férias</option>
+          <option value="hora-extra">Hora extra</option>
+          <option value="outros-rendimentos">Outros rendimentos</option>
+          <!-- se despesa -->
+          <option value="poupanca">Poupança</option>
+          <option value="alimentacao">Alimentação</option>
+          <option value="roupas">Roupas</option>
+          <option value="cosmeticos">Cosméticos</option>
+          <option value="entretenimento">Entretenimento</option>
+          <option value="saude">Saúde</option>
+          <option value="educacao">Educação</option>
+          <option value="transporte">Transporte</option>
+          <option value="moradia">Moradia</option>
+          <option value="comunicacao">Comunicação</option>
+        </select>
       </div>
 
       <div class="divDespesas">
         <ul class="list" id="lista"></ul>
       </div>
 
+      <script src="../login/login.js"></script>
       <script src="transacoes.js"></script>
       <script>
         const returnIcon = document.getElementById("returnIcon");
 
         returnIcon.addEventListener("click", function () {
           window.location.href = "../tela-principal/tela-principal.html";
+        });
+        console.log(usuarioCorrente.id);
+
+        // Filtrar transações por ID de usuário
+        document.addEventListener("DOMContentLoaded", function () {
+          filtroReceitasFunctiiion(usuarioCorrete.id);
         });
       </script>
     </div>
