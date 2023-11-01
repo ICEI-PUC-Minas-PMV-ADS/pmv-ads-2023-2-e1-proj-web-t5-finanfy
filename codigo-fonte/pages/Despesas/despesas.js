@@ -107,12 +107,15 @@ arrayDeObjetos.forEach((objeto) => {
   lista.appendChild(li);
 }); */
 
- const despesas = document.getElementById("despesas");
+ 
 
-function ExibirDespesa() {
-     for (let despesa=0; despesa <  despesas.length; despesa++); 
-     despesa += despesas: = ${despesas.id};
+ let despesasJson = localStorage.getItem("db_despesas");
+ let despesasObj = [];
 
-} 
+ if (despesasJson) {
+   despesasObj = JSON.parse(despesasJson);
+ }
+
+
 
 console.log(despesas);
