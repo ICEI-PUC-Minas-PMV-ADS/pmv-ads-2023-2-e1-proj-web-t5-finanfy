@@ -30,7 +30,7 @@ filtroPoupançaOut.forEach((objeto) => {
 
   const tituloP = document.createElement("p");
   tituloP.classList.add("titleLabelList");
-  tituloP.textContent = objeto.titulo;
+  tituloP.textContent = objeto.descricao;
 
   const dataP = document.createElement("p");
   dataP.classList.add("dateLabelList");
