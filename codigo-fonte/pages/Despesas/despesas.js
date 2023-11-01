@@ -10,7 +10,7 @@
 //   alert("Botão clicado!");
 // }
 
-const arrayDeObjetos = [
+  /*   Comentei isso aqui , para tentar fazer o Get das despesas const arrayDeObjetos = [
   {
     titulo: "Dribblee",
     valor: "- R$ 102,24",
@@ -65,7 +65,7 @@ const arrayDeObjetos = [
     data: "7 jan 22",
     hora: "6:10 PM",
   },
-];
+]; 
 
 const lista = document.getElementById("lista");
 
@@ -105,4 +105,14 @@ arrayDeObjetos.forEach((objeto) => {
   li.appendChild(rightDiv);
 
   lista.appendChild(li);
-});
+}); */
+
+ const despesas = document.getElementById("despesas");
+
+function ExibirDespesa() {
+     for (let despesa=0; despesa <  despesas.length; despesa++); 
+     despesa += despesas: = ${despesas.id};
+
+} 
+
+console.log(despesas);

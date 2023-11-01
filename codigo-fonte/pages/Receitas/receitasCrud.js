@@ -1,19 +1,16 @@
 
+let totalJson = JSON.parse(localStorage.getItem("db_total"));
+
+
+
   
 
-let receitasJs = localStorage.getItem("db_receitas");
-let receitasObj = JSON.parse(receitasJs);
-let userCurrent = '';
-let filtroReceitas = [];
-    for (const receita of receitasObj) {
-      if (receita.idUsuario === userCurrent) {
-        filtroReceitas.push(receita);
-      }
-    }
+
+document.getElementById("totalReceitas").innerHTML = totalJson[idUsuario].totalReceitas;
 
 const lista = document.getElementById("lista");
 
-  filtroReceitas.forEach((objeto) => {
+arrayDeObjetos.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
@@ -22,7 +19,7 @@ const lista = document.getElementById("lista");
 
   const tituloP = document.createElement("p");
   tituloP.classList.add("titleLabelList");
-  tituloP.textContent = objeto.descricao;
+  tituloP.textContent = objeto.titulo;
 
   const dataP = document.createElement("p");
   dataP.classList.add("dateLabelList");

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Despesas | finanfy</title>
-    <link rel="stylesheet" href="despesas.css" />
+    <title>Receitas | finanfy</title>
+    <link rel="stylesheet" href="receitasCrud.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
       rel="stylesheet"
@@ -17,15 +17,14 @@
           window.location.href = "../Login/login.html";
         }
       });
-    </script>
+    </script>   
   </head>
 
   <body class="container">
-    <!-- <div class="leftBack"></div> -->
-    <div class="divPage">
+    <div class="divPage">  
       <!--minha parte abaixo!!-->
       <div class="firtsHeader">
-        <h1 class="mainTitle">Despesas</h1>
+        <h1 class="mainTitle">Receitas</h1>
       </div>
       <div class="iconNavigation">
         <div class="divIcon" id="receitas">
@@ -53,15 +52,14 @@
           <h2 class="generalDescription">Poupança</h2>
         </div>
       </div>
-      <div class="divTotalExpense">
-        <h1 class="titleTotalExpense">Total de despesas</h1>
+      <div class="divTotalRecipes">
+        <h1 class="titleTotalRecipes">Total de receitas</h1>
       </div>
       <div class="lineAmount">
-        <div class="resultTotalExpense">
+        <div class="resultTotalRecipes">
           <span>R$</span>
-          <span id="valueTotalExpense">555</span>
-          <!-- valueTotalExpense = 555 (test value) -->
-          <!-- valueTotalExpense = 0 (default value) -->
+          <span id="valueTotalRecipes"></span>   <!-- valueTotalRecipes = 200 (test value) --> 
+      
         </div>
         <div class="divIconVisibilityWhite">
           <img
@@ -109,7 +107,8 @@
         </div>
       </div>
 
-      <script src="despesas.js"></script>
+      <script src="receitasCrud.js"></script>
+      <script src="../crud-transacoes/crud-transacoes.js"></script>
       <script>
         const receitas = document.getElementById("receitas");
 
@@ -120,7 +119,6 @@
         });
 
         const despesas = document.getElementById("despesas");
-        
 
         // Adicione um evento de clique à imagem
         despesas.addEventListener("click", function () {
@@ -166,17 +164,6 @@
           window.location.href = "../transacoes/transacoes.html";
         });
       </script>
-
-      <!-- <div id="app">
-        <script src="despesas.js"></script>
-        <script>
-          const app = document.getElementById("app");
-          const buttonComponent1 = createButton("Botão 1", handleClick);
-
-          app.appendChild(buttonComponent1);
-        </script>
-      </div> -->
     </div>
-    <!-- <div class="rightBack"></div> -->
   </body>
 </html>
