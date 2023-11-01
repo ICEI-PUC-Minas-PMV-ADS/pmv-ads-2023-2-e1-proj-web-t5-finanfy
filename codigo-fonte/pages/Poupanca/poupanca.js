@@ -16,29 +16,29 @@ let filtroPoupancaIn = [];
       filtroPoupancaOut.push(poupancaOut);
     }
   }
-  // Condição para filtrar as receitas do usuário logado
+  // Condição para filtrar a poupancaOut do usuário logado
 
   for (const poupancaIn of poupancaInObj) {
     if (poupancaIn.idUsuario === usuarioLogado) {
       filtroPoupancaIn.push(poupancaIn);
     }
   }
-  // Condição para filtrar as receitas do usuário logado
+  // Condição para filtrar a poupancaIn do usuário logado
 
   function calcularTotal(x, y) {
     let total = 0;
     x.forEach((objeto) => {
-      total = total + parseFloat(objeto.valor);
+      total += parseFloat(objeto.valor);
     });
     y.forEach((objeto) => {
-      total = total - parseFloat(objeto.valor);
+      total -= parseFloat(objeto.valor);
     });
     return total;
   }
   // função para calcular a subtração do total de poupança
 
   let totalPoupanca = calcularTotal(filtroPoupancaIn, filtroPoupancaOut);
- 
+ //valor total de poupança
   
   let totalPoupancaFormatado = totalPoupanca.toLocaleString("pt-br", {
     style: "currency",
@@ -48,9 +48,10 @@ let filtroPoupancaIn = [];
   
   document.querySelector("#valueTotalSavings").innerHTML = totalPoupancaFormatado;
   // insere o valor total de poupança no html
-6
+
 
 const filtroPoupanca = filtroPoupancaOut.concat(filtroPoupancaIn)
+// concatena os arrays de poupancaIn e poupancaOut
 
 const lista = document.getElementById("lista");
 
