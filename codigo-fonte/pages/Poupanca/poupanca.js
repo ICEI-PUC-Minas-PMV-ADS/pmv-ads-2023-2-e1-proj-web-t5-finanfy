@@ -1,64 +1,27 @@
+let poupancaOutJs = localStorage.getItem("db_poupancaOut");
+let poupancaOutObj = JSON.parse(poupancaOutJs);
+console.log(`teste poupa:`, poupancaOutObj);
 
-const arrayDeObjetos = [
-  {
-    titulo: "Dribble",
-    valor: "- R$ 102,24",
-    data: "13 jan 22",
-    hora: "3:24 PM",
-  },
-  {
-    titulo: "Amazon",
-    valor: "- R$ 32,24",
-    data: "9 jan 22",
-    hora: "2:35 PM",
-  },
-  {
-    titulo: "YouTube TV",
-    valor: "- R$ 10,17",
-    data: "7 jan 22",
-    hora: "6:10 PM",
-  },
-  {
-    titulo: "Dribble",
-    valor: "- R$ 102,24",
-    data: "13 jan 22",
-    hora: "3:24 PM",
-  },
-  {
-    titulo: "Amazon",
-    valor: "- R$ 32,24",
-    data: "9 jan 22",
-    hora: "2:35 PM",
-  },
-  {
-    titulo: "YouTube TV",
-    valor: "- R$ 10,17",
-    data: "7 jan 22",
-    hora: "6:10 PM",
-  },
-  {
-    titulo: "Dribble",
-    valor: "- R$ 102,24",
-    data: "13 jan 22",
-    hora: "3:24 PM",
-  },
-  {
-    titulo: "Amazon",
-    valor: "- R$ 32,24",
-    data: "9 jan 22",
-    hora: "2:35 PM",
-  },
-  {
-    titulo: "YouTube TV",
-    valor: "- R$ 10,17",
-    data: "7 jan 22",
-    hora: "6:10 PM",
-  },
-];
+let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
+let userCurrentObj = JSON.parse(userCurrentJs);
+let usuarioLogado = userCurrentObj.id;
+
+let filtroPoupançaOut = [];
+
+  for (const poupancaOut of poupancaOutObj) {
+    // Condição para filtrar as receitas do usuário logado
+    if (poupancaOut.idUsuario === usuarioLogado) {
+      filtroPoupançaOut.push(poupancaOut);
+    }
+  }
+
+
+
+
 
 const lista = document.getElementById("lista");
 
-arrayDeObjetos.forEach((objeto) => {
+filtroPoupançaOut.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
