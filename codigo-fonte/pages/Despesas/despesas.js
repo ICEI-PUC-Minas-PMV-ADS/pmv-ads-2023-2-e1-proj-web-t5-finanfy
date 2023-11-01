@@ -107,4 +107,12 @@ arrayDeObjetos.forEach((objeto) => {
   lista.appendChild(li);
 }); */
 
-idDespesa 
+ const despesas = document.getElementById("despesas");
+
+function ExibirDespesa() {
+     for (let despesa=0; despesa <  despesas.length; despesa++); 
+     despesa += despesas: = ${despesas.id};
+
+} 
+
+console.log(despesas);
