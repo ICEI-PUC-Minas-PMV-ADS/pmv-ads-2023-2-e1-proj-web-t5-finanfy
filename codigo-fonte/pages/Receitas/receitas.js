@@ -8,12 +8,14 @@ let usuarioLogado = userCurrentObj.id;
 let filtroReceitas = [];
 
 for (const receita of receitasObj) {
+  // Condição para filtrar as receitas do usuário logado
   if (receita.idUsuario === usuarioLogado) {
     filtroReceitas.push(receita);
   }
 }
 
 function calcularTotal(lancamentos) {
+  // função para calcular o total de receitas
   let total = 0;
   for (let i = 0; i < lancamentos.length; i++) {
     total += parseFloat(lancamentos[i].valor);
@@ -21,7 +23,12 @@ function calcularTotal(lancamentos) {
   return total;
 }
 let totalReceitas = calcularTotal(filtroReceitas);
-document.getElementById("valueTotalRecipes").innerHTML = totalReceitas;
+let totalReceitasFormatado = totalReceitas.toLocaleString("pt-br", {
+  style: "currency",
+  currency: "BRL",
+});
+
+document.getElementById("valueTotalRecipes").innerHTML = totalReceitasFormatado; // insere o valor total de receitas no html
 
 const lista = document.getElementById("lista");
 
@@ -38,7 +45,7 @@ filtroReceitas.forEach((objeto) => {
 
   const dataP = document.createElement("p");
   dataP.classList.add("dateLabelList");
-  dataP.textContent = objeto.data;
+  dataP.textContent = new Date(objeto.data).toLocaleDateString('pt-BR');
 
   leftDiv.appendChild(tituloP);
   leftDiv.appendChild(dataP);
@@ -48,7 +55,7 @@ filtroReceitas.forEach((objeto) => {
 
   const valorP = document.createElement("p");
   valorP.classList.add("valueLabelList");
-  valorP.textContent = objeto.valor;
+  valorP.textContent = parseFloat(objeto.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
   const horaP = document.createElement("p");
   horaP.classList.add("hourLabelList");
