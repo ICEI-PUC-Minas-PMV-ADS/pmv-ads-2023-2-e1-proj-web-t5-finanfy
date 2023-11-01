@@ -1,15 +1,17 @@
 let receitasJs = localStorage.getItem("db_receitas");
 let receitasObj = JSON.parse(receitasJs);
+// Pega as receitas do localStorage e transforma em objeto
 
 let poupancaOutJs = localStorage.getItem("db_poupancaOut");
 let poupancaOutObj = JSON.parse(poupancaOutJs);
-
+// Pega as poupancaOut do localStorage e transforma em objeto
 
 let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
 let userCurrentObj = JSON.parse(userCurrentJs);
 let usuarioLogado = userCurrentObj.id;
+// Pega o usuário logado no sessionStorage e transforma em objeto
 
-let filtroReceitas = [];
+let filtroReceitas = []; 
 let filtropoupancaOut = [];
 
 for (const poupancaOut of poupancaOutObj) {
