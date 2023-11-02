@@ -107,7 +107,7 @@ filtroGeral.forEach((objeto) => {
   dataP.classList.add("dateLabelList");
   const data = new Date(objeto.data);
   data.setDate(data.getDate() + 1);
-  dataP.textContent = data.toLocaleDateString("pt-br");
+  dataP.textContent = data.toLocaleDateString("pt-BR");
 
   leftDiv.appendChild(tituloP);
   leftDiv.appendChild(dataP);
