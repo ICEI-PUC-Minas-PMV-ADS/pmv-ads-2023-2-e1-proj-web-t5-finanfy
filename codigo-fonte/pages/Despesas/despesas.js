@@ -115,7 +115,7 @@ arrayDeObjetos.forEach((objeto) => {
  if (despesasJson) {
    despesasObj = JSON.parse(despesasJson);
  }
+ console.log(despesasObj);
 
 
 
-console.log(despesas);
