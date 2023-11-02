@@ -78,7 +78,7 @@ const totalGeral = calcularTotal(
 );
 //valor total de Geral
 
-let totalGeralFormatado = totalGeral.toLocaleString("pt-br", {
+let totalGeralFormatado = totalGeral.toLocaleString("pt-BR", {
   style: "currency",
   currency: "BRL",
 });
