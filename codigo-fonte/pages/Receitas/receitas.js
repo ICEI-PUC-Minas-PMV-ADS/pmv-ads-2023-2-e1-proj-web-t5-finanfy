@@ -36,6 +36,7 @@ function calcularTotal(a) {
 // função para calcular a subtração do total de poupança
 
 const totalReceitas = calcularTotal(filtroReceitas);
+
 //valor total de receitas
 
 let totalReceitasFormatado = totalReceitas.toLocaleString("pt-br", {

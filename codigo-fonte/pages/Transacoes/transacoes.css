@@ -1,5 +1,5 @@
 * {
-background-image: url("../../assets/background.jpg");
+  background-image: url("../../assets/background.jpg");
 }
 
 .container {
@@ -14,8 +14,16 @@ background-image: url("../../assets/background.jpg");
   flex-direction: row;
   top: 0;
   left: 0;
-  
   background-size: cover;
+}
+
+.headerForm {
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+  height: 30px;
 }
 
 .divPage {
@@ -25,17 +33,45 @@ background-image: url("../../assets/background.jpg");
   min-width: 600px;
   width: 41%;
   background-image: none;
-  background-color: #000040; 
+  background-color: #000040;
   align-items: center;
   flex-direction: column;
 }
 
-.divPage, .divPage * {
+.divPage,
+.divPage * {
   background-image: none;
 }
 
+.filtros {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+#filtro_categoria {
+  margin-right: 10px;
+}
+#filtro_subCategoria {
+  margin-left: 10px;
+}
+
+select {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border-style: none;
+  /* border-radius: 30px;
+  border-color: #383467; */
+  background-color: #000040;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+}
+
 .title {
-  font-size: 20px;
+  font-size: 30px;
   color: #fff;
   font-weight: 700;
 }
@@ -49,14 +85,6 @@ background-image: url("../../assets/background.jpg");
 
 .subtitle:hover {
   color: #cbc6d3;
-}
-
-.headerForm {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 240px;
-  height: 30px;
 }
 
 .divDespesas {
