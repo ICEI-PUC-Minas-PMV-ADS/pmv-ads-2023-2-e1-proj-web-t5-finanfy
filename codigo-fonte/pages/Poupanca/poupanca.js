@@ -1,15 +1,20 @@
+
 let poupancaOutJs = localStorage.getItem("db_poupancaOut");
-let poupancaOutObj = JSON.parse(poupancaOutJs);
+let poupancaOutObj = JSON.parse(poupancaOutJs) || [];
+// Pega as poupancaOut do localStorage e transforma em objeto ou cria um array vazio
 
 let poupancaInJs = localStorage.getItem("db_poupancaIn");
-let poupancaInObj = JSON.parse(poupancaInJs);
+let poupancaInObj = JSON.parse(poupancaInJs) || [];
+// Pega as poupancaIn do localStorage e transforma em objeto ou cria um array vazio
 
 let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
 let userCurrentObj = JSON.parse(userCurrentJs);
 let usuarioLogado = userCurrentObj.id;
+// Pega o usuário logado no sessionStorage e transforma em objeto ou cria um array vazio
 
 let filtroPoupancaOut = []; 
 let filtroPoupancaIn = [];
+// Cria um array vazio para receber as poupancaOut e poupancaIn do usuário logado
 
   for (const poupancaOut of poupancaOutObj) {
     if (poupancaOut.idUsuario === usuarioLogado) {
@@ -54,6 +59,7 @@ const filtroPoupanca = filtroPoupancaOut.concat(filtroPoupancaIn)
 // concatena os arrays de poupancaIn e poupancaOut
 
 const lista = document.getElementById("lista");
+// cria uma constante para receber a lista do html
 
 filtroPoupanca.forEach((objeto) => {
   const li = document.createElement("li");
@@ -70,7 +76,8 @@ filtroPoupanca.forEach((objeto) => {
   dataP.classList.add("dateLabelList");
   const data = new Date(objeto.data);
   data.setDate(data.getDate() + 1);
-  dataP.textContent = data.toLocaleDateString("pt-BR")
+  dataP.textContent = data.toLocaleDateString("pt-BR");
+  // formata a data para o padrão brasileiro
 
   leftDiv.appendChild(tituloP);
   leftDiv.appendChild(dataP);
@@ -91,6 +98,7 @@ filtroPoupanca.forEach((objeto) => {
         currency: "BRL",
       });
     }
+    // Condição para formatar o valor de poupancaOut e poupancaIn
 
   const horaP = document.createElement("p");
   horaP.classList.add("hourLabelList");

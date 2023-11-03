@@ -1,14 +1,14 @@
 let receitasJs = localStorage.getItem("db_receitas");
-let receitasObj = JSON.parse(receitasJs);
-// Pega as receitas do localStorage e transforma em objeto
+let receitasObj = JSON.parse(receitasJs) || [];
+// Pega as receitas do localStorage e transforma em objeto ou cria um array vazio
 
 let poupancaOutJs = localStorage.getItem("db_poupancaOut");
-let poupancaOutObj = JSON.parse(poupancaOutJs);
-// Pega as poupancaOut do localStorage e transforma em objeto
+let poupancaOutObj = JSON.parse(poupancaOutJs) || [];
+// Pega as poupancaOut do localStorage e transforma em objeto ou cria um array vazio
 
 let poupancaInJs = localStorage.getItem("db_poupancaIn");
-let poupancaInObj = JSON.parse(poupancaInJs);
-// Pega as poupancaIn do localStorage e transforma em objeto
+let poupancaInObj = JSON.parse(poupancaInJs) || [];
+// Pega as poupancaIn do localStorage e transforma em objeto ou cria um array vazio
 
 let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
 let userCurrentObj = JSON.parse(userCurrentJs);
@@ -48,6 +48,7 @@ document.querySelector("#valueTotalRecipes").innerHTML = totalReceitasFormatado;
 // insere o valor total de receitas no html
 
 const lista = document.getElementById("lista");
+// cria uma constante para receber a lista do html
 
 filtroReceitas.forEach((objeto) => {
   const li = document.createElement("li");
@@ -65,6 +66,7 @@ filtroReceitas.forEach((objeto) => {
   const data = new Date(objeto.data);
   data.setDate(data.getDate() + 1);
   dataP.textContent = data.toLocaleDateString("pt-br");
+  // formata a data para o padrão brasileiro
 
 
   leftDiv.appendChild(tituloP);
@@ -79,6 +81,7 @@ filtroReceitas.forEach((objeto) => {
     style: "currency",
     currency: "BRL",
   });
+  // formata o valor de receitas para o padrão brasileiro
 
   const horaP = document.createElement("p");
   horaP.classList.add("hourLabelList");
@@ -92,3 +95,4 @@ filtroReceitas.forEach((objeto) => {
 
   lista.appendChild(li);
 });
+// função para criar a lista de receitas no html
