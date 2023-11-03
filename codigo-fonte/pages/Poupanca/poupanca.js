@@ -112,3 +112,18 @@ filtroPoupanca.forEach((objeto) => {
 
   lista.appendChild(li);
 });
+
+
+const button = document.querySelector(".iconVisibilityWhite");
+button.addEventListener("click", function () {
+  const valueLabels = document.querySelectorAll(".valueLabelList");
+  valueLabels.forEach(function (label) {
+    if (label.style.display === "flex") {
+      label.style.display = "block";
+      label.textContent = label.dataset.value;
+    } else {
+      label.style.display = "flex";
+      label.dataset.value = label.textContent;
+      label.textContent = "*****";
+    }
+});
