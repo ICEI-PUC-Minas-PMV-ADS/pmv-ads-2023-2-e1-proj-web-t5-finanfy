@@ -15,7 +15,7 @@ let userCurrentObj = JSON.parse(userCurrentJs);
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto
 
-let filtroReceitas = [];  
+let filtroReceitas = [];
 // Cria um array vazio para receber as receitas do usuário logado
 
 for (const receita of receitasObj) {
@@ -31,7 +31,6 @@ function calcularTotal(a) {
     total += parseFloat(objeto.valor);
   });
   return total;
-
 }
 // função para calcular a subtração do total de poupança
 
@@ -69,7 +68,6 @@ filtroReceitas.forEach((objeto) => {
   dataP.textContent = data.toLocaleDateString("pt-br");
   // formata a data para o padrão brasileiro
 
-
   leftDiv.appendChild(tituloP);
   leftDiv.appendChild(dataP);
 
@@ -99,16 +97,16 @@ filtroReceitas.forEach((objeto) => {
 // função para criar a lista de receitas no html
 
 const button = document.querySelector(".iconVisibilityWhite");
-button.addEventListener("click", function() {
+button.addEventListener("click", function () {
   const valueLabels = document.querySelectorAll(".valueLabelList");
-  valueLabels.forEach(function(label) {
-    if (label.style.display === "none") {
-      label.style.display = "flex";
+  valueLabels.forEach(function (label) {
+    if (label.style.display === "flex") {
+      label.style.display = "block";
       label.textContent = label.dataset.value;
     } else {
-      label.style.display = "none";
+      label.style.display = "flex";
       label.dataset.value = label.textContent;
-      label.textContent = "---";
+      label.textContent = "*****";
     }
   });
 });
