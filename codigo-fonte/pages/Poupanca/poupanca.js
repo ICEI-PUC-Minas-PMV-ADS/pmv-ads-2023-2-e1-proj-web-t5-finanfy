@@ -68,7 +68,9 @@ filtroPoupanca.forEach((objeto) => {
 
   const dataP = document.createElement("p");
   dataP.classList.add("dateLabelList");
-  dataP.textContent = new Date(objeto.data).toLocaleDateString("pt-BR")
+  const data = new Date(objeto.data);
+  data.setDate(data.getDate() + 1);
+  dataP.textContent = data.toLocaleDateString("pt-BR")
 
   leftDiv.appendChild(tituloP);
   leftDiv.appendChild(dataP);
