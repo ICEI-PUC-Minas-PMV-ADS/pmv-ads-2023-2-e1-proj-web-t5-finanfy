@@ -112,7 +112,7 @@ filtroPoupanca.forEach((objeto) => {
 
   lista.appendChild(li);
 });
-
+// Criação da lista de Geral
 
 const button = document.querySelector(".iconVisibilityWhite");
 button.addEventListener("click", function () {
