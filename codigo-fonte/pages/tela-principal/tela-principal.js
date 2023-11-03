@@ -1,28 +1,29 @@
 let receitasJs = localStorage.getItem("db_receitas");
-let receitasObj = JSON.parse(receitasJs);
-// Pega as receitas do localStorage e transforma em objeto
+let receitasObj = JSON.parse(receitasJs) || [];
+// Pega as receitas do localStorage e transforma em objeto ou cria um array vazio
 
 let despesasJs = localStorage.getItem("db_despesas");
-let despesasObj = JSON.parse(despesasJs);
-// Pega as despesas do localStorage e transforma em objeto
+let despesasObj = JSON.parse(despesasJs) || [];
+// Pega as despesas do localStorage e transforma em objeto ou cria um array vazio
 
 let poupancaOutJs = localStorage.getItem("db_poupancaOut");
-let poupancaOutObj = JSON.parse(poupancaOutJs);
-// Pega as poupancaOut do localStorage e transforma em objeto
+let poupancaOutObj = JSON.parse(poupancaOutJs) || [];
+// Pega as poupancaOut do localStorage e transforma em objeto ou cria um array vazio
 
 let poupancaInJs = localStorage.getItem("db_poupancaIn");
-let poupancaInObj = JSON.parse(poupancaInJs);
-// Pega as poupancaIn do localStorage e transforma em objeto
+let poupancaInObj = JSON.parse(poupancaInJs) || [];
+// Pega as poupancaIn do localStorage e transforma em objeto ou cria um array vazio
 
 let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
 let userCurrentObj = JSON.parse(userCurrentJs);
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto
 
-filtroReceitas = [];
+filtroReceitas = []; 
 filtroDespesas = [];
 filtroPoupancaOut = [];
 filtroPoupancaIn = [];
+// Cria um array vazio para receber as receitas, despesas, poupancaOut e poupancaIn do usuário logado
 
 for (const receita of receitasObj) {
   if (receita.idUsuario === usuarioLogado) {
@@ -108,6 +109,7 @@ filtroGeral.forEach((objeto) => {
   const data = new Date(objeto.data);
   data.setDate(data.getDate() + 1);
   dataP.textContent = data.toLocaleDateString("pt-BR");
+  // formata a data para o padrão brasileiro e adiciona um dia
 
   leftDiv.appendChild(tituloP);
   leftDiv.appendChild(dataP);
@@ -134,6 +136,7 @@ filtroGeral.forEach((objeto) => {
         currency: "BRL",
       });
   }
+  // formata o valor de Geral para o padrão brasileiro
 
   const horaP = document.createElement("p");
   horaP.classList.add("hourLabelList");
@@ -147,3 +150,4 @@ filtroGeral.forEach((objeto) => {
 
   lista.appendChild(li);
 });
+// Criação da lista de Geral
