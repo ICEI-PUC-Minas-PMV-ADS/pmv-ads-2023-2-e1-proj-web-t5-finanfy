@@ -48,15 +48,12 @@ function calcularTotal(a, b, c) {
   b.forEach((objeto) => {
     total += parseFloat(objeto.valor);
   });
-  c.forEach((objeto) => {
-    total -= parseFloat(objeto.valor);
-  });
   return total;
 
 }
 // função para calcular a subtração do total de poupança
 
-const totalReceitas = calcularTotal(filtroReceitas, filtropoupancaOut, filtropoupancaIn);
+const totalReceitas = calcularTotal(filtroReceitas, filtropoupancaOut);
 //valor total de receitas
 
 let totalReceitasFormatado = totalReceitas.toLocaleString("pt-br", {
