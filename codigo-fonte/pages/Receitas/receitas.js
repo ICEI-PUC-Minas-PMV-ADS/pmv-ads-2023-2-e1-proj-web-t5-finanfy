@@ -15,16 +15,8 @@ let userCurrentObj = JSON.parse(userCurrentJs);
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto
 
-let filtroReceitas = []; 
-let filtropoupancaOut = [];
-let filtropoupancaIn = [];
-
-for (const poupancaOut of poupancaOutObj) {
-  if (poupancaOut.idUsuario === usuarioLogado) {
-    filtropoupancaOut.push(poupancaOut);
-  }
-}
-// Condição para filtrar a poupancaOut do usuário logado
+let filtroReceitas = [];  
+// Cria um array vazio para receber as receitas do usuário logado
 
 for (const receita of receitasObj) {
   if (receita.idUsuario === usuarioLogado) {
@@ -33,30 +25,17 @@ for (const receita of receitasObj) {
 }
 // Condição para filtrar as receitas do usuário logado
 
-for (const poupancaIn of poupancaInObj) {
-  if (poupancaIn.idUsuario === usuarioLogado) {
-    filtropoupancaIn.push(poupancaIn);
-  }
-}
-// Condição para filtrar a poupancaIn do usuário logado
-
-function calcularTotal(a, b, c) {
+function calcularTotal(a) {
   let total = 0;
   a.forEach((objeto) => {
     total += parseFloat(objeto.valor);
-  });
-  b.forEach((objeto) => {
-    total += parseFloat(objeto.valor);
-  });
-  c.forEach((objeto) => {
-    total -= parseFloat(objeto.valor);
   });
   return total;
 
 }
 // função para calcular a subtração do total de poupança
 
-const totalReceitas = calcularTotal(filtroReceitas, filtropoupancaOut, filtropoupancaIn);
+const totalReceitas = calcularTotal(filtroReceitas);
 //valor total de receitas
 
 let totalReceitasFormatado = totalReceitas.toLocaleString("pt-br", {
@@ -68,12 +47,9 @@ let totalReceitasFormatado = totalReceitas.toLocaleString("pt-br", {
 document.querySelector("#valueTotalRecipes").innerHTML = totalReceitasFormatado;
 // insere o valor total de receitas no html
 
-const filtroReceitasGeral = filtroReceitas.concat(filtropoupancaOut);
-// concatena os arrays de receitas e poupancaOut
-
 const lista = document.getElementById("lista");
 
-filtroReceitasGeral.forEach((objeto) => {
+filtroReceitas.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
