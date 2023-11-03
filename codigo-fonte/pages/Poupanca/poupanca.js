@@ -1,4 +1,3 @@
-
 let poupancaOutJs = localStorage.getItem("db_poupancaOut");
 let poupancaOutObj = JSON.parse(poupancaOutJs) || [];
 // Pega as poupancaOut do localStorage e transforma em objeto ou cria um array vazio
@@ -12,50 +11,49 @@ let userCurrentObj = JSON.parse(userCurrentJs);
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto ou cria um array vazio
 
-let filtroPoupancaOut = []; 
+let filtroPoupancaOut = [];
 let filtroPoupancaIn = [];
 // Cria um array vazio para receber as poupancaOut e poupancaIn do usuário logado
 
-  for (const poupancaOut of poupancaOutObj) {
-    if (poupancaOut.idUsuario === usuarioLogado) {
-      filtroPoupancaOut.push(poupancaOut);
-    }
+for (const poupancaOut of poupancaOutObj) {
+  if (poupancaOut.idUsuario === usuarioLogado) {
+    filtroPoupancaOut.push(poupancaOut);
   }
-  // Condição para filtrar a poupancaOut do usuário logado
+}
+// Condição para filtrar a poupancaOut do usuário logado
 
-  for (const poupancaIn of poupancaInObj) {
-    if (poupancaIn.idUsuario === usuarioLogado) {
-      filtroPoupancaIn.push(poupancaIn);
-    }
+for (const poupancaIn of poupancaInObj) {
+  if (poupancaIn.idUsuario === usuarioLogado) {
+    filtroPoupancaIn.push(poupancaIn);
   }
-  // Condição para filtrar a poupancaIn do usuário logado
+}
+// Condição para filtrar a poupancaIn do usuário logado
 
-  function calcularTotal(a, b) {
-    let total = 0;
-    a.forEach((objeto) => {
-      total += parseFloat(objeto.valor);
-    });
-    b.forEach((objeto) => {
-      total -= parseFloat(objeto.valor);
-    });
-    return total;
-  }
-  // função para calcular a subtração do total de poupança
-
-  let totalPoupanca = calcularTotal(filtroPoupancaIn, filtroPoupancaOut);
- //valor total de poupança
-  
-  let totalPoupancaFormatado = totalPoupanca.toLocaleString("pt-br", {
-    style: "currency",
-    currency: "BRL",
+function calcularTotal(a, b) {
+  let total = 0;
+  a.forEach((objeto) => {
+    total += parseFloat(objeto.valor);
   });
-  // formata o valor total de poupança para o padrão brasileiro
-  
-  document.querySelector("#valueTotalSavings").innerHTML = totalPoupancaFormatado;
-  // insere o valor total de poupança no html
+  b.forEach((objeto) => {
+    total -= parseFloat(objeto.valor);
+  });
+  return total;
+}
+// função para calcular a subtração do total de poupança
 
+let totalPoupanca = calcularTotal(filtroPoupancaIn, filtroPoupancaOut);
+//valor total de poupança
 
-const filtroPoupanca = filtroPoupancaOut.concat(filtroPoupancaIn)
+let totalPoupancaFormatado = totalPoupanca.toLocaleString("pt-br", {
+  style: "currency",
+  currency: "BRL",
+});
+// formata o valor total de poupança para o padrão brasileiro
+
+document.querySelector("#valueTotalSavings").innerHTML = totalPoupancaFormatado;
+// insere o valor total de poupança no html
+
+const filtroPoupanca = filtroPoupancaOut.concat(filtroPoupancaIn);
 // concatena os arrays de poupancaIn e poupancaOut
 
 const lista = document.getElementById("lista");
@@ -87,18 +85,18 @@ filtroPoupanca.forEach((objeto) => {
 
   const valorP = document.createElement("p");
   valorP.classList.add("valueLabelList");
-    if (filtroPoupancaOut.includes(objeto)) {
-      valorP.textContent = parseFloat(-objeto.valor).toLocaleString("pt-br", {
-        style: "currency",
-        currency: "BRL",
-      });
-    } else {
-      valorP.textContent = parseFloat(objeto.valor).toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      });
-    }
-    // Condição para formatar o valor de poupancaOut e poupancaIn
+  if (filtroPoupancaOut.includes(objeto)) {
+    valorP.textContent = parseFloat(-objeto.valor).toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    });
+  } else {
+    valorP.textContent = parseFloat(objeto.valor).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+  }
+  // Condição para formatar o valor de poupancaOut e poupancaIn
 
   const horaP = document.createElement("p");
   horaP.classList.add("hourLabelList");

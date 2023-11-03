@@ -19,7 +19,7 @@ let userCurrentObj = JSON.parse(userCurrentJs);
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto
 
-filtroReceitas = []; 
+filtroReceitas = [];
 filtroDespesas = [];
 filtroPoupancaOut = [];
 filtroPoupancaIn = [];
@@ -88,7 +88,11 @@ let totalGeralFormatado = totalGeral.toLocaleString("pt-BR", {
 document.querySelector("#valueTotalBalance").innerHTML = totalGeralFormatado;
 // insere o valor total de Geral no html
 
-const filtroGeral = filtroReceitas.concat(filtroPoupancaOut, filtroDespesas, filtroPoupancaIn);
+const filtroGeral = filtroReceitas.concat(
+  filtroPoupancaOut,
+  filtroDespesas,
+  filtroPoupancaIn
+);
 // concatena os arrays de receitas, poupancaOut, despesas e poupancaIn
 
 const lista = document.getElementById("lista");
@@ -124,17 +128,16 @@ filtroGeral.forEach((objeto) => {
       style: "currency",
       currency: "BRL",
     });
-  } else if (filtroPoupancaIn.includes(objeto)){
+  } else if (filtroPoupancaIn.includes(objeto)) {
     valorP.textContent = parseFloat(-objeto.valor).toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL",
     });
-  
   } else {
-      valorP.textContent = parseFloat(objeto.valor).toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      });
+    valorP.textContent = parseFloat(objeto.valor).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
   }
   // formata o valor de Geral para o padrão brasileiro
 

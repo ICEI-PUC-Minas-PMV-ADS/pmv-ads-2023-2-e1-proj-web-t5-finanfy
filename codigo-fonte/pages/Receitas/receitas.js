@@ -15,7 +15,7 @@ let userCurrentObj = JSON.parse(userCurrentJs);
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto
 
-let filtroReceitas = [];  
+let filtroReceitas = [];
 // Cria um array vazio para receber as receitas do usuário logado
 
 for (const receita of receitasObj) {
@@ -31,7 +31,6 @@ function calcularTotal(a) {
     total += parseFloat(objeto.valor);
   });
   return total;
-
 }
 // função para calcular a subtração do total de poupança
 
@@ -68,7 +67,6 @@ filtroReceitas.forEach((objeto) => {
   data.setDate(data.getDate() + 1);
   dataP.textContent = data.toLocaleDateString("pt-br");
   // formata a data para o padrão brasileiro
-
 
   leftDiv.appendChild(tituloP);
   leftDiv.appendChild(dataP);
