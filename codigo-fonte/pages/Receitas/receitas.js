@@ -97,3 +97,18 @@ filtroReceitas.forEach((objeto) => {
   lista.appendChild(li);
 });
 // função para criar a lista de receitas no html
+
+const button = document.querySelector(".iconVisibilityWhite");
+button.addEventListener("click", function() {
+  const valueLabels = document.querySelectorAll(".valueLabelList");
+  valueLabels.forEach(function(label) {
+    if (label.style.display === "none") {
+      label.style.display = "flex";
+      label.textContent = label.dataset.value;
+    } else {
+      label.style.display = "none";
+      label.dataset.value = label.textContent;
+      label.textContent = "---";
+    }
+  });
+});
