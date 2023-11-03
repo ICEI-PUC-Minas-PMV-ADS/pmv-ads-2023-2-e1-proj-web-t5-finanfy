@@ -1,5 +1,5 @@
 let despesasJs = localStorage.getItem("db_despesas");
-let depesasObj = JSON.parse(despesasJs) || [];
+let despesasObj = JSON.parse(despesasJs) || [];
 // Pega as despesas do localStorage e transforma em objeto ou cria um array vazio
 
 let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
@@ -10,12 +10,21 @@ let usuarioLogado = userCurrentObj.id;
 let filtroDespesas = [];
 // Cria um array vazio para receber as despesas do usuário logado
 
-for (const despesa of despesasObj) {
-  if (despesa.idUsuario === usuarioLogado) {
-    filtroDespesas.push(despesa);
+for (const Despesas of despesasObj) {
+  if (Despesas.idUsuario === usuarioLogado) {
+    filtroDespesas.push(Despesas);
   }
 }
 // Condição para filtrar as despesas do usuário logado
+
+function calcularTotal(a) {
+  let total = 0;
+  a.forEach((objeto) => {
+    total = total + parseFloat(-objeto.valor);
+  });
+  return total;
+}
+// função para calcular a subtração do total de poupança
 
 const totalDespesas = calcularTotal(filtroDespesas);
 
@@ -27,13 +36,13 @@ let totalDespesasFormatado = totalDespesas.toLocaleString("pt-br", {
 });
 // formata o valor total de Despesas para o padrão brasileiro
 
-document.querySelector("#valueTotalDespesas").innerHTML = totalDespesasFormatado;
-// insere o valor total de receitas no html
+document.querySelector("#valueTotalExpense").innerHTML = totalDespesasFormatado;
+// insere o valor total de despesas no html
 
-const lista = document.getElementById("lista");
+const listas = document.getElementById("listas");
 // cria uma constante para receber a lista do html
 
-filtroDesoesas.forEach((objeto) => {
+filtroDespesas.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
@@ -59,11 +68,11 @@ filtroDesoesas.forEach((objeto) => {
 
   const valorP = document.createElement("p");
   valorP.classList.add("valueLabelList");
-  valorP.textContent = parseFloat(objeto.valor).toLocaleString("pt-BR", {
+  valorP.textContent = parseFloat(-objeto.valor).toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
   });
-  // formata o valor de receitas para o padrão brasileiro
+  // formata o valor de despesas para o padrão brasileiro
 
   const horaP = document.createElement("p");
   horaP.classList.add("hourLabelList");
@@ -77,45 +86,5 @@ filtroDesoesas.forEach((objeto) => {
 
   lista.appendChild(li);
 });
-// função para criar a lista de receitas no html
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let despesasJson = localStorage.getItem("db_despesas");
- let despesasObj = [];
-
- if (despesasJson) {
-   despesasObj = JSON.parse(despesasJson);
- }
- console.log(despesasObj);
-
-
+// função para criar a lista de dspesas no html
 
