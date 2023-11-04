@@ -164,4 +164,5 @@ button.addEventListener("click", function () {
       label.dataset.value = label.textContent;
       label.textContent = "*****";
     }
+  });
 });
