@@ -127,6 +127,4 @@ button.addEventListener("click", function () {
       label.textContent = "*****";
     }
   });
-  const totalExpenses = document.querySelector("#totalExpenses");
-  totalExpenses.style.display = "none";
 });
