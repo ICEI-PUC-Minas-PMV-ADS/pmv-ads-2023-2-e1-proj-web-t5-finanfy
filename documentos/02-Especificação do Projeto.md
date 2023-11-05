@@ -41,24 +41,23 @@
 
 |ID    | Descrição                | Prioridade |
 |-------|---------------------------------|----|
-| RF-01 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com data, descrição e forma de recebimento. | ALTA | 
-| RF-02 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir sub-categorias de receitas. | ALTA | 
-| RF-03 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com data, descrição e forma de pagamento. | ALTA | 
-| RF-04 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir sub-categorias de despesas. | ALTA | 
-| RF-05 | A aplicação deve permitir ao usuário visualizar o valor total de suas receitas. | ALTA | 
-| RF-06 | A aplicação deve permitir ao usuário visualizar o valor total de suas receitas por sub-categoria. | MÉDIA | 
-| RF-07 | A aplicação deve permitir ao usuário visualizar o valor total de suas receitas por data. | MÉDIA | 
-| RF-08 | A aplicação deve permitir ao usuário visualizar o valor total de suas receitas por forma de recebimento. | BAIXA | 
-| RF-09 | A aplicação deve permitir ao usuário visualizar o valor total de suas despesas. | ALTA | 
-| RF-10 | A aplicação deve permitir ao usuário visualizar o valor total de suas despesas por sub-categoria. | MÉDIA | 
-| RF-11 | A aplicação deve permitir ao usuário visualizar o valor total de suas despesas por data. | MÉDIA | 
-| RF-12 | A aplicação deve permitir ao usuário visualizar o valor total de suas despesas por forma de pagamento. | BAIXA | 
-| RF-13 | A aplicação deve permitir ao usuário visualizar seu saldo atual. | ALTA | 
+| RF-01 | A aplicação deve permitir ao usuário cadastrar uma nova conta de acesso ao sistema. | ALTA | 
+| RF-02 | A aplicação deve permitir ao usuário entrar e sair de sua conta (login e logout). | ALTA | 
+| RF-03 | A aplicação deve permitir ao usuário alterar sua senha cadastrada. | MÉDIA | 
+| RF-04 | A aplicação deve permitir ao usuário recuperar sua senha de acesso ao sistema. | MÉDIA | 
+| RF-05 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com data, hora, valor e descrição. | ALTA | 
+| RF-06 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir sub-categorias de receitas. | BAIXA | 
+| RF-07 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com data, hora, valor e descrição. | ALTA | 
+| RF-08 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir sub-categorias de despesas. | BAIXA | 
+| RF-09 | A aplicação deve permitir ao usuário visualizar seu saldo atual. | ALTA | 
+| RF-10 | A aplicação deve permitir ao usuário visualizar o valor total de suas receitas. | ALTA | 
+| RF-11 | A aplicação deve permitir ao usuário visualizar o valor total de suas despesas. | ALTA | 
+| RF-12 | A aplicação deve permitir ao usuário visualizar todas as transações cadastradas. | ALTA | 
+| RF-13 | A aplicação deve permitir ao usuário filtrar a visualização de todas as transações por categoria e sub-categoria. | ALTA | 
 | RF-14 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir limites para gastos totais. | BAIXA | 
 | RF-15 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir limites para gastos por categoria. | BAIXA | 
-| RF-16 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança. | ALTA | 
+| RF-16 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança. | MÉDIA | 
 | RF-17 | A aplicação deve permitir ao usuário visualizar seu saldo acumulado em poupança. | BAIXA | 
-| RF-18 | A aplicação deve permitir ao usuário visualizar estimativa de saldo futuro de sua poupança, para um determinado período. | BAIXA | 
 
 ** Prioridade: Alta / Média / Baixa. 
 
