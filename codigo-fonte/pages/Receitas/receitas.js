@@ -109,6 +109,8 @@ button.addEventListener("click", function () {
       label.textContent = "*****";
     }
   });
+  // função para esconder o valor da lista de receitas
+
   const tottalRecipes = document.querySelector("#valueTotalRecipes");
   if (tottalRecipes.style.display === "flex") {
     tottalRecipes.style.display = "block";
@@ -119,3 +121,4 @@ button.addEventListener("click", function () {
     tottalRecipes.textContent = "R$ ";
   }
 });
+// função para esconder o valor total de receitas

@@ -125,6 +125,7 @@ button.addEventListener("click", function () {
       label.textContent = "*****";
     }
   });
+  // função para esconder o valor da lista de poupanca
   const tottalRecipes = document.querySelector("#valueTotalSavings");
   if (tottalRecipes.style.display === "flex") {
     tottalRecipes.style.display = "block";
@@ -135,4 +136,5 @@ button.addEventListener("click", function () {
     tottalRecipes.textContent = "R$ ";
   }
 });
+// função para esconder o valor total de poupanca
 

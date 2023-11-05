@@ -168,6 +168,8 @@ button.addEventListener("click", function () {
       label.textContent = "*****";
     }
   });
+  // Condição para mostrar ou esconder os valores da lista
+
   const tottalRecipes = document.querySelector("#valueTotalBalance");
   if (tottalRecipes.style.display === "flex") {
     tottalRecipes.style.display = "block";
@@ -178,5 +180,6 @@ button.addEventListener("click", function () {
     tottalRecipes.textContent = "R$ ";
   }
 });
+// Condição para mostrar ou esconder os valores do total de Geral
 
 
