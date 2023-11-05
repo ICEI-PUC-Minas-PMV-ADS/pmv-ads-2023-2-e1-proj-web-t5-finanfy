@@ -127,4 +127,13 @@ button.addEventListener("click", function () {
       label.textContent = "*****";
     }
   });
+  const tottalRecipes = document.querySelector("#valueTotalSavings");
+  if (tottalRecipes.style.display === "flex") {
+    tottalRecipes.style.display = "block";
+    tottalRecipes.textContent = tottalRecipes.dataset.value;
+  } else {
+    tottalRecipes.style.display = "flex";
+    tottalRecipes.dataset.value = tottalRecipes.textContent;
+    tottalRecipes.textContent = "R$ ";
+  }
 });
