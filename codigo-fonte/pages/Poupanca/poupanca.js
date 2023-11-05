@@ -110,3 +110,31 @@ filtroPoupanca.forEach((objeto) => {
 
   lista.appendChild(li);
 });
+// Criação da lista de Geral
+
+const button = document.querySelector(".iconVisibilityWhite");
+button.addEventListener("click", function () {
+  const valueLabels = document.querySelectorAll(".valueLabelList");
+  valueLabels.forEach(function (label) {
+    if (label.style.display === "flex") {
+      label.style.display = "block";
+      label.textContent = label.dataset.value;
+    } else {
+      label.style.display = "flex";
+      label.dataset.value = label.textContent;
+      label.textContent = "*****";
+    }
+  });
+  // função para esconder o valor da lista de poupanca
+  const tottalRecipes = document.querySelector("#valueTotalSavings");
+  if (tottalRecipes.style.display === "flex") {
+    tottalRecipes.style.display = "block";
+    tottalRecipes.textContent = tottalRecipes.dataset.value;
+  } else {
+    tottalRecipes.style.display = "flex";
+    tottalRecipes.dataset.value = tottalRecipes.textContent;
+    tottalRecipes.textContent = "R$ ";
+  }
+});
+// função para esconder o valor total de poupanca
+

@@ -154,3 +154,32 @@ filtroGeral.forEach((objeto) => {
   lista.appendChild(li);
 });
 // Criação da lista de Geral
+
+const button = document.querySelector(".iconVisibilityWhite");
+button.addEventListener("click", function () {
+  const valueLabels = document.querySelectorAll(".valueLabelList");
+  valueLabels.forEach(function (label) {
+    if (label.style.display === "flex") {
+      label.style.display = "block";
+      label.textContent = label.dataset.value;
+    } else {
+      label.style.display = "flex";
+      label.dataset.value = label.textContent;
+      label.textContent = "*****";
+    }
+  });
+  // Condição para mostrar ou esconder os valores da lista
+
+  const tottalRecipes = document.querySelector("#valueTotalBalance");
+  if (tottalRecipes.style.display === "flex") {
+    tottalRecipes.style.display = "block";
+    tottalRecipes.textContent = tottalRecipes.dataset.value;
+  } else {
+    tottalRecipes.style.display = "flex";
+    tottalRecipes.dataset.value = tottalRecipes.textContent;
+    tottalRecipes.textContent = "R$ ";
+  }
+});
+// Condição para mostrar ou esconder os valores do total de Geral
+
+
