@@ -1,13 +1,11 @@
-let poupancaOutJs = localStorage.getItem("db_poupancaOut");
-let poupancaOutObj = JSON.parse(poupancaOutJs) || [];
+let poupancaOutObj = JSON.parse(localStorage.getItem("db_poupancaOut")) || [];
 // Pega as poupancaOut do localStorage e transforma em objeto ou cria um array vazio
 
-let poupancaInJs = localStorage.getItem("db_poupancaIn");
-let poupancaInObj = JSON.parse(poupancaInJs) || [];
+
+let poupancaInObj = JSON.parse(localStorage.getItem("db_poupancaIn")) || [];
 // Pega as poupancaIn do localStorage e transforma em objeto ou cria um array vazio
 
-let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
-let userCurrentObj = JSON.parse(userCurrentJs);
+let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto ou cria um array vazio
 
