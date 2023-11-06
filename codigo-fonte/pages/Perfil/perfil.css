@@ -72,11 +72,16 @@ html, body {
     justify-content: center;
     width: 116px;
     height: 116px;
+    border-radius: 50%;
+    background-color: #000040;
+    border: 4px solid #fff;
   }
   .iconProfilePhoto {
     width: 116px;
     height: 100%;
     cursor: pointer;
+    border-radius: 50%;
+    background-color: lightgray;
   }
   .profileInfo {
     display: flex;

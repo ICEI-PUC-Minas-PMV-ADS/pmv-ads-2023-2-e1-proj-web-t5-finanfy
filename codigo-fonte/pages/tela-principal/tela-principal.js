@@ -18,6 +18,10 @@ let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
 let userCurrentObj = JSON.parse(userCurrentJs);
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto
+console.log(userCurrentObj);
+
+document.querySelector("#personalNameHome").innerHTML = `${userCurrentObj.nome} ${userCurrentObj.sobrenome}`;
+// insere o nome e sobrenome do usuário na tela principal
 
 filtroReceitas = [];
 filtroDespesas = [];

@@ -65,17 +65,21 @@ html, body {
   font-weight: normal;
   margin: 0;
 }
-.diviconHomeProfile {
+.divIconHomeProfile {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #fff;
 }
 .iconHomeProfilePhoto {
-  width: 60px;
-  height: 80px;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
+  border-radius: 50%;
+  background-color: #d3d3d3;
 }
 
 .iconNavigation {
@@ -355,7 +359,7 @@ ul::-webkit-scrollbar-thumb:hover {
   .headerWelcome {
     width: 300px;
   }
-  .iconHomeProfilePhoto {
+  .divIconHomeProfile {
     width: 60px;
   }
   .iconNavigation {
@@ -387,7 +391,7 @@ ul::-webkit-scrollbar-thumb:hover {
   .headerWelcome {
     width: 350px;
   }
-  .iconHomeProfilePhoto {
+  .divIconHomeProfile {
     width: 70px;
   }
   .iconNavigation {
@@ -434,7 +438,7 @@ ul::-webkit-scrollbar-thumb:hover {
   .headerWelcome {
     width: 400px;
   }
-  .iconHomeProfilePhoto {
+  .divIconHomeProfilePhoto {
     width: 80px;
   }
   .iconNavigation {
@@ -483,7 +487,7 @@ ul::-webkit-scrollbar-thumb:hover {
   .headerWelcome {
     width: 450px;
   }
-  .iconHomeProfilePhoto {
+  .divIconHomeProfile {
     width: 80px;
   }
   .iconNavigation {
@@ -515,7 +519,7 @@ ul::-webkit-scrollbar-thumb:hover {
   .headerWelcome {
     width: 500px;
   }
-  .iconHomeProfilePhoto {
+  .divIconHomeProfile {
     width: 80px;
   }
   .iconNavigation {
@@ -547,7 +551,7 @@ ul::-webkit-scrollbar-thumb:hover {
   .headerWelcome {
     width: 550px;
   }
-  .iconHomeProfilePhoto {
+  .divIconHomeProfile {
     width: 80px;
   }
   .iconNavigation {
