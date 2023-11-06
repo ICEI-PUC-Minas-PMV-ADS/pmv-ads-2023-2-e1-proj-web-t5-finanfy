@@ -1,24 +1,18 @@
-let receitasJs = localStorage.getItem("db_receitas");
-let receitasObj = JSON.parse(receitasJs) || [];
+let receitasObj = JSON.parse(localStorage.getItem("db_receitas")) || [];
 // Pega as receitas do localStorage e transforma em objeto ou cria um array vazio
 
-let despesasJs = localStorage.getItem("db_despesas");
-let despesasObj = JSON.parse(despesasJs) || [];
+let despesasObj = JSON.parse(localStorage.getItem("db_despesas")) || [];
 // Pega as despesas do localStorage e transforma em objeto ou cria um array vazio
 
-let poupancaOutJs = localStorage.getItem("db_poupancaOut");
-let poupancaOutObj = JSON.parse(poupancaOutJs) || [];
+let poupancaOutObj = JSON.parse(localStorage.getItem("db_poupancaOut")) || [];
 // Pega as poupancaOut do localStorage e transforma em objeto ou cria um array vazio
 
-let poupancaInJs = localStorage.getItem("db_poupancaIn");
-let poupancaInObj = JSON.parse(poupancaInJs) || [];
+let poupancaInObj = JSON.parse(localStorage.getItem("db_poupancaIn")) || [];
 // Pega as poupancaIn do localStorage e transforma em objeto ou cria um array vazio
 
-let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
-let userCurrentObj = JSON.parse(userCurrentJs);
+let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto
-console.log(userCurrentObj);
 
 document.querySelector("#personalNameHome").innerHTML = `${userCurrentObj.nome} ${userCurrentObj.sobrenome}`;
 // insere o nome e sobrenome do usuário na tela principal

@@ -1,7 +1,6 @@
 let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto
-console.log(userCurrentObj);
 
 let userName = userCurrentObj.nome;
 document.querySelector("#nameInfo").innerHTML = userName;
@@ -14,9 +13,3 @@ document.querySelector("#lastNameInfo").innerHTML = lastName;
 let email = userCurrentObj.email;
 document.querySelector("#emailInfo").innerHTML = email;
 // insere o email do usuário na tela de perfil
-
-
-
-
-
-
