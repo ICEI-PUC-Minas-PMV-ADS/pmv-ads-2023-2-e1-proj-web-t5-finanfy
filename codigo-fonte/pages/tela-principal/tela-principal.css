@@ -362,6 +362,7 @@ ul::-webkit-scrollbar-thumb:hover {
   }
   .divIconHomeProfile {
     width: 60px;
+    height: 60px;
   }
   .iconNavigation {
     width: 260px;
@@ -394,6 +395,7 @@ ul::-webkit-scrollbar-thumb:hover {
   }
   .divIconHomeProfile {
     width: 70px;
+    height: 80px;
   }
   .iconNavigation {
     width: 310px;
