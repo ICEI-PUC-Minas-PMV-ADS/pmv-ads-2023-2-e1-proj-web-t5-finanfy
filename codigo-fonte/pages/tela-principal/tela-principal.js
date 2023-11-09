@@ -10,17 +10,22 @@ let poupancaOutObj = JSON.parse(localStorage.getItem("db_poupancaOut")) || [];
 let poupancaInObj = JSON.parse(localStorage.getItem("db_poupancaIn")) || [];
 // Pega as poupancaIn do localStorage e transforma em objeto ou cria um array vazio
 
+let transacoesObj = JSON.parse(localStorage.getItem("db_transacoes")) || [];
+
 let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto
 
-document.querySelector("#personalNameHome").innerHTML = `${userCurrentObj.nome} ${userCurrentObj.sobrenome}`;
+document.querySelector(
+  "#personalNameHome"
+).innerHTML = `${userCurrentObj.nome} ${userCurrentObj.sobrenome}`;
 // insere o nome e sobrenome do usuário na tela principal
 
 filtroReceitas = [];
 filtroDespesas = [];
 filtroPoupancaOut = [];
 filtroPoupancaIn = [];
+filtroTransacoes = [];
 // Cria um array vazio para receber as receitas, despesas, poupancaOut e poupancaIn do usuário logado
 
 for (const receita of receitasObj) {
@@ -50,6 +55,13 @@ for (const poupancaIn of poupancaInObj) {
   }
 }
 // Condição para filtrar a poupancaIn do usuário logado
+
+for (const transacao of transacoesObj) {
+  if (transacao.idUsuario === usuarioLogado) {
+    filtroTransacoes.push(transacao);
+  }
+}
+// Condição para filtrar as transacoes do usuário logado
 
 function calcularTotal(a, b, c, d) {
   let total = 0;
@@ -86,16 +98,9 @@ let totalGeralFormatado = totalGeral.toLocaleString("pt-BR", {
 document.querySelector("#valueTotalBalance").innerHTML = totalGeralFormatado;
 // insere o valor total de Geral no html
 
-const filtroGeral = filtroReceitas.concat(
-  filtroPoupancaOut,
-  filtroDespesas,
-  filtroPoupancaIn
-);
-// concatena os arrays de receitas, poupancaOut, despesas e poupancaIn
-
 const lista = document.getElementById("lista");
 
-filtroGeral.forEach((objeto) => {
+filtroTransacoes.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
@@ -179,5 +184,3 @@ button.addEventListener("click", function () {
   }
 });
 // Condição para mostrar ou esconder os valores do total de Geral
-
-
