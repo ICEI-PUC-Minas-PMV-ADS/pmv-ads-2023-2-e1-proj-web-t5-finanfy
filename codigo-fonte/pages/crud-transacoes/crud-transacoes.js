@@ -11,8 +11,11 @@ function postReceitas(
   if (!idUsuario || idUsuario === "") {
     return alert("Login expirado. Logue novamente!");
   }
-  if (!valor || valor === "") {
-    return alert("É necessário preencher um valor");
+  if (!valor || valor == 0) {
+    return alert("É  necessário preencher um valor");
+  }
+  if (!valor || valor < 0 ) {
+    return alert("Não é possivel inserir um valor negativo");
   }
   if (!descricao || descricao === "") {
     return alert("É necessário preencher uma descrição");
