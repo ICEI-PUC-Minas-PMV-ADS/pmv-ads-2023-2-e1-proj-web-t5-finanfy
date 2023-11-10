@@ -24,7 +24,7 @@ function calcularTotal(a) {
   });
   return total;
 }
-// função para calcular a subtração do total de poupança
+// função para calcular a subtração do total de despesas
 
 const totalDespesas = calcularTotal(filtroDespesas);
 

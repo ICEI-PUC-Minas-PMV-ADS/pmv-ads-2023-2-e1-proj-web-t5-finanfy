@@ -143,10 +143,10 @@ html, body {
 .resultTotalExpense {
   display: flex;
   color: #fff;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   width: 203px;
-  height: 38px;
+  height: 10px;
   gap: 10px;
 }
 .divIconVisibilityWhite {
@@ -206,6 +206,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .list {
