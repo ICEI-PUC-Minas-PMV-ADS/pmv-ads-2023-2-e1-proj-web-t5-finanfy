@@ -76,6 +76,9 @@ p {
   text-align: center;
   width: 90%;
   align-items: center;
+  border-style: solid;
+  border-width: 1px;
+  
 }
 
 ::-webkit-calendar-picker-indicator {

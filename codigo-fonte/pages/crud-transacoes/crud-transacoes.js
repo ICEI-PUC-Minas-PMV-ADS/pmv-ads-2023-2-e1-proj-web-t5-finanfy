@@ -8,9 +8,17 @@ function postReceitas(
   idSubcategoria,
   descricao
 ) {
+  if (idCategoria = receita) {
+  }
   if (!idUsuario || idUsuario === "") {
     return alert("Login expirado. Logue novamente!");
   }
+  if (!idCategoria || idCategoria == receita) {
+     function (0) 
+      onclick idTipo = entrada;
+      idTipo.disabled = true;
+  }
+
   if (!valor || valor == 0) {
     return alert("É  necessário preencher um valor");
   }
@@ -81,6 +89,8 @@ function postReceitas(
     localStorage.setItem("db_transacoes", JSON.stringify(transacoesObj));
 
     alert("Receita cadastrada com sucesso!");
+    window.location.href = "../tela-principal/tela-principal.html";   
+
   } else if (idCategoria === "despesas") {
     let despesasJson = localStorage.getItem("db_despesas");
     let despesasObj = [];
@@ -94,7 +104,7 @@ function postReceitas(
       if (despesa.idDespesa > maiorIdDespesa) {
         maiorIdDespesa = despesa.idDespesa;
       }
-    }
+    }   
 
     const maiorIdDespesaIncrementado = maiorIdDespesa + 1;
 
@@ -119,6 +129,8 @@ function postReceitas(
     localStorage.setItem("db_transacoes", JSON.stringify(transacoesObj));
 
     alert("Despesa cadastrada com sucesso!");
+    location.href = "../tela-principal/tela-principal.html";  
+
   } else if (idCategoria === "poupanca") {
     if (idTipo === "entrada") {
       let poupancaInJson = localStorage.getItem("db_poupancaIn");
@@ -159,6 +171,8 @@ function postReceitas(
       localStorage.setItem("db_transacoes", JSON.stringify(transacoesObj));
 
       alert("Poupança de entrada cadastrada com sucesso!");
+      location.href = "../tela-principal/tela-principal.html";  
+
     } else if (idTipo === "saida") {
       let poupancaOutJson = localStorage.getItem("db_poupancaOut");
       let poupancaOutObj = [];
@@ -198,6 +212,7 @@ function postReceitas(
       localStorage.setItem("db_transacoes", JSON.stringify(transacoesObj));
 
       alert("Poupança de saída cadastrada com sucesso!");
+      location.href = "../tela-principal/tela-principal.html"; 
     }
   }
   calcularTotais(idUsuario);
