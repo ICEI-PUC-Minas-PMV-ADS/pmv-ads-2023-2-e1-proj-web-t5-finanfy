@@ -8,17 +8,16 @@ function postReceitas(
   idSubcategoria,
   descricao
 ) {
-  if (idCategoria = receita) {
-  }
   if (!idUsuario || idUsuario === "") {
     return alert("Login expirado. Logue novamente!");
   }
-  if (!idCategoria || idCategoria == receita) {
-     function (0) 
-      onclick idTipo = entrada;
-      idTipo.disabled = true;
+  if (!idCategoria || idCategoria === "") {
+     return alert("É necessário definir uma categoria");
   }
-
+  /* if (!idCategoria || idCategoria == "receitas") {
+      idTipo.disabled = true;
+  }*/
+   
   if (!valor || valor == 0) {
     return alert("É  necessário preencher um valor");
   }
