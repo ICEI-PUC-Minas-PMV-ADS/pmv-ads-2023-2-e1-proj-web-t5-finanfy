@@ -62,7 +62,7 @@
       </div>
       <div class="profileButtons">
         <div class="buttonKey">
-          <span id="changePassword">Mudar senha</span>
+          <span id="alterardados">Alterar Dados</span>
         </div>
         <div class="buttonLogOut" id="btn_logout">
           <span id="logOutAccount">Sair da conta</span>
@@ -73,6 +73,13 @@
         document
           .getElementById("btn_logout")
           .addEventListener("click", logoutUser);
+
+        const alterardados = document.getElementById("alterardados");
+
+        alterardados.addEventListener("click", function () {
+          // Redirecione o usuário para outra página
+          window.location.href = "../AlterarDados/alterardados.html";
+        });
       </script>
       <script src="perfil.js"></script>
     </div>

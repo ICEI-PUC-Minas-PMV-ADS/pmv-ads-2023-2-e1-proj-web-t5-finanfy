@@ -39,6 +39,8 @@ const dadosIniciais = {
       email: "admin@abc.com",
       questionSecurity: "3",
       respSecurity: "123",
+      urlPerfil:
+        "https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg",
     },
     {
       id: generateUUID(),
@@ -48,6 +50,8 @@ const dadosIniciais = {
       email: "user@abc.com",
       questionSecurity: "1",
       respSecurity: "123",
+      urlPerfil:
+        "https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg",
     },
   ],
 };
@@ -101,6 +105,7 @@ function loginUser(email, senha) {
       usuarioCorrente.sobrenome = usuario.sobrenome;
       usuarioCorrente.questionSecurity = usuario.questionSecurity;
       usuarioCorrente.respSecurity = usuario.respSecurity;
+      usuarioCorrente.urlPerfil = usuario.urlPerfil;
       // Salva os dados do usuário corrente no Session Storage, mas antes converte para string
       sessionStorage.setItem(
         "usuarioCorrente",
@@ -125,7 +130,7 @@ function logoutUser() {
   window.location.href = "../Login/login.html";
 }
 
-function addUser(nome, sobrenome, email, senha, questionSecurity, respSecurity) {
+function addUser(nome, sobrenome, email, senha, questionSecurity, respSecurity, urlPerfil) {
   console.log("Entrou addUser");
   // Cria um objeto de usuario para o novo usuario
   let newId = generateUUID();
@@ -137,6 +142,7 @@ function addUser(nome, sobrenome, email, senha, questionSecurity, respSecurity) 
     senha: senha,
     questionSecurity: questionSecurity,
     respSecurity: respSecurity,
+    urlPerfil: urlPerfil,
   };
 
   // Inclui o novo usuario no banco de dados baseado em JSON
