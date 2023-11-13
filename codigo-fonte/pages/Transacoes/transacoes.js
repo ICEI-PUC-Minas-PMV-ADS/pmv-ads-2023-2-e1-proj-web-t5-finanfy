@@ -1,137 +1,19 @@
-// const arrayDeObjetos = [
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-// ];
+let transacoes = localStorage.getItem("db_transacoes");
+let transacoesObj = JSON.parse(transacoes);
 
-let transacoes = window.localStorage.getItem("db_transacoes");
-let arrayDeObjetos = JSON.parse(transacoes);
+let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
+let usuarioLogado = userCurrentObj.id;
+let filtroTransacoes = [];
+
+for (const transacao of transacoesObj) {
+  if (transacao.idUsuario === usuarioLogado) {
+    filtroTransacoes.push(transacao);
+  }
+}
+
 const lista = document.getElementById("lista");
 
-arrayDeObjetos.forEach((objeto) => {
+filtroTransacoes.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
