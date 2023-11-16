@@ -36,6 +36,7 @@
       </div>
       <div class="divIconProfile">
         <img
+          id="profileImage"
           src="https://cdn.icon-icons.com/icons2/1769/PNG/512/4092564-about-mobile-ui-profile-ui-user-website_114033.png"
           alt="Icon Profile Photo"
           class="iconProfilePhoto"
@@ -79,9 +80,20 @@
         alterardados.addEventListener("click", function () {
           // Redirecione o usuário para outra página
           window.location.href = "../AlterarDados/alterardados.html";
+
         });
       </script>
       <script src="perfil.js"></script>
+      <script>
+          const profileImage = document.getElementById("profileImage");
+
+          console.log("URL PERFIL: ", urlPerfil)
+
+
+    profileImage.src = urlPerfil;
+  
+
+      </script>
     </div>
   </body>
 </html>
