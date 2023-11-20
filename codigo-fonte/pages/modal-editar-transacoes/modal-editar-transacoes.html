@@ -64,25 +64,25 @@
             <h2>Sub-categoria</h2>
             <select class="entrada">
               <!-- se receita -->
-              <option value="salario">Salário</option>
-              <option value="mesada">Mesada</option>
-              <option value="bonus">Bônus</option>
-              <option value="segundo-emprego">Segundo emprego</option>
-              <option value="renda-extra">Renda extra</option>
-              <option value="ferias">Férias</option>
-              <option value="hora-extra">Hora extra</option>
-              <option value="outros-rendimentos">Outros rendimentos</option>
+              <option value="salario" id="salario">Salário</option>
+              <option value="mesada" id="mesada">Mesada</option>
+              <option value="bonus" id="bonus">Bônus</option>
+              <option value="segundo-emprego" id="segundo-emprego">Segundo emprego</option>
+              <option value="renda-extra" id="renda-extra">Renda extra</option>
+              <option value="ferias" id="ferias">Férias</option>
+              <option value="hora-extra" id="hora-extra">Hora extra</option>
+              <option value="outros-rendimentos" id="outros-rendimentos">Outros rendimentos</option>
               <!-- se despesa -->
-              <option value="poupanca">Poupança</option>
-              <option value="alimentacao">Alimentação</option>
-              <option value="roupas">Roupas</option>
-              <option value="cosmeticos">Cosméticos</option>
-              <option value="entretenimento">Entretenimento</option>
-              <option value="saude">Saúde</option>
-              <option value="educacao">Educação</option>
-              <option value="transporte">Transporte</option>
-              <option value="moradia">Moradia</option>
-              <option value="comunicacao">Comunicação</option>
+              <option value="poupanca" id="poupanca">Poupança</option>
+              <option value="alimentacao" id="alimentacao">Alimentação</option>
+              <option value="roupas" id="roupas">Roupas</option>
+              <option value="cosmeticos" id="cosmeticos">Cosméticos</option>
+              <option value="entretenimento" id="entretenimento">Entretenimento</option>
+              <option value="saude" id="saude">Saúde</option>
+              <option value="educacao" id="educacao">Educação</option>
+              <option value="transporte" id="transporte">Transporte</option>
+              <option value="moradia" id="moradia">Moradia</option>
+              <option value="comunicacao" id="comunicacao">Comunicação</option>
             </select>
           </div>
           <div class="divDescricao">
@@ -104,5 +104,19 @@
       </div>
     </div>
     <script src="modal-editar-transacoes.js"></script>
+    <script src="../crud-transacoes/crud-transacoes.js"></script>
+    <script>
+      
+      // Cria um novo objeto URLSearchParams com a string de consulta da URL
+      const params = new URLSearchParams(window.location.search);
+
+      // Recupera o valor do parâmetro "id"
+      const idDaTransacao = params.get('id');
+      console.log(idDaTransacao);
+
+      
+        let tarefa = LerTransacao(idDaTransacao);
+      
+    </script>
   </body>
 </html>

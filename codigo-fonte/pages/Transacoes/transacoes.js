@@ -1,137 +1,24 @@
-// const arrayDeObjetos = [
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-//   {
-//     titulo: "Dribble",
-//     valor: "- R$ 102,24",
-//     data: "13 jan 22",
-//     hora: "3:24 PM",
-//   },
-//   {
-//     titulo: "Amazon",
-//     valor: "- R$ 32,24",
-//     data: "9 jan 22",
-//     hora: "2:35 PM",
-//   },
-//   {
-//     titulo: "YouTube TV",
-//     valor: "- R$ 10,17",
-//     data: "7 jan 22",
-//     hora: "6:10 PM",
-//   },
-// ];
 
-let transacoes = window.localStorage.getItem("db_transacoes");
-let arrayDeObjetos = JSON.parse(transacoes);
+let transacoesJs = window.localStorage.getItem("db_transacoes");
+let transacoesObj = JSON.parse(transacoesJs);
 const lista = document.getElementById("lista");
 
-arrayDeObjetos.forEach((objeto) => {
+// Cria um array vazio para receber as transações do usuário logado
+let filtroTransacoes = [];
+
+// Pega o usuário logado no sessionStorage e transforma em objeto
+let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
+let usuarioLogado = userCurrentObj.id;
+
+//fução para filtra transações do usuário logado
+for(const transacao of transacoesObj) {
+  if(transacao.idUsuario === usuarioLogado){
+    filtroTransacoes.push(transacao);
+  }
+}
+
+// Percorre o array de transações filtradas e cria os elementos HTML
+filtroTransacoes.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
@@ -165,6 +52,14 @@ arrayDeObjetos.forEach((objeto) => {
 
   li.appendChild(leftDiv);
   li.appendChild(rightDiv);
+
+   // Adiciona um ouvinte de eventos "click" a cada elemento "li"
+   li.addEventListener("click", () => {
+    // Recupera o ID da transação correspondente
+    const idDaTransacao = objeto.idTransacao;
+     // Redireciona o usuário para outra página para atualizar as informações
+     window.location.href = `../modal-editar-transacoes/modal-editar-transacoes.html?id=${idDaTransacao}`;
+  });
 
   lista.appendChild(li);
 });

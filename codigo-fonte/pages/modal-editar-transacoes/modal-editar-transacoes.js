@@ -20,5 +20,4 @@ window.onclick = function (event) {
 
 
 
-//fucôes de excluir e editar transações
 

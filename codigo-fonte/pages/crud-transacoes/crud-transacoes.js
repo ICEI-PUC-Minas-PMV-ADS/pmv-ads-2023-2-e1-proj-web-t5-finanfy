@@ -309,6 +309,8 @@ function calcularTotais(idUsuario) {
   //Salva o objeto no localStorage
 }
 
+
+
 function LerTransacoes () {
   return JSON.parse(localStorage.getItem("db_transacoes")) || [];
 }
@@ -317,4 +319,12 @@ function LerTransacoes () {
 function LerTransacao(idTransacao) {
   let transacoes = LerTransacoes();
   return transacoes.find((transacao) => transacao.idTransacao == idTransacao);
+}
+//Função para ler uma transação específica do localStorage
+
+function UpdateTransacao(transacao) {
+  let transacoes = LerTransacoes();
+  let index = transacoes.findIndex((obj) => obj.idTransacao == transacao.idTransacao);
+  transacoes[index] = transacao;
+  localStorage.setItem("db_transacoes", JSON.stringify(transacoes));
 }
