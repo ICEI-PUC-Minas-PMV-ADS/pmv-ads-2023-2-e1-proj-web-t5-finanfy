@@ -1,11 +1,23 @@
-// se nenhum filtro selecionado => mostrar todas as transações
+var dbTransacoes = localStorage.getItem("db_transacoes");
+var dbTransacoesObj = JSON.parse(dbTransacoes);
 
-// se filtro selecionado => mostrar apenas as transações que atendem ao filtro
+// ****************** FILTRO DE TRANSAÇÕES ****************** //
 
-var getTransacoes = localStorage.getItem("db_transacoes");
-var getTtransacoesObj = JSON.parse(getTransacoes);
-function getReceitas(value) {
-  if (value.idCategoria == "receitas") return value;
+function ListaTransacoes() {
+  // ler o valor selecionado no filtro
+  let filtroSelecionado = document.getElementById("filtro_categoria").value;
+
+  // mostrar somente transacoes cujo idCategoria seja == valor selecionado no filtro
+  if (filtroSelecionado != "") {
+    function retornaTransacaoFiltrada(value) {
+      if (value.idCategoria == filtroSelecionado) return value;
+    }
+
+    let transacoesFiltradas = dbTransacoesObj.filter(retornaTransacaoFiltrada);
+    transacoesFiltradas.forEach((transacoes) => {
+      console.log(transacoes);
+    });
+  }
 }
-let onlyReceitas = getTtransacoesObj.filter(getReceitas);
-console.log(onlyReceitas);
+
+// ********************************************************** //
