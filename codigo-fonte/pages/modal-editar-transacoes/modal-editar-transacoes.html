@@ -114,8 +114,15 @@
       const idDaTransacao = params.get('id');
       console.log(idDaTransacao);
 
+      //Preencher transaçâo
+      let transacao = LerTransacao(idDaTransacao);
+      entrada.value = transacao.entrada;
+      valor.value = transacao.valor;
+      descricao.value = transacao.descricao;
+      data.value = transacao.data;
+      hora.value = transacao.hora;
+
       
-        let tarefa = LerTransacao(idDaTransacao);
       
     </script>
   </body>
