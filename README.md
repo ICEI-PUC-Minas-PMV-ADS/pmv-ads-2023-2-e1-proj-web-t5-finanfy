@@ -11,7 +11,7 @@ O objetivo geral deste projeto é a criação de uma aplicação web de fácil a
 ## Integrantes
 
 * ~~Adalberto Guimarães~~
-* [Isabela Neto](https://github.com/isabelaCalcavara)
+* ~~Isabela Neto~~
 * [Leandro Borth](https://github.com/leandroborth)
 * [Pedro Louzada](https://github.com/PedroLouzadas)
 * [Rodolfo Almeida](https://github.com/RodollfoAlmeida)

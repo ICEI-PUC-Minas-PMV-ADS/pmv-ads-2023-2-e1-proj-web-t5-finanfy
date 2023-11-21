@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alterar Dados | finanfy</title>
+    <link rel="stylesheet" href="alterardados.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../Login/login.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Verifica se o usuário já está logado e, se não estiver, redireciona para a tela de login
+        if (!usuarioCorrente.email) {
+          window.location.href = "../Login/login.html";
+        }
+      });
+    </script>
+  </head>
+
+  <body class="container">
+    <div class="divPage">
+      <div class="profileHeader">
+        <div class="divIconBack">
+          <a href="../Perfil/perfil.html">
+            <img
+              src="../../assets/iconBtnBack.svg"
+              alt="Icon Back"
+              class="iconBtnBack"
+            />
+          </a>
+        </div>
+        <h1 id="mainTitle">Alterar Dados</h1>
+      </div>
+
+      <div class="divInput">
+        <h2 class="tituloInput">Nome</h2>
+        <input id="txt_nome" class="input" type="text" />
+      </div>
+      <div class="divInput">
+        <h2 class="tituloInput">Sobrenome</h2>
+        <input id="txt_sobrenome" class="input" type="text" />
+      </div>
+      <div class="divInput">
+        <h2 class="tituloInput">Email</h2>
+        <input id="txt_email" class="input" type="text" />
+      </div>
+      <div class="divInput">
+        <h2 class="tituloInput">Senha</h2>
+        <input id="txt_senha" class="input" type="text" />
+      </div>
+      <div class="divInput">
+        <h2 class="tituloInput">Confirmar Senha</h2>
+        <input id="txt_confirmSenha" class="input" type="text" />
+      </div>
+      <div class="divInput">
+        <h2 class="tituloInput">Imagem de Perfil</h2>
+        <input id="txt_imagemPerfil" class="input" type="text" />
+      </div>
+      <div class="divSendButton">
+        <img
+          src="../../assets/icon-send.png"
+          alt="Icon Send"
+          class="imageSend"
+          id="btn_put"
+        />
+      </div>
+    </div>
+
+    <script src="../login/login.js"></script>
+    <script src="./alterardados.js"></script>
+    <script>
+      function callPutUser(event) {
+        event.preventDefault();
+
+        let nome = document.getElementById("txt_nome").value;
+        let sobrenome = document.getElementById("txt_sobrenome").value;
+        let email = document.getElementById("txt_email").value;
+        let senha = document.getElementById("txt_senha").value;
+        let confirmSenha = document.getElementById("txt_confirmSenha").value;
+        let imagemPerfil = document.getElementById("txt_imagemPerfil").value;
+        let usuarioCorrenteDb = usuarioCorrente?.id;
+
+        if(senha !== confirmSenha) {
+          return alert("É necessário que a senha seja igual a confirmação de senha!");
+        }
+
+        putUser(
+          nome,
+          sobrenome,
+          email,
+          senha,
+          imagemPerfil,
+          usuarioCorrenteDb
+        );
+      }
+
+      document.getElementById("btn_put").addEventListener("click", callPutUser);
+    </script>
+  </body>
+</html>

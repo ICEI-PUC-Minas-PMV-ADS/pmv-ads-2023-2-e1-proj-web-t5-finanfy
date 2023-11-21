@@ -12,4 +12,8 @@ document.querySelector("#lastNameInfo").innerHTML = lastName;
 
 let email = userCurrentObj.email;
 document.querySelector("#emailInfo").innerHTML = email;
+
+
+let urlPerfil = userCurrentObj.urlPerfil;
+document.querySelector("#urlInfo").innerHTML = urlPerfil;
 // insere o email do usuário na tela de perfil

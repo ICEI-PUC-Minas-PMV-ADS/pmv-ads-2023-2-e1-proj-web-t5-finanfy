@@ -12,8 +12,8 @@ A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, 
 ### Divisão de Papéis
 
 - `Scrum Master` [Leandro Borth](https://github.com/leandroborth)
-- `Product Owner` [Isabela Neto](https://github.com/isabelaCalcavara)
-- `Equipe de Desenvolvimento` ~~Adalberto Guimarães~~, [Isabela Neto](https://github.com/isabelaCalcavara), [Leandro Borth](https://github.com/leandroborth), [Pedro Louzada](https://github.com/PedroLouzadas), [Rodolfo Almeida](https://github.com/RodollfoAlmeida), [Welbert Soares](https://github.com/Welbert-Soares)
+- `Product Owner` ~~Isabela Neto~~
+- `Equipe de Desenvolvimento` ~~Adalberto Guimarães~~, ~~Isabela Neto~~, [Leandro Borth](https://github.com/leandroborth), [Pedro Louzada](https://github.com/PedroLouzadas), [Rodolfo Almeida](https://github.com/RodollfoAlmeida), [Welbert Soares](https://github.com/Welbert-Soares)
 - `Equipe de Design` ~~Adalberto Guimarães~~, [Pedro Louzada](https://github.com/PedroLouzadas), [Rodolfo Almeida](https://github.com/RodollfoAlmeida), [Welbert Soares](https://github.com/Welbert-Soares)
 
 ### Processo

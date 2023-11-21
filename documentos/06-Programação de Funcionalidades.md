@@ -2,161 +2,146 @@
 
 Abaixo, apresentamos a implementação de algumas funcionalidades da aplicação, descritas por meio dos requisitos codificados. 
 
-### LOGIN / LOGOUT
-
-![login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/42105c3d-4654-4f73-a0a4-f99b06d53771)
-
-#### Requisito atendido
-[RF-X: adicione a descrição do requisito atendido]
-
-#### Artefatos da funcionalidade
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
-
-#### Estrutura de Dados
-[Caso exista estrutura de dados, adicione aqui]
-
-#### Instruções de acesso
-[Adicione as orientações de acesso à funcionalidade]
-
-#### Responsável
-[Pedro Louzada](https://github.com/PedroLouzadas)
-
 ### CADASTRAR CONTA
 
-![cadastrar](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/ecefb8a0-90f5-4179-96d1-23a963f3420d)
+![2-cadastro](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/99b626ea-8ded-4e53-a17f-f88b30431198)
 
 #### Requisito atendido
-[RF-X: adicione a descrição do requisito atendido]
+- `RF-01` - A aplicação deve permitir ao usuário cadastrar uma nova conta de acesso ao sistema.
 
 #### Artefatos da funcionalidade
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
-
-#### Estrutura de Dados
-[Caso exista estrutura de dados, adicione aqui]
+- `Código-fonte:` [Aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte/pages/Cadastro)
 
 #### Instruções de acesso
-[Adicione as orientações de acesso à funcionalidade]
+Na tela inicial da aplicação, clique em "Registre-se aqui".
 
 #### Responsável
-[Pedro Louzada](https://github.com/PedroLouzadas)
+- [Pedro Louzada](https://github.com/PedroLouzadas)
+
+***
+
+### LOGIN / LOGOUT
+
+![1-login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/f167335e-380d-4e6b-babe-467d537dba5e)
+
+#### Requisito atendido
+- `RF-02` - A aplicação deve permitir ao usuário entrar e sair de sua conta (login e logout).
+
+#### Artefatos da funcionalidade
+- `Código-fonte:` [Aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte/pages/Login)
+
+#### Instruções de acesso
+Na tela inicial da aplicação, clique em "Entrar na conta".
+
+#### Responsável
+- [Pedro Louzada](https://github.com/PedroLouzadas)
+
+***
 
 ### CRUD TRANSAÇÕES
 
-![crud](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/c7f50caa-6d61-477a-a09e-ab4bb2208660)
+![3-crud-transacoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/0d955f29-59b4-4dd2-893a-a74642d4f40f)
 
 #### Requisito atendido
-RF-01 - A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com data, descrição e forma de recebimento.
-RF-03 - A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com data, descrição e forma de pagamento.
+- `RF-05` - A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com data, hora, valor e descrição.
+- `RF-07` - A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com data, hora, valor e descrição.
 
 #### Artefatos da funcionalidade
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
-
-#### Estrutura de Dados
-[Caso exista estrutura de dados, adicione aqui]
-
-#### Instruções de acesso
-[Adicione as orientações de acesso à funcionalidade]
+- `Código-fonte:` [Aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte/pages/crud-transacoes)
 
 #### Responsável
-[Leandro Borth](https://github.com/leandroborth)
-[Pedro Louzada](https://github.com/PedroLouzadas)
-[Rodolfo Almeida](https://github.com/RodollfoAlmeida)
-[Welbert Soares](https://github.com/Welbert-Soares)
+- [Leandro Borth](https://github.com/leandroborth)
+- [Pedro Louzada](https://github.com/PedroLouzadas)
+- [Rodolfo Almeida](https://github.com/RodollfoAlmeida)
+- [Welbert Soares](https://github.com/Welbert-Soares)
 
+***
 
 ### POST TRANSAÇÕES (CRUD)
 
-![receita-cadastrada](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/cf064341-c1cd-447b-ba95-86b9466de72c)
-![despesa-cadastrada](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/d74b867a-9cf2-42fe-8ad5-59a5f2ccce76)
+![4-receita-cadastrada](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/600ede8a-fe0f-47ad-ac93-7001764f334a)
+![5-despesa-cadastrada](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/90126ecf-822d-4783-8e79-ecf7f2056e1d)
 
 #### Requisito atendido
-[RF-X: adicione a descrição do requisito atendido]
+- `RF-05` - A aplicação deve permitir ao usuário **cadastrar**, editar, visualizar e excluir receitas com data, hora, valor e descrição.
+- `RF-07` - A aplicação deve permitir ao usuário **cadastrar**, editar, visualizar e excluir despesas com data, hora, valor e descrição.
 
 #### Artefatos da funcionalidade
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
-
-#### Estrutura de Dados
-[Caso exista estrutura de dados, adicione aqui]
+- `Código-fonte:` [Aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte/pages/crud-transacoes)
 
 #### Instruções de acesso
-[Adicione as orientações de acesso à funcionalidade]
+Na tela principal da aplicação, clique no botão "+" na parte inferior da página, para cadastrar uma transação.
 
 #### Responsável
-[Pedro Louzada](https://github.com/PedroLouzadas)
+- [Pedro Louzada](https://github.com/PedroLouzadas)
+
+***
 
 ### GET TELA PRINCIPAL (CRUD)
 
-![get-tela-principal](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/46a65b22-e155-43c1-a07a-9844c852a608)
+![6-get-tela-principal](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/7a36c069-7c13-430c-ade9-9f4c33e37e01)
 
 #### Requisito atendido
-RF-13 - A aplicação deve permitir ao usuário visualizar seu saldo atual.
+- `RF-05` - A aplicação deve permitir ao usuário cadastrar, editar, **visualizar** e excluir receitas com data, hora, valor e descrição.
+- `RF-07` - A aplicação deve permitir ao usuário cadastrar, editar, **visualizar** e excluir despesas com data, hora, valor e descrição.
+- `RF-09` - A aplicação deve permitir ao usuário visualizar seu saldo atual.
 
 #### Artefatos da funcionalidade
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
-
-#### Estrutura de Dados
-[Caso exista estrutura de dados, adicione aqui]
-
-#### Instruções de acesso
-[Adicione as orientações de acesso à funcionalidade]
+- `Código-fonte:` [Aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte/pages/tela-principal)
 
 #### Responsável
-[Pedro Louzada](https://github.com/PedroLouzadas)
+- [Welbert Soares](https://github.com/Welbert-Soares)
+
+***
 
 ### GET RECEITAS (CRUD)
 
-![get-receitas](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/ca2c257a-9d40-4af8-abb2-02710e2ed305)
+![7-get-receitas](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/574c5f5b-0f21-4637-8f2e-0055919e883b)
 
 #### Requisito atendido
-RF-05 - A aplicação deve permitir ao usuário visualizar o valor total de suas receitas.
+- `RF-05` - A aplicação deve permitir ao usuário cadastrar, editar, **visualizar** e excluir receitas com data, hora, valor e descrição.
+- `RF-10` - A aplicação deve permitir ao usuário visualizar o valor total de suas receitas.
 
 #### Artefatos da funcionalidade
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
-
-#### Estrutura de Dados
-[Caso exista estrutura de dados, adicione aqui]
-
-#### Instruções de acesso
-[Adicione as orientações de acesso à funcionalidade]
+- `Código-fonte:` [Aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte/pages/Receitas)
 
 #### Responsável
-[Welbert Soares](https://github.com/Welbert-Soares)
+- [Welbert Soares](https://github.com/Welbert-Soares)
+
+***
 
 ### GET DESPESAS (CRUD)
 
-![get-despesas](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/136aa648-aedd-4c2d-b4ba-8408cc3b8f91)
+![8-get-despesas](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/2549fc73-31c0-4c34-acec-4e1249f378d9)
 
 #### Requisito atendido
-RF-09 - A aplicação deve permitir ao usuário visualizar o valor total de suas despesas.
+- `RF-07` - A aplicação deve permitir ao usuário cadastrar, editar, **visualizar** e excluir despesas com data, hora, valor e descrição.
+- `RF-11` - A aplicação deve permitir ao usuário visualizar o valor total de suas despesas.
 
 #### Artefatos da funcionalidade
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
-
-#### Estrutura de Dados
-[Caso exista estrutura de dados, adicione aqui]
-
-#### Instruções de acesso
-[Adicione as orientações de acesso à funcionalidade]
+- `Código-fonte:` [Aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte/pages/Despesas)
 
 #### Responsável
-[Rodolfo Almeida](https://github.com/RodollfoAlmeida)
+- [Rodolfo Almeida](https://github.com/RodollfoAlmeida)
 
-### GET TRANSAÇÕES (CRUD)
+***
 
-![get-transacoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/32aad7bb-3cc0-4d0e-ba27-938799876c05)
+### GET TRANSAÇÕES (CRUD) + FILTROS TRANSAÇÕES
+
+![9-get-transacoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/ca92ef60-c9a0-4c60-81ae-3a23db64428c)
 
 #### Requisito atendido
-[RF-X: adicione a descrição do requisito atendido]
+- `RF-05` - A aplicação deve permitir ao usuário cadastrar, editar, **visualizar** e excluir receitas com data, hora, valor e descrição.
+- `RF-07` - A aplicação deve permitir ao usuário cadastrar, editar, **visualizar** e excluir despesas com data, hora, valor e descrição.
+- `RF-12` - A aplicação deve permitir ao usuário visualizar todas as transações cadastradas.
+- `RF-13` - A aplicação deve permitir ao usuário filtrar a visualização de todas as transações por categoria e sub-categoria.
 
 #### Artefatos da funcionalidade
-[Adicione os nomes dos arquivos relacionados ao desenvolvimento da funcionalidade]
-
-#### Estrutura de Dados
-[Caso exista estrutura de dados, adicione aqui]
+- `Código-fonte:` [Aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte/pages/Transacoes)
 
 #### Instruções de acesso
-[Adicione as orientações de acesso à funcionalidade]
+Em qualquer página (principal, receitas, despesas, poupança), clique em "Ver tudo" para visualizar a lista completa de transações.
+Na página Transações, clique no botão de filtro (ícone filtro / canto superior direito) para abrir as opções de filtro de transações disponíveis.
 
 #### Responsável
-[Leandro Borth](https://github.com/leandroborth)
-
+- [Leandro Borth](https://github.com/leandroborth)
