@@ -124,9 +124,10 @@
       subCategoriaEntrada.value = transacao.idSubcategoria;
       tipo.value = transacao.idTipo;
       
-      //
+      //Atualizar transação
       const botaoAtualizar = document.querySelector('.divSendButton');
 
+      //Função para atualizar transação
       botaoAtualizar.onclick = function () {
         if (tipo.value === "" || categoriaEntrada.value === "" || subCategoriaEntrada.value === "" || data.value === "" || valor.value === "" || descricao.value === "") {
           alert("Por favor, preencha todos os campos.");
@@ -148,6 +149,16 @@
         }
       };
 
+      const botaoExcluir = document.querySelector('#botaoExcluir');
+
+      //Função para excluir transação
+      botaoExcluir.onclick = function () {
+        if (confirm("Tem certeza que deseja excluir esta transação?")) {
+          DeleteTransacao(parseInt(idDaTransacao));
+          alert("Transação apagada com sucesso!");
+          window.location.href ="../Transacoes/transacoes.html";
+        }
+      };
 
     </script>
   </body>

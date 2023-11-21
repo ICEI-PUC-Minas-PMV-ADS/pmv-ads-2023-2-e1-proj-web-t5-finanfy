@@ -304,3 +304,10 @@ function UpdateTransacao(transacao) {
   localStorage.setItem("db_transacoes", JSON.stringify(transacoes));
 }
 
+function DeleteTransacao(idExclusao) {
+  let transacoes = LerTransacoes();
+  let index = transacoes.findIndex((obj) => obj.idTransacao == idExclusao);
+  transacoes.splice(index, 1);
+  localStorage.setItem("db_transacoes", JSON.stringify(transacoes));
+}
+
