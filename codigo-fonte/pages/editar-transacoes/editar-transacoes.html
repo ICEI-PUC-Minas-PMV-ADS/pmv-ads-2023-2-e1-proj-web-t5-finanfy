@@ -24,7 +24,7 @@
           </div>
           <div class="divCategoria">
             <h2>Categoria</h2>
-            <select class="entrada">
+            <select class="entrada" id="categoriaEntrada">
               <option value="receitas">Receitas</option>
               <option value="despesas">Despesas</option>
               <option value="poupanca">Poupança</option>
@@ -32,7 +32,7 @@
           </div>
           <div class="divTipo">
             <h2>Tipo</h2>
-            <select class="entrada">
+            <select class="entrada" id="tipo">
               <!-- se receita ou poupança -->
               <option value="entrada">Entrada</option>
               <!-- se despesa ou poupança -->
@@ -41,7 +41,7 @@
           </div>
           <div class="divData">
             <h2>Data</h2>
-            <input class="entrada" type="date" value="2023-10-05" />
+            <input class="entrada" type="date" value="2023-10-05" id="data"/>
           </div>
           <div class="divValor">
             <h2>Valor</h2>
@@ -55,7 +55,7 @@
           </div>
           <div class="divSubCategoria">
             <h2>Sub-categoria</h2>
-            <select class="entrada">
+            <select class="entrada" id="subCategoriaEntrada">
               <!-- se receita -->
               <option value="salario">Salário</option>
               <option value="mesada">Mesada</option>
@@ -88,11 +88,67 @@
             />
           </div>
           <div class="divSendButton">
-            <a href=""><img src="../../assets/icon-send.png" /></a>
+            <img src="../../assets/icon-send.png" />
           </div>
         </div>
       </div>
     </div>
     <script src="modal-editar-transacoes.js"></script>
+    <script src="../crud-transacoes/crud-transacoes.js"></script>
+    <script>
+      
+      //redirecionar para tela principal
+      const close = document.querySelector('.close');
+      close.addEventListener('click', function () {
+        window.location.href = "../Transacoes/transacoes.html";
+      });
+
+      // Cria um novo objeto URLSearchParams com a string de consulta da URL
+      const params = new URLSearchParams(window.location.search);
+
+      let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
+      let usuarioLogado = userCurrentObj.id;
+      // Pega o usuário logado no sessionStorage e transforma em objeto
+
+      // Recupera o valor do parâmetro "id"
+      const idDaTransacao = params.get('id');
+      console.log(idDaTransacao);
+
+      //Preencher transaçâo
+      let transacao = LerTransacao(idDaTransacao);
+      console.log(transacao);
+      valor.value = transacao.valor;
+      categoriaEntrada.value = transacao.idCategoria;
+      descricao.value = transacao.descricao;
+      data.value = transacao.data;
+      subCategoriaEntrada.value = transacao.idSubcategoria;
+      tipo.value = transacao.idTipo;
+      
+      //
+      const botaoAtualizar = document.querySelector('.divSendButton');
+
+      botaoAtualizar.onclick = function () {
+        if (tipo.value === "" || categoriaEntrada.value === "" || subCategoriaEntrada.value === "" || data.value === "" || valor.value === "" || descricao.value === "") {
+          alert("Por favor, preencha todos os campos.");
+        } else {
+          let transacaoEditada = {
+            idTransacao: idDaTransacao,
+            idUsuario: usuarioLogado,
+            idTipo: tipo.value,
+            idCategoria: categoriaEntrada.value,
+            idSubcategoria: subCategoriaEntrada.value,
+            data: data.value,
+            hora: transacao.hora,
+            valor: valor.value,
+            descricao: descricao.value,
+          };
+          UpdateTransacao(transacaoEditada);
+          alert("Transação atualizada com sucesso!");
+          window.location.href = "../Transacoes/transacoes.html";
+        }
+      };
+
+
+    </script>
   </body>
 </html>

@@ -54,21 +54,10 @@ function postReceitas(
     }
     //Se existir, transforma o JSON em objeto
 
-    let maiorIdReceita = 0;
-    for (const receita of receitasObj) {
-      if (receita.idReceita > maiorIdReceita) {
-        maiorIdReceita = receita.idReceita;
-      }
-    }
-    //Percorre o array de receitas e verifica qual o maior id
-
-    const maiorIdReceitaIncrementado = maiorIdReceita + 1;
-    //Incrementa o maior id de receitas para que não haja conflito de ids
-
     const receita = {
       idTransacao: maiorIdTransacoesIncrementado,
       idUsuario,
-      idReceita: maiorIdReceitaIncrementado,
+      idTipo,
       idCategoria,
       idSubcategoria,
       data,
@@ -100,21 +89,10 @@ function postReceitas(
     }
     //Se existir, transforma o JSON em objeto
 
-    let maiorIdDespesa = 0;
-    for (const despesa of despesasObj) {
-      if (despesa.idDespesa > maiorIdDespesa) {
-        maiorIdDespesa = despesa.idDespesa;
-      }
-    }
-    //Percorre o array de despesas e verifica qual o maior id
-
-    const maiorIdDespesaIncrementado = maiorIdDespesa + 1;
-    //Incrementa o maior id de despesas para que não haja conflito de ids
-
     const despesa = {
       idTransacao: maiorIdTransacoesIncrementado,
       idUsuario,
-      idDespesa: maiorIdDespesaIncrementado,
+      idTipo,
       idCategoria,
       idSubcategoria,
       data,
@@ -147,21 +125,9 @@ function postReceitas(
       }
       //Se existir, transforma o JSON em objeto
 
-      let maiorIdPoupancaIn = 0;
-      for (const poupancaIn of poupancaInObj) {
-        if (poupancaIn.idPoupancaIn > maiorIdPoupancaIn) {
-          maiorIdPoupancaIn = poupancaIn.idPoupancaIn;
-        }
-      }
-      //Percorre o array de poupancaIn e verifica qual o maior id
-
-      const maiorIdPoupancaInIncrementado = maiorIdPoupancaIn + 1;
-      //Incrementa o maior id de poupancaIn para que não haja conflito de ids
-
       const poupancaIn = {
         idTransacao: maiorIdTransacoesIncrementado,
         idUsuario,
-        idPoupancaIn: maiorIdPoupancaInIncrementado,
         idTipo,
         idCategoria,
         idSubcategoria,
@@ -194,21 +160,9 @@ function postReceitas(
       }
       //Se existir, transforma o JSON em objeto
 
-      let maiorIdPoupancaOut = 0;
-      for (const poupancaOut of poupancaOutObj) {
-        if (poupancaOut.idPoupancaOut > maiorIdPoupancaOut) {
-          maiorIdPoupancaOut = poupancaOut.idPoupancaOut;
-        }
-      }
-      //Percorre o array de poupancaOut e verifica qual o maior id
-
-      const maiorIdPoupancaOutIncrementado = maiorIdPoupancaOut + 1;
-      //Incrementa o maior id de poupancaOut para que não haja conflito de ids
-
       const poupancaOut = {
         idTransacao: maiorIdTransacoesIncrementado,
         idUsuario,
-        idPoupancaOut: maiorIdPoupancaOutIncrementado,
         idTipo,
         idCategoria,
         idSubcategoria,
@@ -316,6 +270,26 @@ function LerTransacoes () {
 }
 //Função para ler as transações do localStorage
 
+function LerReceitas () {
+  return JSON.parse(localStorage.getItem("db_receitas")) || [];
+}
+//Função para ler as receitas do localStorage
+
+function LerDespesas () {
+  return JSON.parse(localStorage.getItem("db_despesas")) || [];
+}
+//Função para ler as despesas do localStorage
+
+function LerPoupancaIn () {
+  return JSON.parse(localStorage.getItem("db_poupancaIn")) || [];
+}
+//Função para ler as poupancaIn do localStorage
+
+function LerPoupancaOut () {
+  return JSON.parse(localStorage.getItem("db_poupancaOut")) || [];
+}
+//Função para ler as poupancaOut do localStorage
+
 function LerTransacao(idTransacao) {
   let transacoes = LerTransacoes();
   return transacoes.find((transacao) => transacao.idTransacao == idTransacao);
@@ -327,4 +301,41 @@ function UpdateTransacao(transacao) {
   let index = transacoes.findIndex((obj) => obj.idTransacao == transacao.idTransacao);
   transacoes[index] = transacao;
   localStorage.setItem("db_transacoes", JSON.stringify(transacoes));
+
+  if (transacao.idCategoria == "receitas" && transacao.idTipo == "entrada") {
+    let receitas = LerReceitas();
+    transacao.idTransacao = parseInt(transacao.idTransacao);
+    receitas.push(transacao);
+    localStorage.setItem("db_receitas", JSON.stringify(receitas));
+    RemoveTransacaoAnterior(transacao, ["db_despesas", "db_poupancaOut", "db_poupancaIn"]);
+  } else if (transacao.idCategoria == "despesas" && transacao.idTipo == "saida") {
+    let despesas = LerDespesas();
+    transacao.idTransacao = parseInt(transacao.idTransacao);
+    despesas.push(transacao);
+    localStorage.setItem("db_despesas", JSON.stringify(despesas));
+    RemoveTransacaoAnterior(transacao, ["db_receitas", "db_poupancaOut", "db_poupancaIn"]);
+  } else if (transacao.idCategoria == "poupanca" && transacao.idTipo == "entrada") {
+    let poupancaIn = LerPoupancaIn();
+    transacao.idTransacao = parseInt(transacao.idTransacao);
+    poupancaIn.push(transacao);
+    localStorage.setItem("db_poupancaIn", JSON.stringify(poupancaIn));
+    RemoveTransacaoAnterior(transacao, ["db_receitas", "db_despesas", "db_poupancaOut"]);
+  } else if (transacao.idCategoria == "poupanca" && transacao.idTipo == "saida") {
+    let poupancaOut = LerPoupancaOut();
+    transacao.idTransacao = parseInt(transacao.idTransacao);
+    poupancaOut.push(transacao);
+    localStorage.setItem("db_poupancaOut", JSON.stringify(poupancaOut));
+    RemoveTransacaoAnterior(transacao, ["db_receitas", "db_despesas", "db_poupancaIn"]);
+  }
+}
+
+function RemoveTransacaoAnterior(transacao, bancosDeDados) {
+  for (let i = 0; i < bancosDeDados.length; i++) {
+    let transacoes = JSON.parse(localStorage.getItem(bancosDeDados[i]));
+    let index = transacoes.findIndex((obj) => obj.idTransacao == transacao.idTransacao);
+    if (index != -1) {
+      transacoes.splice(index, 1);
+      localStorage.setItem(bancosDeDados[i], JSON.stringify(transacoes));
+    }
+  }
 }

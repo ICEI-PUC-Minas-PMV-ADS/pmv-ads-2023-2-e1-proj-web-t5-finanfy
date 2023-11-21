@@ -58,7 +58,7 @@ filtroTransacoes.forEach((objeto) => {
     // Recupera o ID da transação correspondente
     const idDaTransacao = objeto.idTransacao;
      // Redireciona o usuário para outra página para atualizar as informações
-     window.location.href = `../modal-editar-transacoes/modal-editar-transacoes.html?id=${idDaTransacao}`;
+     window.location.href = `../editar-transacoes/editar-transacoes.html?id=${idDaTransacao}`;
   });
 
   lista.appendChild(li);

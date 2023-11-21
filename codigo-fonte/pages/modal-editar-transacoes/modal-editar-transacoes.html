@@ -104,26 +104,6 @@
       </div>
     </div>
     <script src="modal-editar-transacoes.js"></script>
-    <script src="../crud-transacoes/crud-transacoes.js"></script>
-    <script>
-      
-      // Cria um novo objeto URLSearchParams com a string de consulta da URL
-      const params = new URLSearchParams(window.location.search);
-
-      // Recupera o valor do parâmetro "id"
-      const idDaTransacao = params.get('id');
-      console.log(idDaTransacao);
-
-      //Preencher transaçâo
-      let transacao = LerTransacao(idDaTransacao);
-      entrada.value = transacao.entrada;
-      valor.value = transacao.valor;
-      descricao.value = transacao.descricao;
-      data.value = transacao.data;
-      hora.value = transacao.hora;
-
-      
-      
-    </script>
+  
   </body>
 </html>
