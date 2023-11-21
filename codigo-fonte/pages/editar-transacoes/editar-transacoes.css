@@ -68,6 +68,7 @@ p {
   border-radius: 50px;
   padding: 15px 100px 15px 100px;
   background-image: linear-gradient(to top, #982626 0%, #661111 100%);
+  cursor: pointer;
 }
 
 .entrada {
@@ -102,6 +103,7 @@ p {
 
 .divSendButton {
   padding: 40px;
+  cursor: pointer;
 }
 
 select {

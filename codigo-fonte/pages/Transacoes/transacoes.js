@@ -1,3 +1,25 @@
+
+
+let transacoesJs = window.localStorage.getItem("db_transacoes");
+let transacoesObj = JSON.parse(transacoesJs);
+const lista = document.getElementById("lista");
+
+// Cria um array vazio para receber as transações do usuário logado
+let filtroTransacoes = [];
+
+// Pega o usuário logado no sessionStorage e transforma em objeto
+let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
+let usuarioLogado = userCurrentObj.id;
+
+//fução para filtra transações do usuário logado
+for(const transacao of transacoesObj) {
+  if(transacao.idUsuario === usuarioLogado){
+    filtroTransacoes.push(transacao);
+  }
+}
+
+// Percorre o array de transações filtradas e cria os elementos HTML
+=======
 let transacoes = localStorage.getItem("db_transacoes");
 let transacoesObj = JSON.parse(transacoes);
 
@@ -69,9 +91,10 @@ function ListaTransacoes() {
   }
 }
 
-// ********************************************************** //
 
-const lista = document.getElementById("lista");
+
+
+
 
 filtroTransacoes.forEach((objeto) => {
   const li = document.createElement("li");
@@ -107,6 +130,14 @@ filtroTransacoes.forEach((objeto) => {
 
   li.appendChild(leftDiv);
   li.appendChild(rightDiv);
+
+   // Adiciona um ouvinte de eventos "click" a cada elemento "li"
+   li.addEventListener("click", () => {
+    // Recupera o ID da transação correspondente
+    const idDaTransacao = objeto.idTransacao;
+     // Redireciona o usuário para outra página para atualizar as informações
+     window.location.href = `../editar-transacoes/editar-transacoes.html?id=${idDaTransacao}`;
+  });
 
   lista.appendChild(li);
 });

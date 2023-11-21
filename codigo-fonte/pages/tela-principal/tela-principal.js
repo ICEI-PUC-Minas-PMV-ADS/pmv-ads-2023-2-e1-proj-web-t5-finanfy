@@ -11,6 +11,7 @@ let poupancaInObj = JSON.parse(localStorage.getItem("db_poupancaIn")) || [];
 // Pega as poupancaIn do localStorage e transforma em objeto ou cria um array vazio
 
 let transacoesObj = JSON.parse(localStorage.getItem("db_transacoes")) || [];
+// Pega as transacoes do localStorage e transforma em objeto ou cria um array vazio
 
 let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
 let usuarioLogado = userCurrentObj.id;
