@@ -13,6 +13,7 @@ for (const transacao of transacoesObj) {
   }
 }
 
+
 // ****************** FILTRO DE TRANSAÇÕES ****************** //
 
 function ListaTransacoes() {
@@ -118,3 +119,5 @@ filtroTransacoes.forEach((objeto) => {
 
   lista.appendChild(li);
 });
+
+
