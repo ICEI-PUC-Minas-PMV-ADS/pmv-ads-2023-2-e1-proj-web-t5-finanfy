@@ -1,12 +1,6 @@
 let receitasObj = JSON.parse(localStorage.getItem("db_receitas")) || [];
 // Pega as receitas do localStorage e transforma em objeto ou cria um array vazio
 
-let poupancaOutObj = JSON.parse(localStorage.getItem("db_poupancaOut")) || [];
-// Pega as poupancaOut do localStorage e transforma em objeto ou cria um array vazio
-
-let poupancaInObj = JSON.parse(localStorage.getItem("db_poupancaIn")) || [];
-// Pega as poupancaIn do localStorage e transforma em objeto ou cria um array vazio
-
 let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto
@@ -21,6 +15,29 @@ for (const receita of receitasObj) {
 }
 // Condição para filtrar as receitas do usuário logado
 
+
+////////////////////////// test //////////////////////////
+let transacoesObj = JSON.parse(localStorage.getItem("db_transacoes")) || [];
+//Pega as transações do localStorage e transforma em objeto ou cria um array vazio
+
+let filtroTransacoes = [];
+// Cria um array vazio para receber as transações do usuário logado
+
+for (const transacao of transacoesObj) {
+  if (transacao.idUsuario === usuarioLogado) {
+    filtroTransacoes.push(transacao);
+  }
+}
+// Condição para filtrar as transações do usuário logado
+
+filtroTransacoes = filtroTransacoes.filter(transacao => transacao.idCategoria === "receitas")
+// Condição para filtrar as transações de receitas do usuário logado
+
+console.log(filtroTransacoes)
+
+
+////////////////////////// fim do test //////////////////////////
+
 function calcularTotal(a) {
   let total = 0;
   a.forEach((objeto) => {
@@ -30,8 +47,7 @@ function calcularTotal(a) {
 }
 // função para calcular a subtração do total de poupança
 
-const totalReceitas = calcularTotal(filtroReceitas);
-
+const totalReceitas = calcularTotal(filtroTransacoes);
 //valor total de receitas
 
 let totalReceitasFormatado = totalReceitas.toLocaleString("pt-br", {
@@ -46,7 +62,7 @@ document.querySelector("#valueTotalRecipes").innerHTML = totalReceitasFormatado;
 const lista = document.getElementById("lista");
 // cria uma constante para receber a lista do html
 
-filtroReceitas.forEach((objeto) => {
+filtroTransacoes.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 

@@ -13,6 +13,7 @@ for (const transacao of transacoesObj) {
   }
 }
 
+
 // ****************** FILTRO DE TRANSAÇÕES ****************** //
 
 function ListaTransacoes() {

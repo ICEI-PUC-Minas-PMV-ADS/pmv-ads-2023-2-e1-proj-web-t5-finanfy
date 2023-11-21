@@ -299,43 +299,8 @@ function LerTransacao(idTransacao) {
 function UpdateTransacao(transacao) {
   let transacoes = LerTransacoes();
   let index = transacoes.findIndex((obj) => obj.idTransacao == transacao.idTransacao);
+  transacao.idTransacao = parseInt(transacao.idTransacao);
   transacoes[index] = transacao;
   localStorage.setItem("db_transacoes", JSON.stringify(transacoes));
-
-  if (transacao.idCategoria == "receitas" && transacao.idTipo == "entrada") {
-    let receitas = LerReceitas();
-    transacao.idTransacao = parseInt(transacao.idTransacao);
-    receitas.push(transacao);
-    localStorage.setItem("db_receitas", JSON.stringify(receitas));
-    RemoveTransacaoAnterior(transacao, ["db_despesas", "db_poupancaOut", "db_poupancaIn"]);
-  } else if (transacao.idCategoria == "despesas" && transacao.idTipo == "saida") {
-    let despesas = LerDespesas();
-    transacao.idTransacao = parseInt(transacao.idTransacao);
-    despesas.push(transacao);
-    localStorage.setItem("db_despesas", JSON.stringify(despesas));
-    RemoveTransacaoAnterior(transacao, ["db_receitas", "db_poupancaOut", "db_poupancaIn"]);
-  } else if (transacao.idCategoria == "poupanca" && transacao.idTipo == "entrada") {
-    let poupancaIn = LerPoupancaIn();
-    transacao.idTransacao = parseInt(transacao.idTransacao);
-    poupancaIn.push(transacao);
-    localStorage.setItem("db_poupancaIn", JSON.stringify(poupancaIn));
-    RemoveTransacaoAnterior(transacao, ["db_receitas", "db_despesas", "db_poupancaOut"]);
-  } else if (transacao.idCategoria == "poupanca" && transacao.idTipo == "saida") {
-    let poupancaOut = LerPoupancaOut();
-    transacao.idTransacao = parseInt(transacao.idTransacao);
-    poupancaOut.push(transacao);
-    localStorage.setItem("db_poupancaOut", JSON.stringify(poupancaOut));
-    RemoveTransacaoAnterior(transacao, ["db_receitas", "db_despesas", "db_poupancaIn"]);
-  }
 }
 
-function RemoveTransacaoAnterior(transacao, bancosDeDados) {
-  for (let i = 0; i < bancosDeDados.length; i++) {
-    let transacoes = JSON.parse(localStorage.getItem(bancosDeDados[i]));
-    let index = transacoes.findIndex((obj) => obj.idTransacao == transacao.idTransacao);
-    if (index != -1) {
-      transacoes.splice(index, 1);
-      localStorage.setItem(bancosDeDados[i], JSON.stringify(transacoes));
-    }
-  }
-}

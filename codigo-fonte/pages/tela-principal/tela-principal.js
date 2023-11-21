@@ -64,6 +64,22 @@ for (const transacao of transacoesObj) {
 }
 // Condição para filtrar as transacoes do usuário logado
 
+////////////////////////// test //////////////////////////
+let filtroTransacoesReceitas = filtroTransacoes.filter(transacao => transacao.idCategoria === "receitas")
+// Condição para filtrar as transações de receitas do usuário logado
+
+let filtroTransacoesDespesas = filtroTransacoes.filter(transacao => transacao.idCategoria === "despesas")
+// Condição para filtrar as transações de despesas do usuário logado
+
+let filtroTransacoesPoupancaIn = filtroTransacoes.filter(transacao => transacao.idCategoria === "poupanca" && transacao.idTipo === "entrada")
+// Condição para filtrar as transações de poupancaIn do usuário logado
+
+let filtroTransacoesPoupancaOut = filtroTransacoes.filter(transacao => transacao.idCategoria === "poupanca" && transacao.idTipo === "saida")
+// Condição para filtrar as transações de poupancaOut do usuário logado
+
+
+////////////////////////// fim do test //////////////////////////
+
 function calcularTotal(a, b, c, d) {
   let total = 0;
   a.forEach((objeto) => {
@@ -83,10 +99,10 @@ function calcularTotal(a, b, c, d) {
 // função para calcular a subtração do total de Geral
 
 const totalGeral = calcularTotal(
-  filtroReceitas,
-  filtroPoupancaOut,
-  filtroDespesas,
-  filtroPoupancaIn
+  filtroTransacoesReceitas,
+  filtroTransacoesPoupancaOut,
+  filtroTransacoesDespesas,
+  filtroTransacoesPoupancaIn
 );
 //valor total de Geral
 
@@ -99,9 +115,13 @@ let totalGeralFormatado = totalGeral.toLocaleString("pt-BR", {
 document.querySelector("#valueTotalBalance").innerHTML = totalGeralFormatado;
 // insere o valor total de Geral no html
 
+const filtroGeral = filtroTransacoesReceitas.concat(filtroTransacoesPoupancaOut, filtroTransacoesDespesas, filtroTransacoesPoupancaIn);
+// concatena os arrays de receitas, poupancaOut, despesas e poupancaIn
+
+
 const lista = document.getElementById("lista");
 
-filtroTransacoes.forEach((objeto) => {
+filtroGeral.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
@@ -127,12 +147,12 @@ filtroTransacoes.forEach((objeto) => {
 
   const valorP = document.createElement("p");
   valorP.classList.add("valueLabelList");
-  if (filtroDespesas.includes(objeto)) {
+  if (filtroTransacoesDespesas.includes(objeto)) {
     valorP.textContent = parseFloat(-objeto.valor).toLocaleString("pt-br", {
       style: "currency",
       currency: "BRL",
     });
-  } else if (filtroPoupancaIn.includes(objeto)) {
+  } else if (filtroTransacoesPoupancaIn.includes(objeto)) {
     valorP.textContent = parseFloat(-objeto.valor).toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL",
