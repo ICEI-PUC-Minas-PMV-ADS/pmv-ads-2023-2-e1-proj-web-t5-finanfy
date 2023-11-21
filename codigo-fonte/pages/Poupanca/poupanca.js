@@ -27,6 +27,29 @@ for (const poupancaIn of poupancaInObj) {
 }
 // Condição para filtrar a poupancaIn do usuário logado
 
+////////////////////////// test //////////////////////////
+let transacoesObj = JSON.parse(localStorage.getItem("db_transacoes")) || [];
+//Pega as transações do localStorage e transforma em objeto ou cria um array vazio
+
+let filtroTransacoes = [];
+// Cria um array vazio para receber as transações do usuário logado
+
+for (const transacao of transacoesObj) {
+  if (transacao.idUsuario === usuarioLogado) {
+    filtroTransacoes.push(transacao);
+  }
+}
+// Condição para filtrar as transações do usuário logado
+
+let filtroTransacoesPoupancaIn = filtroTransacoes.filter(transacao => transacao.idCategoria === "poupanca" && transacao.idTipo === "entrada")
+// Condição para filtrar as transações de poupancaIn do usuário logado
+
+let filtroTransacoesPoupancaOut = filtroTransacoes.filter(transacao => transacao.idCategoria === "poupanca" && transacao.idTipo === "saida")
+// Condição para filtrar as transações de poupancaOut do usuário logado
+
+
+////////////////////////// fim do test //////////////////////////
+
 function calcularTotal(a, b) {
   let total = 0;
   a.forEach((objeto) => {
@@ -39,7 +62,7 @@ function calcularTotal(a, b) {
 }
 // função para calcular a subtração do total de poupança
 
-let totalPoupanca = calcularTotal(filtroPoupancaIn, filtroPoupancaOut);
+let totalPoupanca = calcularTotal(filtroTransacoesPoupancaIn, filtroTransacoesPoupancaOut);
 //valor total de poupança
 
 let totalPoupancaFormatado = totalPoupanca.toLocaleString("pt-br", {
@@ -51,7 +74,7 @@ let totalPoupancaFormatado = totalPoupanca.toLocaleString("pt-br", {
 document.querySelector("#valueTotalSavings").innerHTML = totalPoupancaFormatado;
 // insere o valor total de poupança no html
 
-const filtroPoupanca = filtroPoupancaOut.concat(filtroPoupancaIn);
+const filtroPoupanca = filtroTransacoesPoupancaOut.concat(filtroTransacoesPoupancaIn);
 // concatena os arrays de poupancaIn e poupancaOut
 
 const lista = document.getElementById("lista");
@@ -83,7 +106,7 @@ filtroPoupanca.forEach((objeto) => {
 
   const valorP = document.createElement("p");
   valorP.classList.add("valueLabelList");
-  if (filtroPoupancaOut.includes(objeto)) {
+  if (filtroTransacoesPoupancaOut.includes(objeto)) {
     valorP.textContent = parseFloat(-objeto.valor).toLocaleString("pt-br", {
       style: "currency",
       currency: "BRL",
