@@ -303,6 +303,7 @@ function UpdateTransacao(transacao) {
   transacoes[index] = transacao;
   localStorage.setItem("db_transacoes", JSON.stringify(transacoes));
 }
+//Função para atualizar uma transação específica do localStorage
 
 function DeleteTransacao(idExclusao) {
   let transacoes = LerTransacoes();
@@ -310,4 +311,5 @@ function DeleteTransacao(idExclusao) {
   transacoes.splice(index, 1);
   localStorage.setItem("db_transacoes", JSON.stringify(transacoes));
 }
+//Função para excluir uma transação específica do localStorage
 

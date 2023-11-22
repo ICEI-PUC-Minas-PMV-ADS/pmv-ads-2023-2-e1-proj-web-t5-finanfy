@@ -72,11 +72,18 @@ function ListaTransacoes() {
 
 // ********************************************************** //
 
-const lista = document.getElementById("lista");
-
 filtroTransacoes.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
+
+  const newDiv = document.createElement("div");
+  newDiv.classList.add("iconDiv");
+
+  const icon = document.createElement("i");
+  icon.classList.add("fa");
+  icon.classList.add("fa-pencil");
+
+  newDiv.appendChild(icon);
 
   const leftDiv = document.createElement("div");
   leftDiv.classList.add("leftList");
@@ -87,7 +94,10 @@ filtroTransacoes.forEach((objeto) => {
 
   const dataP = document.createElement("p");
   dataP.classList.add("dateLabelList");
-  dataP.textContent = objeto.data;
+  const data = new Date(objeto.data);
+  data.setDate(data.getDate() + 1);
+  dataP.textContent = data.toLocaleDateString("pt-BR");
+  // formata a data para o padrão brasileiro e adiciona um dia
 
   leftDiv.appendChild(tituloP);
   leftDiv.appendChild(dataP);
@@ -97,7 +107,11 @@ filtroTransacoes.forEach((objeto) => {
 
   const valorP = document.createElement("p");
   valorP.classList.add("valueLabelList");
-  valorP.textContent = objeto.valor;
+  if ((objeto.idCategoria === "despesas" && objeto.idTipo === "saida") || (objeto.idCategoria === "poupanca" && objeto.idTipo === "entrada")) {
+    valorP.textContent = parseFloat(-objeto.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  } else {
+    valorP.textContent = parseFloat(objeto.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  }
 
   const horaP = document.createElement("p");
   horaP.classList.add("hourLabelList");
@@ -106,18 +120,20 @@ filtroTransacoes.forEach((objeto) => {
   rightDiv.appendChild(valorP);
   rightDiv.appendChild(horaP);
 
+  li.appendChild(newDiv);
   li.appendChild(leftDiv);
   li.appendChild(rightDiv);
 
-   // Adiciona um ouvinte de eventos "click" a cada elemento "li"
-   li.addEventListener("click", () => {
+  // Adiciona um ouvinte de eventos "click" ao ícone
+  newDiv.addEventListener("click", () => {
     // Recupera o ID da transação correspondente
     const idDaTransacao = objeto.idTransacao;
-     // Redireciona o usuário para outra página para atualizar as informações
-     window.location.href = `../editar-transacoes/editar-transacoes.html?id=${idDaTransacao}`;
+    // Redireciona o usuário para outra página para atualizar as informações
+    window.location.href = `../editar-transacoes/editar-transacoes.html?id=${idDaTransacao}`;
   });
 
   lista.appendChild(li);
 });
+
 
 
