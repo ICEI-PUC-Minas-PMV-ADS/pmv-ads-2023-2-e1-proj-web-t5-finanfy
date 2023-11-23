@@ -89,22 +89,34 @@ function exibirTransacoes() {
     horaP.classList.add("hourLabelList");
     horaP.textContent = objeto.hora;
 
-    rightDiv.appendChild(valorP);
-    rightDiv.appendChild(horaP);
 
-    li.appendChild(leftDiv);
-    li.appendChild(rightDiv);
+filtroTransacoes.forEach((objeto) => {
+  const li = document.createElement("li");
+  li.classList.add("itemList");
 
-    lista.appendChild(li);
-  });
-}
+  const newDiv = document.createElement("div");
+  newDiv.classList.add("iconDiv");
+
+  const icon = document.createElement("i");
+  icon.classList.add("fa");
+  icon.classList.add("fa-pencil");
+
+  newDiv.appendChild(icon);
+
+  const leftDiv = document.createElement("div");
+  leftDiv.classList.add("leftList");
+
 
 // ****************** EXIBIR TRANSAÇÕES FILTRADAS ****************** //
 
-function exibirTransacoesFiltradas() {
-  transacoesFiltradas.forEach((transacoes) => {
-    const li = document.createElement("li");
-    li.classList.add("itemList");
+
+  const dataP = document.createElement("p");
+  dataP.classList.add("dateLabelList");
+  const data = new Date(objeto.data);
+  data.setDate(data.getDate() + 1);
+  dataP.textContent = data.toLocaleDateString("pt-BR");
+  // formata a data para o padrão brasileiro e adiciona um dia
+
 
     const leftDiv = document.createElement("div");
     leftDiv.classList.add("leftList");
@@ -113,9 +125,14 @@ function exibirTransacoesFiltradas() {
     tituloP.classList.add("titleLabelList");
     tituloP.textContent = transacoes.descricao;
 
-    const dataP = document.createElement("p");
-    dataP.classList.add("dateLabelList");
-    dataP.textContent = transacoes.data;
+  const valorP = document.createElement("p");
+  valorP.classList.add("valueLabelList");
+  if ((objeto.idCategoria === "despesas" && objeto.idTipo === "saida") || (objeto.idCategoria === "poupanca" && objeto.idTipo === "entrada")) {
+    valorP.textContent = parseFloat(-objeto.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  } else {
+    valorP.textContent = parseFloat(objeto.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  }
+
 
     leftDiv.appendChild(tituloP);
     leftDiv.appendChild(dataP);
@@ -123,13 +140,19 @@ function exibirTransacoesFiltradas() {
     const rightDiv = document.createElement("div");
     rightDiv.classList.add("rightList");
 
-    const valorP = document.createElement("p");
-    valorP.classList.add("valueLabelList");
-    valorP.textContent = transacoes.valor;
 
-    const horaP = document.createElement("p");
-    horaP.classList.add("hourLabelList");
-    horaP.textContent = transacoes.hora;
+  li.appendChild(newDiv);
+  li.appendChild(leftDiv);
+  li.appendChild(rightDiv);
+
+  // Adiciona um ouvinte de eventos "click" ao ícone
+  newDiv.addEventListener("click", () => {
+    // Recupera o ID da transação correspondente
+    const idDaTransacao = objeto.idTransacao;
+    // Redireciona o usuário para outra página para atualizar as informações
+    window.location.href = `../editar-transacoes/editar-transacoes.html?id=${idDaTransacao}`;
+  });
+
 
     rightDiv.appendChild(valorP);
     rightDiv.appendChild(horaP);
@@ -137,6 +160,6 @@ function exibirTransacoesFiltradas() {
     li.appendChild(leftDiv);
     li.appendChild(rightDiv);
 
-    lista.appendChild(li);
-  });
-}
+
+
+

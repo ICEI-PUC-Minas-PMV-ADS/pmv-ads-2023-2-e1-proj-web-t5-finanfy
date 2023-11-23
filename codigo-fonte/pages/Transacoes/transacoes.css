@@ -217,10 +217,23 @@ ul::-webkit-scrollbar-thumb:hover {
   color: #b9b2c4;
   bottom: 5px;
 }
+.iconDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  cursor: pointer;
+  opacity: 50%;
+}
+.iconDiv:hover {
+  opacity: 100%;
+}
 
 .leftList {
   text-align: left;
-  margin-right: 15px;
+  margin-right: auto;
 }
 
 .rightList {

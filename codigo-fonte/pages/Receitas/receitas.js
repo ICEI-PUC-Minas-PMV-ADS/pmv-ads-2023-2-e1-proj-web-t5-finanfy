@@ -1,22 +1,9 @@
-let receitasObj = JSON.parse(localStorage.getItem("db_receitas")) || [];
-// Pega as receitas do localStorage e transforma em objeto ou cria um array vazio
+
 
 let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto
 
-let filtroReceitas = [];
-// Cria um array vazio para receber as receitas do usuário logado
-
-for (const receita of receitasObj) {
-  if (receita.idUsuario === usuarioLogado) {
-    filtroReceitas.push(receita);
-  }
-}
-// Condição para filtrar as receitas do usuário logado
-
-
-////////////////////////// test //////////////////////////
 let transacoesObj = JSON.parse(localStorage.getItem("db_transacoes")) || [];
 //Pega as transações do localStorage e transforma em objeto ou cria um array vazio
 
@@ -30,13 +17,9 @@ for (const transacao of transacoesObj) {
 }
 // Condição para filtrar as transações do usuário logado
 
-filtroTransacoes = filtroTransacoes.filter(transacao => transacao.idCategoria === "receitas")
+filtroTransacoesReceitas = filtroTransacoes.filter(transacao => transacao.idCategoria === "receitas")
 // Condição para filtrar as transações de receitas do usuário logado
 
-console.log(filtroTransacoes)
-
-
-////////////////////////// fim do test //////////////////////////
 
 function calcularTotal(a) {
   let total = 0;
@@ -47,7 +30,7 @@ function calcularTotal(a) {
 }
 // função para calcular a subtração do total de poupança
 
-const totalReceitas = calcularTotal(filtroTransacoes);
+const totalReceitas = calcularTotal(filtroTransacoesReceitas);
 //valor total de receitas
 
 let totalReceitasFormatado = totalReceitas.toLocaleString("pt-br", {
@@ -62,7 +45,7 @@ document.querySelector("#valueTotalRecipes").innerHTML = totalReceitasFormatado;
 const lista = document.getElementById("lista");
 // cria uma constante para receber a lista do html
 
-filtroTransacoes.forEach((objeto) => {
+filtroTransacoesReceitas.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 

@@ -18,7 +18,7 @@
           </div>
           <div class="divSaldo">
             <h2>Seu saldo atual é de</h2>
-            <p>R$ 1.924,35</p>
+            <p id="saldoAtual">R$ 1.924,35</p>
             <img
               class="icons"
               id="iconVisibility"
@@ -113,8 +113,8 @@
     </script>
     <script src="../crud-transacoes/crud-transacoes.js"></script>
     <script src="../Login/login.js"></script>
+    <script src="../movimentar/movimentar.js"></script>
     <script>
-      console.log("UsuarioCorrente: ", usuarioCorrente);
       function salvarTransacao(event) {
         event.preventDefault();
 
