@@ -167,4 +167,3 @@ button.addEventListener("click", function () {
     tottalRecipes.textContent = "R$ ";
   }
 });
-
