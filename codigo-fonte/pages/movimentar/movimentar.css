@@ -56,6 +56,14 @@ p {
   color: #ffffff;
 }
 
+#saldoAtual {
+  font-size: 32px;
+  font-weight: 500;
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+}
+
 .divSaldo {
   padding: 30px;
 }
@@ -93,6 +101,12 @@ p {
   border-width: 1px;
   border-color: #b9b2c4;
   border-radius: 30px;
+}
+
+#valor::-webkit-outer-spin-button,
+#valor::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 #descricao {

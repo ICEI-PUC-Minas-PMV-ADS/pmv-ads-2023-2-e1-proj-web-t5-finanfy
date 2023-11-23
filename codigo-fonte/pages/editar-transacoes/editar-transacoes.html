@@ -41,7 +41,7 @@
           </div>
           <div class="divData">
             <h2>Data</h2>
-            <input class="entrada" type="date" value="2023-10-05" id="data"/>
+            <input class="entrada" type="date" value="2023-10-05" id="data" />
           </div>
           <div class="divValor">
             <h2>Valor</h2>
@@ -96,22 +96,23 @@
     <script src="modal-editar-transacoes.js"></script>
     <script src="../crud-transacoes/crud-transacoes.js"></script>
     <script>
-      
       //redirecionar para tela principal
-      const close = document.querySelector('.close');
-      close.addEventListener('click', function () {
+      const close = document.querySelector(".close");
+      close.addEventListener("click", function () {
         window.location.href = "../Transacoes/transacoes.html";
       });
 
       // Cria um novo objeto URLSearchParams com a string de consulta da URL
       const params = new URLSearchParams(window.location.search);
 
-      let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
+      let userCurrentObj = JSON.parse(
+        sessionStorage.getItem("usuarioCorrente")
+      );
       let usuarioLogado = userCurrentObj.id;
       // Pega o usuário logado no sessionStorage e transforma em objeto
 
       // Recupera o valor do parâmetro "id"
-      const idDaTransacao = params.get('id');
+      const idDaTransacao = params.get("id");
       console.log(idDaTransacao);
 
       //Preencher transaçâo
@@ -123,13 +124,20 @@
       data.value = transacao.data;
       subCategoriaEntrada.value = transacao.idSubcategoria;
       tipo.value = transacao.idTipo;
-      
+
       //Atualizar transação
-      const botaoAtualizar = document.querySelector('.divSendButton');
+      const botaoAtualizar = document.querySelector(".divSendButton");
 
       //Função para atualizar transação
       botaoAtualizar.onclick = function () {
-        if (tipo.value === "" || categoriaEntrada.value === "" || subCategoriaEntrada.value === "" || data.value === "" || valor.value === "" || descricao.value === "") {
+        if (
+          tipo.value === "" ||
+          categoriaEntrada.value === "" ||
+          subCategoriaEntrada.value === "" ||
+          data.value === "" ||
+          valor.value === "" ||
+          descricao.value === ""
+        ) {
           alert("Por favor, preencha todos os campos.");
         } else {
           let transacaoEditada = {
@@ -149,17 +157,16 @@
         }
       };
 
-      const botaoExcluir = document.querySelector('#botaoExcluir');
+      const botaoExcluir = document.querySelector("#botaoExcluir");
 
       //Função para excluir transação
       botaoExcluir.onclick = function () {
         if (confirm("Tem certeza que deseja excluir esta transação?")) {
           DeleteTransacao(parseInt(idDaTransacao));
           alert("Transação apagada com sucesso!");
-          window.location.href ="../Transacoes/transacoes.html";
+          window.location.href = "../Transacoes/transacoes.html";
         }
       };
-
     </script>
   </body>
 </html>

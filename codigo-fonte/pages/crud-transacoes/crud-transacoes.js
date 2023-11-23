@@ -82,7 +82,6 @@ function postReceitas(
 
     window.location.href = "../tela-principal/tela-principal.html";
     //Redireciona para a tela principal
-
   } else if (idCategoria === "despesas") {
     let despesasJson = localStorage.getItem("db_despesas");
     let despesasObj = [];
@@ -121,7 +120,6 @@ function postReceitas(
 
     window.location.href = "../tela-principal/tela-principal.html";
     //Redireciona para a tela principal
-
   } else if (idCategoria === "poupanca") {
     if (idTipo === "entrada") {
       let poupancaInJson = localStorage.getItem("db_poupancaIn");
@@ -161,7 +159,6 @@ function postReceitas(
 
       window.location.href = "../tela-principal/tela-principal.html";
       //Redireciona para a tela principal
-
     } else if (idTipo === "saida") {
       let poupancaOutJson = localStorage.getItem("db_poupancaOut");
       let poupancaOutObj = [];
@@ -278,28 +275,27 @@ function calcularTotais(idUsuario) {
   //Salva o objeto no localStorage
 }
 
-
-function LerTransacoes () {
+function LerTransacoes() {
   return JSON.parse(localStorage.getItem("db_transacoes")) || [];
 }
 //Função para ler as transações do localStorage
 
-function LerReceitas () {
+function LerReceitas() {
   return JSON.parse(localStorage.getItem("db_receitas")) || [];
 }
 //Função para ler as receitas do localStorage
 
-function LerDespesas () {
+function LerDespesas() {
   return JSON.parse(localStorage.getItem("db_despesas")) || [];
 }
 //Função para ler as despesas do localStorage
 
-function LerPoupancaIn () {
+function LerPoupancaIn() {
   return JSON.parse(localStorage.getItem("db_poupancaIn")) || [];
 }
 //Função para ler as poupancaIn do localStorage
 
-function LerPoupancaOut () {
+function LerPoupancaOut() {
   return JSON.parse(localStorage.getItem("db_poupancaOut")) || [];
 }
 //Função para ler as poupancaOut do localStorage
@@ -312,7 +308,9 @@ function LerTransacao(idTransacao) {
 
 function UpdateTransacao(transacao) {
   let transacoes = LerTransacoes();
-  let index = transacoes.findIndex((obj) => obj.idTransacao == transacao.idTransacao);
+  let index = transacoes.findIndex(
+    (obj) => obj.idTransacao == transacao.idTransacao
+  );
   transacao.idTransacao = parseInt(transacao.idTransacao);
   transacoes[index] = transacao;
   localStorage.setItem("db_transacoes", JSON.stringify(transacoes));
@@ -326,5 +324,3 @@ function DeleteTransacao(idExclusao) {
   localStorage.setItem("db_transacoes", JSON.stringify(transacoes));
 }
 //Função para excluir uma transação específica do localStorage
-
-
