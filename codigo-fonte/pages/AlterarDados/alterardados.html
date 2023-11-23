@@ -48,11 +48,11 @@
         <input id="txt_email" class="input" type="text" />
       </div>
       <div class="divInput">
-        <h2 class="tituloInput">Alterar Senha</h2>
+        <h2 class="tituloInput">Senha</h2>
         <input id="txt_senha" class="input" type="text" />
       </div>
       <div class="divInput">
-        <h2 class="tituloInput">Confirmar Alteração de Senha</h2>
+        <h2 class="tituloInput">Confirmar Senha</h2>
         <input id="txt_confirmSenha" class="input" type="text" />
       </div>
       <div class="divInput">
@@ -72,25 +72,6 @@
     <script src="../login/login.js"></script>
     <script src="./alterardados.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        if (!usuarioCorrente.email) {
-          window.location.href = "../Login/login.html";
-        } else {
-          // Preencher os campos com os dados do usuário corrente
-          let usuario =
-            JSON.parse(sessionStorage.getItem("usuarioCorrente")) || {};
-
-          document.getElementById("txt_nome").value = usuario.nome || "";
-          document.getElementById("txt_sobrenome").value =
-            usuario.sobrenome || "";
-          document.getElementById("txt_email").value = usuario.email || "";
-          document.getElementById("txt_senha").value = ""; // Deixando a senha vazia por questões de segurança
-          document.getElementById("txt_confirmSenha").value = ""; // Deixando a confirmação de senha vazia
-          document.getElementById("txt_imagemPerfil").value =
-            usuario.urlPerfil || "";
-        }
-      });
-
       function callPutUser(event) {
         event.preventDefault();
 
@@ -102,13 +83,18 @@
         let imagemPerfil = document.getElementById("txt_imagemPerfil").value;
         let usuarioCorrenteDb = usuarioCorrente?.id;
 
-        if (senha !== confirmSenha) {
-          return alert(
-            "É necessário que a senha seja igual a confirmação de senha!"
-          );
+        if(senha !== confirmSenha) {
+          return alert("É necessário que a senha seja igual a confirmação de senha!");
         }
 
-        putUser(nome, sobrenome, email, senha, imagemPerfil, usuarioCorrenteDb);
+        putUser(
+          nome,
+          sobrenome,
+          email,
+          senha,
+          imagemPerfil,
+          usuarioCorrenteDb
+        );
       }
 
       document.getElementById("btn_put").addEventListener("click", callPutUser);
