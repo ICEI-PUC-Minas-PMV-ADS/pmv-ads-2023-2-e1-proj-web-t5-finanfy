@@ -1,7 +1,5 @@
-
 // Pega as transacoes do localStorage e transforma em objeto ou cria um array vazio
 let transacoesObj = JSON.parse(localStorage.getItem("db_transacoes")) || [];
-
 
 // Pega o usuário logado no sessionStorage e transforma em objeto
 let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
@@ -23,16 +21,26 @@ for (const transacao of transacoesObj) {
 }
 
 // Condição para filtrar as transações de receitas do usuário logado
-let filtroTransacoesReceitas = filtroTransacoes.filter(transacao => transacao.idCategoria === "receitas")
+let filtroTransacoesReceitas = filtroTransacoes.filter(
+  (transacao) => transacao.idCategoria === "receitas"
+);
 
 // Condição para filtrar as transações de despesas do usuário logado
-let filtroTransacoesDespesas = filtroTransacoes.filter(transacao => transacao.idCategoria === "despesas")
+let filtroTransacoesDespesas = filtroTransacoes.filter(
+  (transacao) => transacao.idCategoria === "despesas"
+);
 
 // Condição para filtrar as transações de poupancaIn do usuário logado
-let filtroTransacoesPoupancaIn = filtroTransacoes.filter(transacao => transacao.idCategoria === "poupanca" && transacao.idTipo === "entrada")
+let filtroTransacoesPoupancaIn = filtroTransacoes.filter(
+  (transacao) =>
+    transacao.idCategoria === "poupanca" && transacao.idTipo === "entrada"
+);
 
 // Condição para filtrar as transações de poupancaOut do usuário logado
-let filtroTransacoesPoupancaOut = filtroTransacoes.filter(transacao => transacao.idCategoria === "poupanca" && transacao.idTipo === "saida")
+let filtroTransacoesPoupancaOut = filtroTransacoes.filter(
+  (transacao) =>
+    transacao.idCategoria === "poupanca" && transacao.idTipo === "saida"
+);
 
 // função para calcular a subtração do total de Geral
 function calcularTotal(a, b, c, d) {
@@ -70,8 +78,11 @@ let totalGeralFormatado = totalGeral.toLocaleString("pt-BR", {
 document.querySelector("#valueTotalBalance").innerHTML = totalGeralFormatado;
 
 // concatena os arrays de receitas, poupancaOut, despesas e poupancaIn
-const filtroGeral = filtroTransacoesReceitas.concat(filtroTransacoesPoupancaOut, filtroTransacoesDespesas, filtroTransacoesPoupancaIn);
-
+const filtroGeral = filtroTransacoesReceitas.concat(
+  filtroTransacoesPoupancaOut,
+  filtroTransacoesDespesas,
+  filtroTransacoesPoupancaIn
+);
 
 // Criação da lista de Geral
 const lista = document.getElementById("lista");
@@ -102,10 +113,19 @@ filtroTransacoes.forEach((objeto) => {
 
   const valorP = document.createElement("p");
   valorP.classList.add("valueLabelList");
-  if ((objeto.idCategoria === "despesas" && objeto.idTipo === "saida") || (objeto.idCategoria === "poupanca" && objeto.idTipo === "entrada")) {
-    valorP.textContent = parseFloat(-objeto.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  if (
+    (objeto.idCategoria === "despesas" && objeto.idTipo === "saida") ||
+    (objeto.idCategoria === "poupanca" && objeto.idTipo === "entrada")
+  ) {
+    valorP.textContent = parseFloat(-objeto.valor).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
   } else {
-    valorP.textContent = parseFloat(objeto.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    valorP.textContent = parseFloat(objeto.valor).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
   }
 
   const horaP = document.createElement("p");
@@ -120,4 +140,3 @@ filtroTransacoes.forEach((objeto) => {
 
   lista.appendChild(li);
 });
-

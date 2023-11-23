@@ -1,23 +1,10 @@
-let despesasJs = localStorage.getItem("db_despesas");
-let despesasObj = JSON.parse(despesasJs) || [];
-// Pega as despesas do localStorage e transforma em objeto ou cria um array vazio
+
 
 let userCurrentJs = sessionStorage.getItem("usuarioCorrente");
 let userCurrentObj = JSON.parse(userCurrentJs);
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto
 
-let filtroDespesas = [];
-// Cria um array vazio para receber as despesas do usuário logado
-
-for (const Despesas of despesasObj) {
-  if (Despesas.idUsuario === usuarioLogado) {
-    filtroDespesas.push(Despesas);
-  }
-}
-// Condição para filtrar as despesas do usuário logado
-
-////////////////////////// test //////////////////////////
 let transacoesObj = JSON.parse(localStorage.getItem("db_transacoes")) || [];
 //Pega as transações do localStorage e transforma em objeto ou cria um array vazio
 
@@ -31,13 +18,12 @@ for (const transacao of transacoesObj) {
 }
 // Condição para filtrar as transações do usuário logado
 
-filtroTransacoes = filtroTransacoes.filter(transacao => transacao.idCategoria === "despesas")
+filtroTransacoesDespesas = filtroTransacoes.filter(
+  (transacao) => transacao.idCategoria === "despesas"
+);
 // Condição para filtrar as transações de receitas do usuário logado
 
-console.log(filtroTransacoes)
-
-
-////////////////////////// fim do test //////////////////////////
+console.log(filtroTransacoes);
 
 function calcularTotal(a) {
   let total = 0;
@@ -48,7 +34,7 @@ function calcularTotal(a) {
 }
 // função para calcular a subtração do total de poupança
 
-const totalDespesas = calcularTotal(filtroTransacoes);
+const totalDespesas = calcularTotal(filtroTransacoesDespesas);
 
 //valor total de despesas
 
@@ -64,7 +50,7 @@ document.querySelector("#valueTotalExpense").innerHTML = totalDespesasFormatado;
 const listas = document.getElementById("listas");
 // cria uma constante para receber a lista do html
 
-filtroTransacoes.forEach((objeto) => {
+filtroTransacoesDespesas.forEach((objeto) => {
   const li = document.createElement("li");
   li.classList.add("itemList");
 
@@ -110,3 +96,28 @@ filtroTransacoes.forEach((objeto) => {
 });
 // função para criar a lista de dspesas no html
 
+const button = document.querySelector(".iconVisibilityWhite");
+button.addEventListener("click", function () {
+  const valueLabels = document.querySelectorAll(".valueLabelList");
+  valueLabels.forEach(function (label) {
+    if (label.style.display === "flex") {
+      label.style.display = "block";
+      label.textContent = label.dataset.value;
+    } else {
+      label.style.display = "flex";
+      label.dataset.value = label.textContent;
+      label.textContent = "*****";
+    }
+  });
+  // função para esconder o valor da lista de despesas
+
+  const tottalRecipes = document.querySelector("#valueTotalExpense");
+  if (tottalRecipes.style.display === "flex") {
+    tottalRecipes.style.display = "block";
+    tottalRecipes.textContent = tottalRecipes.dataset.value;
+  } else {
+    tottalRecipes.style.display = "flex";
+    tottalRecipes.dataset.value = tottalRecipes.textContent;
+    tottalRecipes.textContent = "R$ ";
+  }
+});

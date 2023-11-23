@@ -1,33 +1,11 @@
-let poupancaOutObj = JSON.parse(localStorage.getItem("db_poupancaOut")) || [];
-// Pega as poupancaOut do localStorage e transforma em objeto ou cria um array vazio
 
 
-let poupancaInObj = JSON.parse(localStorage.getItem("db_poupancaIn")) || [];
-// Pega as poupancaIn do localStorage e transforma em objeto ou cria um array vazio
+
 
 let userCurrentObj = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
 let usuarioLogado = userCurrentObj.id;
 // Pega o usuário logado no sessionStorage e transforma em objeto ou cria um array vazio
 
-let filtroPoupancaOut = [];
-let filtroPoupancaIn = [];
-// Cria um array vazio para receber as poupancaOut e poupancaIn do usuário logado
-
-for (const poupancaOut of poupancaOutObj) {
-  if (poupancaOut.idUsuario === usuarioLogado) {
-    filtroPoupancaOut.push(poupancaOut);
-  }
-}
-// Condição para filtrar a poupancaOut do usuário logado
-
-for (const poupancaIn of poupancaInObj) {
-  if (poupancaIn.idUsuario === usuarioLogado) {
-    filtroPoupancaIn.push(poupancaIn);
-  }
-}
-// Condição para filtrar a poupancaIn do usuário logado
-
-////////////////////////// test //////////////////////////
 let transacoesObj = JSON.parse(localStorage.getItem("db_transacoes")) || [];
 //Pega as transações do localStorage e transforma em objeto ou cria um array vazio
 
@@ -46,9 +24,6 @@ let filtroTransacoesPoupancaIn = filtroTransacoes.filter(transacao => transacao.
 
 let filtroTransacoesPoupancaOut = filtroTransacoes.filter(transacao => transacao.idCategoria === "poupanca" && transacao.idTipo === "saida")
 // Condição para filtrar as transações de poupancaOut do usuário logado
-
-
-////////////////////////// fim do test //////////////////////////
 
 function calcularTotal(a, b) {
   let total = 0;
