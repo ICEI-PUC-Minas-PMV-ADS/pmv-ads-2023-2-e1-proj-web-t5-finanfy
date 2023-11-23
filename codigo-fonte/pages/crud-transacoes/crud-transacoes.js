@@ -79,6 +79,10 @@ function postReceitas(
 
     alert("Receita cadastrada com sucesso!");
     //Exibe mensagem de sucesso
+
+    window.location.href = "../tela-principal/tela-principal.html";
+    //Redireciona para a tela principal
+
   } else if (idCategoria === "despesas") {
     let despesasJson = localStorage.getItem("db_despesas");
     let despesasObj = [];
@@ -114,6 +118,10 @@ function postReceitas(
 
     alert("Despesa cadastrada com sucesso!");
     //Exibe mensagem de sucesso
+
+    window.location.href = "../tela-principal/tela-principal.html";
+    //Redireciona para a tela principal
+
   } else if (idCategoria === "poupanca") {
     if (idTipo === "entrada") {
       let poupancaInJson = localStorage.getItem("db_poupancaIn");
@@ -150,6 +158,10 @@ function postReceitas(
 
       alert("Poupança de entrada cadastrada com sucesso!");
       //Exibe mensagem de sucesso
+
+      window.location.href = "../tela-principal/tela-principal.html";
+      //Redireciona para a tela principal
+
     } else if (idTipo === "saida") {
       let poupancaOutJson = localStorage.getItem("db_poupancaOut");
       let poupancaOutObj = [];
@@ -185,6 +197,9 @@ function postReceitas(
 
       alert("Poupança de saída cadastrada com sucesso!");
       //Exibe mensagem de sucesso
+
+      window.location.href = "../tela-principal/tela-principal.html";
+      //Redireciona para a tela principal
     }
   }
   calcularTotais(idUsuario);
@@ -264,7 +279,6 @@ function calcularTotais(idUsuario) {
 }
 
 
-
 function LerTransacoes () {
   return JSON.parse(localStorage.getItem("db_transacoes")) || [];
 }
@@ -312,4 +326,5 @@ function DeleteTransacao(idExclusao) {
   localStorage.setItem("db_transacoes", JSON.stringify(transacoes));
 }
 //Função para excluir uma transação específica do localStorage
+
 
