@@ -7,17 +7,19 @@ function postReceitas(
   valor,
   idSubcategoria,
   descricao
-) {
+) 
+
+{
+ 
   if (!idUsuario || idUsuario === "") {
     return alert("Login expirado. Logue novamente!");
   }
   if (!idCategoria || idCategoria === "") {
      return alert("É necessário definir uma categoria");
-  }
-  /* if (!idCategoria || idCategoria == "receitas") {
-      idTipo.disabled = true;
-  }*/
-   
+  }   
+  if (!idTipo || idTipo === "") {
+    return alert("É necessário definir um tipo");
+ } 
   if (!valor || valor == 0) {
     return alert("É  necessário preencher um valor");
   }
