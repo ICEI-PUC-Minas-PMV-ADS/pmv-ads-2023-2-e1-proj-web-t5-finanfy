@@ -30,7 +30,10 @@
         }
       }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body class="container">
     <div class="divPage">
@@ -55,10 +58,10 @@
         <select
           name="filtro_categoria"
           id="filtro_categoria"
-          onchange="ListaTransacoes()"
+          onchange="ListaTransacoesCat()"
           class="form-control"
         >
-          <option value="" selected>Selecione a categoria</option>
+          <option value="-" selected>Selecione a categoria</option>
           <option value="receitas">Receitas</option>
           <option value="despesas">Despesas</option>
           <option value="poupanca">Poupança</option>
@@ -67,10 +70,10 @@
         <select
           name="filtro_subCategoria"
           id="filtro_subCategoria"
-          onchange="ListaTransacoes()"
+          onchange="ListaTransacoesSubCat()"
           class="form-control"
         >
-          <option value="" selected>Selecione a sub-categoria</option>
+          <option value="-" selected>Selecione a sub-categoria</option>
           <!-- se receita -->
           <option value="salario">Salário</option>
           <option value="mesada">Mesada</option>
@@ -106,8 +109,6 @@
         returnIcon.addEventListener("click", function () {
           window.location.href = "../tela-principal/tela-principal.html";
         });
-
-
       </script>
       <!-- <script src="./filtro-transacoes.js"></script> -->
     </div>
