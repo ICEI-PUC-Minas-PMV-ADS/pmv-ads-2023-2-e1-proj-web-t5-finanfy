@@ -78,6 +78,16 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 
 ---
 
+| CASO DE TESTE | `CT-08 – CADASTRO USUÁRIO` |
+| :----------: | :---------- |
+| Requisitos Associados | RF-01 - A aplicação deve permitir ao usuário alterar sua senha cadastrada. |
+| Objetivo do Teste   | Verificar se o usuário consegue alterar a senha de seu cadastro. |
+| Passos | 1) Preencha todos os campos obrigatórios. <br> 2)Tente submeter o formulário. <br> 3) Verifique se não há mensagens de erro. <br> 4) Confirme se o usuário é redirecionado para a página de login. |
+|  Critérios de Êxito | ... |
+|  Responsável | Integrante X |
+
+---
+
 | CASO DE TESTE | CT-XX – ... |
 | :----------: | :---------- |
 | Requisitos Associados | RF-XX - A aplicação deve ... |
