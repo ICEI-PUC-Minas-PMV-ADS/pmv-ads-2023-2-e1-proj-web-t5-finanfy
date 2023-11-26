@@ -95,3 +95,13 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | Passos | 1) Acesse o navegador <br> 2) Informe a URL da aplicação Finanfy <br> 3) logue na plataforma com seu usuário e senha previamente cadastrados <br> 4) Visualizar a página inicial <br> 5) Clicar no ícone "+" <br> 6) Cadastrar 3 transações distintas com êxito (receita, despesa e poupança). |
 |  Critérios de Êxito | Ao cadastrar os três tipos de movimentações possíveis com êxito, a aplicação deverá retornar automaticamente para a tela principal. |
 |  Responsável | Rodolfo Almeida |
+
+---
+
+| CASO DE TESTE | `CT-10 – NÃO ACEITAR VALORES NEGATIVOS OU ZERADOS AO CADASTRAR TRANSAÇÕES` |
+| :----------: | :---------- |
+| Requisitos Associados | RF-05  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com dados, hora, valor e descrição <br> RF-07  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com dados, hora, valor e descrição. <br> RF-16 A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança.|
+| Objetivo do Teste   | Confirmar que ao ser cadastrada uma transação de receita, despesa ou poupança com êxito, não seja permitido cadastrar movimentações de receita, despesa ou poupança com valores iguais a zero ou valores negativos. |
+| Passos | 1) Acesse o navegador <br> 2) Informe a URL da aplicação Finanfy <br> 3) logue na plataforma com seu usuário e senha previamente cadastrados <br> 4) Visualizar a página inicial <br> 5) Clicar no ícone "+" <br> 6) tentar cadastrar 6 transações distintas, sendo duas do tipo receita, duas do tipo despesa e duas do tipo poupança, informando em cada transação algum valor numérico negativo e tambem o valor igual a zero. |
+|  Critérios de Êxito | Ao tentar cadastrar todos os tipos de movimentações citados anteriormente, a aplicação deverá exibir uma mensagem de alerta com o seguinte dizer "Não é possivel inserir um valor igual a zero ou negativo". |
+|  Responsável | Rodolfo Almeida |
