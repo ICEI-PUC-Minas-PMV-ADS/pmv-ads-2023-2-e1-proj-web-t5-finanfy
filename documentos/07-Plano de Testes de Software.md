@@ -92,6 +92,6 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | :----------: | :---------- |
 | Requisitos Associados | RF-05  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com dados, hora, valor e descrição <br> RF-07  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com dados, hora, valor e descrição. <br> RF-16 A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança.|
 | Objetivo do Teste   | Confirmar que ao ser cadastrada uma transação de receita, despesa ou poupança com êxito, o usúario seja redirecionado para a tela principal da aplicação. |
-| Passos | **TELA PRINCIPAL** <br> 1) Acesse o navegador <br> 2) Informe a URL <br> 3) Visualizar a página inicial <br> 4) Clicar no ícone "+" <br> | 5) Cadastrar 3 transações distintas com êxito (receita, despesa e poupança). |
+| Passos | **TELA PRINCIPAL** <br> 1) Acesse o navegador <br> 2) Informe a URL <br> 3) Visualizar a página inicial <br> 4) Clicar no ícone "+" <br> 5) Cadastrar 3 transações distintas com êxito (receita, despesa e poupança). |
 |  Critérios de Êxito | Ao cadastrar os três tipos de movimentações possíveis com êxito, a aplicação deverá retornar automaticamente para a tela principal. |
 |  Responsável | Rodolfo Almeida |
