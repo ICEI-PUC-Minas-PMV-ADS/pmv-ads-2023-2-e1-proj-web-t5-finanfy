@@ -54,7 +54,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | Objetivo do Teste   | Verificar se o usuário consegue cadastrar, editar, visualizar e excluir uma transação. |
 | Passos | **CADASTRAR** <br> 1) Acesse o navegador <br> 2) Informe a URL <br> 3) Visualizar a página principal <br> 4) Clique no ícone "+" <br> **EDITAR** <br> 1) Clicar no ícone "Ver tudo" <br> 2) Clicar no ícone com forma de "Lápis" <br> **VISUALIZAR** <br> 1) Clicar nos ícones "RECEITAS", "DESPESAS", "POUPANÇA", as respecticas visualizações de cada página estará presente <br> **EXCLUIR TRANSAÇÃO** <br> 1) Clicar no ícone "Ver tudo" <br> 2) Clicar no ícone com forma de "Lápis" <br> 3) Clicar em "Excluir transação" <br> 4) Confirmar a exclusão |
 |  Critérios de Êxito | **CADASTRAR** <br> Após envio do formulário preenchido com as informações solicitadas, o cadastro é realizado. <br> **EDITAR** <br> Após envio do formulário com as informações atualizadas, a transação é atualizada. <br> **VISUALIZAR** <br> Transações cadastradas nas respectivas páginas de visualização. <br> **EXCLUIR TRANSAÇÃO** <br> Confirmar a exclusão da formação. |
-|  Responsável | Integrante X |
+|  Responsável | Welbert Soares |
 
 ---
 
@@ -62,9 +62,9 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | :----------: | :---------- |
 | Requisitos Associados | RF-09 - A aplicação deve permitir ao usuário visualizar seu saldo atual. <br> RF-10 - A aplicação deve permitir ao usuário visualizar o valor total de suas receitas. <br> RF-11 - A aplicação deve permitir ao usuário visualizar o valor total de suas despesas. <br> RF-17 - A aplicação deve permitir ao usuário visualizar seu saldo acumulado em poupança. |
 | Objetivo do Teste   | Verificar se o usuário consegue visualizar seu saldo atual (tela principal), seu total de receitas (tela receitas), seu total de despesas (tela despesas) e seu saldo acumulado (tela poupança). |
-| Passos | 1) ... <br> 2) ... <br> 3) ... <br> 4) ... |
-|  Critérios de Êxito | ... |
-|  Responsável | Integrante X |
+| Passos | **TOTAL GERAL** <br> 1) Acesse o navegador <br> 2) Informe o URL <br> 3) Visualizar a página incial <br> **TOTAL RECEITAS** <br> 1) Visualizar a página incial <br> 2) Clicar no ícone "receitas" <br> 3) Visualizar a página receitas <br> **TOTAL DE DESPESAS** <br> 1) Visualizar a página inicial <br> 2) Clicar no ícone "despesas" <br> 3) Visualizar a página despesas <br> **TOTAL DE POUPANÇA** <br> 1) Visualizar a página inicial <br> 2) Clicar no ícone "poupanças" <br> 3) Visualizar a página "poupança" |
+|  Critérios de Êxito | **TOTAL GERAL** <br> Após as transações cadastradas o total geral será atualizado. <br> **TOTAL RECEITAS** <br> Após as transações de categoria receitas ser cadastradas, o total receitas será atualizado. <br> **TOTAL DESPESAS** <br> Após as transações de categoria despesas ser cadastradas, o total despesas será atualizado. <br> **TOTAL POUPANÇA** <br> Após as transações de categoria poupança do tipo entrada e saída serem cadastradas, o total receitas será atualizado. |
+|  Responsável | Welbert Soares |
 
 ---
 
@@ -78,10 +78,10 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 
 ---
 
-| CASO DE TESTE | CT-XX – ... |
+| CASO DE TESTE | `CT-08 – OCUlTAR E EXIBIR TODAS AS TRANSAÇÕES E TOTAIS` |
 | :----------: | :---------- |
-| Requisitos Associados | RF-XX - A aplicação deve ... |
-| Objetivo do Teste   | Verificar se ... |
-| Passos | 1) ... <br> 2) ... <br> 3) ... <br> 4) ... |
-|  Critérios de Êxito | ... |
-|  Responsável | Integrante X |
+| Requisitos Associados | RF-18  A aplicação deve permitir ao usuário ocultar e exibir novamente todas os valores das transações. <br> RF-19  A aplicação deve permitir ao usuário ocultar e exibir novamente todas os totais das transações.|
+| Objetivo do Teste   | Verificar se o usuário consegue ocultar e exibir novamente todos valores de totais e transações. |
+| Passos | **TELA PRINCIPAL** <br> 1) Acesse o navegador <br> 2) Informe a URL <br> 3) Visualizar a página inicail <br> 4) Clicar no ícone em forma de "olho" <br> **RECEITAS** <br> 1) Visualizar a página principal <br> 2) Clicar no ícone "receitas" <br> 3) Clicar no ícone em forma de "olho" <br> **DESPESAS** <br> 1) Visualizar a página principal <br> 2) Clicar no ícone "despesas" <br> 3) Clicar no ícone em forma de "olho" <br> **POUPANÇA** <br> 1) Visualizar a página principal <br> 2) Clicar no ícone "poupança" <br> 3) Clicar no ícone em forma de "olho" <br> **CADASTRO TRANSAÇÕES** <br> 1) Visualizar a página principal <br> 2) Clicar no ícone "+" <br> 3) Clicar no ícone em forma de "olho" |
+|  Critérios de Êxito | Ao clicar com os valores exibidos, eles se ocultam, enquanto ocultos, os mesmos exibem. |
+|  Responsável | Welbert Soares |
