@@ -102,6 +102,17 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | :----------: | :---------- |
 | Requisitos Associados | RF-05  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com dados, hora, valor e descrição <br> RF-07  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com dados, hora, valor e descrição. <br> RF-16 A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança.|
 | Objetivo do Teste   | Na tentativa de cadastrar uma transação de receita, despesa ou poupança, não seja permitido informar valores iguais a zero ou negativos. |
-| Passos | 1) Acesse o navegador <br> 2) Informe a URL da aplicação Finanfy <br> 3) logue na plataforma com seu usuário e senha previamente cadastrados <br> 4) Visualizar a página inicial <br> 5) Clicar no ícone "+" <br> 6) tentar cadastrar 6 transações distintas, sendo duas do tipo receita, duas do tipo despesa e duas do tipo poupança, informando em cada transação algum valor numérico negativo e tambem o valor igual a zero. |
+| Passos | 1) Acesse o navegador <br> 2) Informe a URL da aplicação Finanfy <br> 3) logue na plataforma com seu usuário e senha previamente cadastrados <br> 4) Visualizar a página inicial <br> 5) Clicar no ícone "+" <br> 6) tentar cadastrar 6 transações distintas, sendo duas da categoria receita, duas da categoria despesa e duas da categoria poupança, informando em cada transação algum valor numérico negativo e tambem o valor igual a zero. |
 |  Critérios de Êxito | Ao tentar cadastrar todos os tipos de movimentações citados anteriormente, a aplicação deverá exibir uma mensagem de alerta com o seguinte dizer "Não é possivel inserir um valor igual a zero ou negativo". |
 |  Responsável | Rodolfo Almeida |
+
+---
+
+| CASO DE TESTE | `CT-11 – SE A MOVIMENTAÇÃO A SER CADASTRADA FOR RECEITA, SELECIONAR AUTOMATICAMENTE O TIPO ENTRADA E SE FOR DESPESA, SELECIONAR AUTOMATICAMENTE O TIPO SAIDA.` |
+| :----------: | :---------- |
+| Requisitos Associados | RF-05  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com dados, hora, valor e descrição <br> RF-07  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com dados, hora, valor e descrição. <br> RF-16 A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança.|
+| Objetivo do Teste   | Na tentativa de cadastrar uma transação de receita ou despesa, seja selecionado automaticamente o tipo "entrada" no caso de receita e o tipo "saida" no caso de despesa . |
+| Passos | 1) Acesse o navegador <br> 2) Informe a URL da aplicação Finanfy <br> 3) logue na plataforma com seu usuário e senha previamente cadastrados <br> 4) Visualizar a página inicial <br> 5) Clicar no ícone "+" <br> 6) tentar cadastrar 2 transações distintas, sendo uma da categoria receita e uma da categoria despesa. |
+|  Critérios de Êxito | Ao tentar cadastrar as movimentações citados anteriormente, a aplicação deverá selecionar automaticamente o tipo entrada quando a categoria for receita e o tipo saida quando a categoria for despesa |
+|  Responsável | Rodolfo Almeida |
+
