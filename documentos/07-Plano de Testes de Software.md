@@ -91,7 +91,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | CASO DE TESTE | `CT-09 – FECHAR PAGINA APÓS CADASTRAR TRANSAÇÕES` |
 | :----------: | :---------- |
 | Requisitos Associados | RF-05  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com dados, hora, valor e descrição <br> RF-07  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com dados, hora, valor e descrição. <br> RF-16 A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança.|
-| Objetivo do Teste   | Confirmar que ao ser cadastrada uma transação de receita, despesa ou poupança com exito, o usúario seja redirecionado para a tela principal da aplicação. |
+| Objetivo do Teste   | Confirmar que ao ser cadastrada uma transação de receita, despesa ou poupança com sucesso, o usúario seja redirecionado para a tela principal da aplicação. |
 | Passos | 1) Acesse o navegador <br> 2) Informe a URL da aplicação Finanfy <br> 3) logue na plataforma com seu usuário e senha previamente cadastrados <br> 4) Visualizar a página inicial <br> 5) Clicar no ícone "+" <br> 6) Cadastrar 3 transações distintas com êxito (receita, despesa e poupança). |
 |  Critérios de Êxito | Ao cadastrar os três tipos de movimentações possíveis com êxito, a aplicação deverá retornar automaticamente para a tela principal. |
 |  Responsável | Rodolfo Almeida |
