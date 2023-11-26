@@ -22,6 +22,7 @@ Os resultados dos testes funcionais realizados na aplicação são descritos a s
 | Resultados obtidos | Ao tentar cadastrar todos os tipos de movimentações possiveis, a aplicação exibiu uma mensagem de alerta com o seguinte dizer "Não é possivel inserir um valor igual a zero ou negativo" |
 | Responsável pela execução do caso de Teste | Nome do integrante da equipe |
 
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/139129269/483c12ee-12bd-4e32-9ee2-03c2979df31e
 
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/139129269/edf46368-ef2c-4b68-a1d5-5345aa0d4f98
 
