@@ -12,19 +12,20 @@ function postReceitas(
 {
  
   if (!idUsuario || idUsuario === "") {
-    return alert("Login expirado. Logue novamente!");
+    return alert("Login expirado. Logue novamente!"),
+    window.location.href = "../Login/login.html"; 
   }
   if (!idCategoria || idCategoria === "") {
      return alert("É necessário definir uma categoria");
   }   
   if (!idTipo || idTipo === "") {
     return alert("É necessário definir um tipo");
- } 
-  if (!valor || valor == 0) {
-    return alert("É  necessário preencher um valor");
+  } 
+  if (!valor || valor === "" ) {
+  return alert("É  necessário preencher um valor");
   }
-  if (!valor || valor < 0 ) {
-    return alert("Não é possivel inserir um valor negativo");
+  if (!valor || valor <= 0 ) {
+   return alert("Não é possivel inserir um valor igual a zero ou negativo");
   }
   if (!descricao || descricao === "") {
     return alert("É necessário preencher uma descrição");
@@ -35,6 +36,7 @@ function postReceitas(
   if (!hora || hora === "") {
     return alert("É necessário preencher uma hora");
   }
+
 
   let transacoesJson = localStorage.getItem("db_transacoes");
   let transacoesObj = [];
@@ -55,7 +57,7 @@ function postReceitas(
   if (idCategoria === "receitas") {
     let receitasJson = localStorage.getItem("db_receitas");
     let receitasObj = [];
-
+    
     if (receitasJson) {
       receitasObj = JSON.parse(receitasJson);
     }
