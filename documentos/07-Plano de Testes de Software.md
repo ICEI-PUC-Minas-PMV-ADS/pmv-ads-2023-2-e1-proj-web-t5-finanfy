@@ -88,7 +88,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 
 ---
 
-| CASO DE TESTE | `CT-09 – FECHA PAGINA APÓS CADASTRAR TRANSAÇÕES` |
+| CASO DE TESTE | `CT-09 – FECHAR PAGINA APÓS CADASTRAR TRANSAÇÕES` |
 | :----------: | :---------- |
 | Requisitos Associados | RF-05  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com dados, hora, valor e descrição <br> RF-07  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com dados, hora, valor e descrição. <br> RF-16 A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança.|
 | Objetivo do Teste   | Confirmar que ao ser cadastrada uma transação de receita, despesa ou poupança com êxito, o usúario seja redirecionado para a tela principal da aplicação. |
