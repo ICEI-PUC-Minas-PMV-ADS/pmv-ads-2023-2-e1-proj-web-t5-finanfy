@@ -43,7 +43,7 @@
 |-------|---------------------------------|----|
 | RF-01 | A aplicação deve permitir ao usuário cadastrar uma nova conta de acesso ao sistema. | ALTA | 
 | RF-02 | A aplicação deve permitir ao usuário entrar e sair de sua conta (login e logout). | ALTA | 
-| RF-03 | A aplicação deve permitir ao usuário alterar sua senha cadastrada. | MÉDIA | 
+| RF-03 | A aplicação deve permitir ao usuário alterar seus dados cadastrados (nome, sobrenome, e-mail e senha). | MÉDIA | 
 | RF-04 | A aplicação deve permitir ao usuário recuperar sua senha de acesso ao sistema. | MÉDIA | 
 | RF-05 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com data, hora, valor e descrição. | ALTA | 
 | RF-06 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir sub-categorias de receitas. | BAIXA | 
