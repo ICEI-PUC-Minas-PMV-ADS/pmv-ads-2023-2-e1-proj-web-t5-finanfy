@@ -7,12 +7,25 @@ function postReceitas(
   valor,
   idSubcategoria,
   descricao
-) {
+) 
+
+{
+ 
   if (!idUsuario || idUsuario === "") {
-    return alert("Login expirado. Logue novamente!");
+    return alert("Login expirado. Logue novamente!"),
+    window.location.href = "../Login/login.html"; 
   }
-  if (!valor || valor === "") {
-    return alert("É necessário preencher um valor");
+  if (!idCategoria || idCategoria === "") {
+     return alert("É necessário definir uma categoria");
+  }   
+  if (!idTipo || idTipo === "") {
+    return alert("É necessário definir um tipo");
+  } 
+  if (!valor || valor === "" ) {
+  return alert("É  necessário preencher um valor");
+  }
+  if (!valor || valor <= 0 ) {
+   return alert("Não é possivel inserir um valor igual a zero ou negativo");
   }
   if (!descricao || descricao === "") {
     return alert("É necessário preencher uma descrição");
@@ -23,6 +36,7 @@ function postReceitas(
   if (!hora || hora === "") {
     return alert("É necessário preencher uma hora");
   }
+
 
   let transacoesJson = localStorage.getItem("db_transacoes");
   let transacoesObj = [];
@@ -47,6 +61,8 @@ function postReceitas(
   if (idCategoria === "receitas") {
     let receitasJson = localStorage.getItem("db_receitas");
     let receitasObj = [];
+    
+    
     //Verifica se existe receitas no localStorage, se não existir, cria um array vazio
 
     if (receitasJson) {
@@ -78,6 +94,8 @@ function postReceitas(
     //Salva o array de transações no localStorage
 
     alert("Receita cadastrada com sucesso!");
+    window.location.href = "../tela-principal/tela-principal.html";   
+
     //Exibe mensagem de sucesso
 
     window.location.href = "../tela-principal/tela-principal.html";
@@ -85,11 +103,21 @@ function postReceitas(
   } else if (idCategoria === "despesas") {
     let despesasJson = localStorage.getItem("db_despesas");
     let despesasObj = [];
+    
     //Verifica se existe despesas no localStorage, se não existir, cria um array vazio
 
     if (despesasJson) {
       despesasObj = JSON.parse(despesasJson);
     }
+
+    let maiorIdDespesa = 0;
+    for (const despesa of despesasObj) {
+      if (despesa.idDespesa > maiorIdDespesa) {
+        maiorIdDespesa = despesa.idDespesa;
+      }
+    }   
+
+    const maiorIdDespesaIncrementado = maiorIdDespesa + 1;
     //Se existir, transforma o JSON em objeto
 
     const despesa = {
@@ -116,10 +144,8 @@ function postReceitas(
     //Salva o array de transações no localStorage
 
     alert("Despesa cadastrada com sucesso!");
-    //Exibe mensagem de sucesso
+    location.href = "../tela-principal/tela-principal.html";  
 
-    window.location.href = "../tela-principal/tela-principal.html";
-    //Redireciona para a tela principal
   } else if (idCategoria === "poupanca") {
     if (idTipo === "entrada") {
       let poupancaInJson = localStorage.getItem("db_poupancaIn");
@@ -155,6 +181,8 @@ function postReceitas(
       //Salva o array de transações no localStorage
 
       alert("Poupança de entrada cadastrada com sucesso!");
+      location.href = "../tela-principal/tela-principal.html";  
+
       //Exibe mensagem de sucesso
 
       window.location.href = "../tela-principal/tela-principal.html";
@@ -193,6 +221,7 @@ function postReceitas(
       //Salva o array de transações no localStorage
 
       alert("Poupança de saída cadastrada com sucesso!");
+      location.href = "../tela-principal/tela-principal.html"; 
       //Exibe mensagem de sucesso
 
       window.location.href = "../tela-principal/tela-principal.html";
@@ -201,6 +230,7 @@ function postReceitas(
   }
   calcularTotais(idUsuario);
 }
+
 
 function calcularTotais(idUsuario) {
   let totalJson = localStorage.getItem("db_total");
