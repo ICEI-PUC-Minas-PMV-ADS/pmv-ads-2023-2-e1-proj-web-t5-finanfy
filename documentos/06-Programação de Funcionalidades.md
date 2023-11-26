@@ -145,3 +145,40 @@ Na página Transações, clique no botão de filtro (ícone filtro / canto super
 
 #### Responsável
 - [Leandro Borth](https://github.com/leandroborth)
+
+***
+
+### ALTERAR DADOS
+
+![alterar-dados](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/1b6d6f31-0a1a-4c76-bab2-938835adacde)
+
+#### Requisito atendido
+- `RF-03` - A aplicação deve permitir ao usuário alterar seus dados cadastrados (nome, sobrenome, e-mail e senha).
+
+#### Artefatos da funcionalidade
+- `Código-fonte:` [Aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte/pages/AlterarDados)
+
+#### Instruções de acesso
+Em qualquer página (principal, receitas, despesas, poupança), clique no ícone de perfil para visualizar os dados cadastrados, e no botão "Alterar dados" para alterar nome, sobrenome, e-mail ou senha cadastrada.
+
+#### Responsável
+- [Pedro Louzada](https://github.com/PedroLouzadas)
+
+***
+
+### POUPANÇA
+
+![poupanca](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/af2f1e55-7999-4894-8d09-bdcf6c55896e)
+
+#### Requisito atendido
+- `RF-16` - A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança.
+- `RF-17` - A aplicação deve permitir ao usuário visualizar seu saldo acumulado em poupança.
+
+#### Artefatos da funcionalidade
+- `Código-fonte:` [Aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte/pages/Poupanca)
+
+#### Instruções de acesso
+Em qualquer página (principal, receitas, despesas, poupança), clique no botão "+" na parte inferior da página, para cadastrar uma transação de entrada ou saída em sua poupança.
+
+#### Responsável
+- [Welbert Soares](https://github.com/Welbert-Soares)
