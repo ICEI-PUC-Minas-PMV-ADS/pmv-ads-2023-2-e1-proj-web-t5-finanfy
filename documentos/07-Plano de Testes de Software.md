@@ -52,8 +52,8 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | :----------: | :---------- |
 | Requisitos Associados | RF-05 - A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com data, hora, valor e descrição. <br> RF-07 - A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com data, hora, valor e descrição. <br> RF-16 - A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança. |
 | Objetivo do Teste   | Verificar se o usuário consegue cadastrar, editar, visualizar e excluir uma transação. |
-| Passos | 1) ... <br> 2) ... <br> 3) ... <br> 4) ... |
-|  Critérios de Êxito | ... |
+| Passos | **CADASTRAR** <br> 1) Acesse o navegador <br> 2) Informe a URL <br> 3) Visualizar a página principal <br> 4) Clique no ícone "+" <br> **EDITAR** <br> 1) Clicar no ícone "Ver tudo" <br> 2) Clicar no ícone com forma de "Lápis" <br> **VISUALIZAR** <br> 1) Clicar nos ícones "RECEITAS", "DESPESAS", "POUPANÇA", as respecticas visualizações de cada página estará presente <br> **EXCLUIR TRANSAÇÃO** <br> 1) Clicar no ícone "Ver tudo" <br> 2) Clicar no ícone com forma de "Lápis" <br> 3) Clicar em "Excluir transação" <br> 4) Confirmar a exclusão |
+|  Critérios de Êxito | **CADASTRAR** <br> Após envio do formulário preenchido com as informações solicitadas, o cadastro é realizado. <br> **EDITAR** <br> Após envio do formulário com as informações atualizadas, a transação é atualizada. <br> **VISUALIZAR** <br> Transações cadastradas nas respectivas páginas de visualização. <br> **EXCLUIR TRANSAÇÃO** <br> Confirmar a exclusão da formação. |
 |  Responsável | Integrante X |
 
 ---
