@@ -223,6 +223,7 @@ function postReceitas(
   calcularTotais(idUsuario);
 }
 
+
 function calcularTotais(idUsuario) {
   let totalJson = localStorage.getItem("db_total");
   let totalObj = totalJson ? JSON.parse(totalJson) : {};
