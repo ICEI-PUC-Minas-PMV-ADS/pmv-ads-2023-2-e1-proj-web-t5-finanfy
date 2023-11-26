@@ -113,6 +113,6 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | Requisitos Associados | RF-05  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com dados, hora, valor e descrição <br> RF-07  A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir despesas com dados, hora, valor e descrição. <br> RF-16 A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança.|
 | Objetivo do Teste   | Na tentativa de cadastrar uma transação de receita ou despesa, seja selecionado automaticamente o tipo "entrada" no caso de receita e o tipo "saida" no caso de despesa . |
 | Passos | 1) Acesse o navegador <br> 2) Informe a URL da aplicação Finanfy <br> 3) logue na plataforma com seu usuário e senha previamente cadastrados <br> 4) Visualizar a página inicial <br> 5) Clicar no ícone "+" <br> 6) tentar cadastrar 2 transações distintas, sendo uma da categoria receita e uma da categoria despesa. |
-|  Critérios de Êxito | Ao tentar cadastrar as movimentações citados anteriormente, a aplicação deverá selecionar automaticamente o tipo entrada quando a categoria for receita e o tipo saida quando a categoria for despesa |
+|  Critérios de Êxito | Ao tentar cadastrar as movimentações citados anteriormente, a aplicação deverá selecionar automaticamente o tipo entrada quando a categoria for receita e o tipo saída quando a categoria for despesa |
 |  Responsável | Rodolfo Almeida |
 
