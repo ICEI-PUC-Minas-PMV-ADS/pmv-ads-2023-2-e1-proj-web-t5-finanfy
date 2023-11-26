@@ -182,3 +182,22 @@ Em qualquer página (principal, receitas, despesas, poupança), clique no botão
 
 #### Responsável
 - [Welbert Soares](https://github.com/Welbert-Soares)
+
+***
+
+### RECUPERAR SENHA
+
+![recuperar-senha](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/116202867/6e44c703-fcb8-49e7-b1f5-06c0866f80ee)
+
+
+#### Requisito atendido
+- `RF-04` - A aplicação deve permitir ao usuário recuperar sua senha de acesso ao sistema.
+
+#### Artefatos da funcionalidade
+- `Código-fonte:` [Aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/tree/main/codigo-fonte/pages/recuperar-senha)
+
+#### Instruções de acesso
+Na tela inicial da aplicação, clique em "Entrar na conta" e em seguida em "Esqueceu sua senha? Recupere aqui."
+
+#### Responsável
+- [Pedro Louzada](https://github.com/PedroLouzadas)
