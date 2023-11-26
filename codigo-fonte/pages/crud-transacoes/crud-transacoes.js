@@ -58,6 +58,7 @@ function postReceitas(
     let receitasJson = localStorage.getItem("db_receitas");
     let receitasObj = [];
     
+    
     if (receitasJson) {
       receitasObj = JSON.parse(receitasJson);
     }
@@ -97,6 +98,7 @@ function postReceitas(
   } else if (idCategoria === "despesas") {
     let despesasJson = localStorage.getItem("db_despesas");
     let despesasObj = [];
+    
 
     if (despesasJson) {
       despesasObj = JSON.parse(despesasJson);
