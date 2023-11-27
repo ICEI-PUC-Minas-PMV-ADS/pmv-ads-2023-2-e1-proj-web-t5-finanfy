@@ -94,12 +94,12 @@ function postReceitas(
     //Salva o array de transações no localStorage
 
     alert("Receita cadastrada com sucesso!");
-    window.location.href = "../tela-principal/tela-principal.html";   
 
     //Exibe mensagem de sucesso
 
     window.location.href = "../tela-principal/tela-principal.html";
     //Redireciona para a tela principal
+
   } else if (idCategoria === "despesas") {
     let despesasJson = localStorage.getItem("db_despesas");
     let despesasObj = [];
@@ -144,7 +144,13 @@ function postReceitas(
     //Salva o array de transações no localStorage
 
     alert("Despesa cadastrada com sucesso!");
+
+     //Exibe mensagem de sucesso
+
     location.href = "../tela-principal/tela-principal.html";  
+
+    //Redireciona para a tela principal
+
 
   } else if (idCategoria === "poupanca") {
     if (idTipo === "entrada") {
@@ -180,13 +186,13 @@ function postReceitas(
       localStorage.setItem("db_transacoes", JSON.stringify(transacoesObj));
       //Salva o array de transações no localStorage
 
-      alert("Poupança de entrada cadastrada com sucesso!");
-      location.href = "../tela-principal/tela-principal.html";  
+      alert("Poupança de entrada cadastrada com sucesso!");      
 
       //Exibe mensagem de sucesso
 
       window.location.href = "../tela-principal/tela-principal.html";
       //Redireciona para a tela principal
+      
     } else if (idTipo === "saida") {
       let poupancaOutJson = localStorage.getItem("db_poupancaOut");
       let poupancaOutObj = [];
@@ -220,8 +226,7 @@ function postReceitas(
       localStorage.setItem("db_transacoes", JSON.stringify(transacoesObj));
       //Salva o array de transações no localStorage
 
-      alert("Poupança de saída cadastrada com sucesso!");
-      location.href = "../tela-principal/tela-principal.html"; 
+      alert("Poupança de saída cadastrada com sucesso!");    
       //Exibe mensagem de sucesso
 
       window.location.href = "../tela-principal/tela-principal.html";
