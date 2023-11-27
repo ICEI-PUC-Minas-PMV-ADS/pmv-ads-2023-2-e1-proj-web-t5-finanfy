@@ -3,7 +3,7 @@
 Relatório com as evidências dos testes de software realizados na aplicação pela equipe, baseado no plano de testes pré-definido.
 Os resultados dos testes funcionais realizados na aplicação são descritos a seguir.
 
-|Caso de Teste | CT-01 – CADASTRAR CONTA |
+|Caso de Teste | `CT-01 – CADASTRAR CONTA` |
 |:---|:---|
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Leandro Borth |
@@ -12,28 +12,28 @@ Os resultados dos testes funcionais realizados na aplicação são descritos a s
 
 ---
 
-|Caso de Teste | CT-02 – LOGIN / LOGOUT |
-|:---|:---|
-| Resultados obtidos | Funcionalidade OK. |
-| Responsável pela execução do caso de Teste | Rodolfo Almeida |
-
----
-
-|Caso de Teste | CT-03 – ALTERAR DADOSA |
+|Caso de Teste | `CT-02 – LOGIN / LOGOUT` |
 |:---|:---|
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Welbert Soares |
 
 ---
 
-|Caso de Teste | CT-04 – CADASTRAR / EDITAR / VISUALIZAR / EXCLUIR TRANSAÇÃO |
+|Caso de Teste | `CT-03 – ALTERAR DADOSA` |
+|:---|:---|
+| Resultados obtidos | Funcionalidade OK. |
+| Responsável pela execução do caso de Teste | Welbert Soares |
+
+---
+
+|Caso de Teste | `CT-04 – CADASTRAR / EDITAR / VISUALIZAR / EXCLUIR TRANSAÇÃO` |
 |:---|:---|
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Pedro Louzadas |
 
 ---
 
-|Caso de Teste | CT-05 – VISUALIZAR TOTAIS |
+|Caso de Teste | `CT-05 – VISUALIZAR TOTAIS` |
 |:---|:---|
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Leandro Borth |
@@ -48,28 +48,28 @@ Os resultados dos testes funcionais realizados na aplicação são descritos a s
 
 ---
 
-|Caso de Teste | CT-06 – FILTRAR VISUALIZAÇÃO DE TRANSAÇÕES |
+|Caso de Teste | `CT-06 – FILTRAR VISUALIZAÇÃO DE TRANSAÇÕES` |
 |:---|:---|
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Pedro Louzada |
 
 ---
 
-|Caso de Teste | CT-07 – OCULTAR E EXIBIR TODAS AS TRANSAÇÕES E TOTAIS |
+|Caso de Teste | `CT-07 – OCULTAR E EXIBIR TODAS AS TRANSAÇÕES E TOTAIS` |
 |:---|:---|
 | Resultados obtidos | Funcionalidade OK. |
-| Responsável pela execução do caso de Teste | Rodolfo Almeida |
+| Responsável pela execução do caso de Teste | Pedro Louzada |
 
 ---
 
-|Caso de Teste | CT-08 – FECHAR PAGINA APÓS CADASTRAR TRANSAÇÕES E RETORNAR AUTOMATICAMENTE PARA A TELA PRINCIPAL |
+|Caso de Teste | `CT-08 – FECHAR PAGINA APÓS CADASTRAR TRANSAÇÕES E RETORNAR AUTOMATICAMENTE PARA A TELA PRINCIPAL` |
 |:---|:---|
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Welbert Soares |
 
 ---
 
-|Caso de Teste | CT-09 – NÃO ACEITAR VALORES NEGATIVOS OU ZERADOS AO CADASTRAR TRANSAÇÕES |
+|Caso de Teste | `CT-09 – NÃO ACEITAR VALORES NEGATIVOS OU ZERADOS AO CADASTRAR TRANSAÇÕES` |
 |:---|:---|
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Rodolfo Almeida |
@@ -78,7 +78,7 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/
 
 ---
 
-|Caso de Teste | CT-10 – SE A MOVIMENTAÇÃO A SER CADASTRADA FOR RECEITA, SELECIONAR AUTOMATICAMENTE O TIPO ENTRADA E SE FOR DESPESA, SELECIONAR AUTOMATICAMENTE O TIPO SAIDA |
+|Caso de Teste | `CT-10 – SE A MOVIMENTAÇÃO A SER CADASTRADA FOR RECEITA, SELECIONAR AUTOMATICAMENTE O TIPO ENTRADA E SE FOR DESPESA, SELECIONAR AUTOMATICAMENTE O TIPO SAIDA` |
 |:---|:---|
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Rodolfo Almeida |
@@ -87,7 +87,7 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/
 
 ---
 
-|Caso de Teste | CT-11 – RECUPERAR SENHA |
+|Caso de Teste | `CT-11 – RECUPERAR SENHA` |
 |:---|:---|
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Leandro Borth |
