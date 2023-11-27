@@ -24,7 +24,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | Objetivo do Teste   | Verificar se o usuário consegue fazer login / logout em sua conta. |
 | Passos | **LOGIN** <br> 1) Acessar o navegador <br> 2) Informar a URL https://icei-puc-minas-pmv-ads.github.io/finanfy/ <br> 3) Visualizar a página principal <br> 4) Clicar em "Entrar na conta" <br> **LOGOUT** <br> 1) Clicar no ícone de "Perfil" <br> 2) Clicar em "Sair da conta" |
 |  Critérios de Êxito | **LOGIN** <br> Após envio do formulário preenchido com as informações solicitadas, o login é efetuado. <br> **LOGOUT** <br> Após clicar em "Sair da conta" o logout é efetuado. |
-|  Responsável | Rodolfo Almeida |
+|  Responsável | Welbert Soares |
 
 ---
 
@@ -74,7 +74,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | Objetivo do Teste   | Verificar se o usuário consegue ocultar e exibir novamente todos valores de totais e transações. |
 | Passos | **TELA PRINCIPAL** <br> 1) Acesse o navegador <br> 2) Informe a URL <br> 3) Visualizar a página inicail <br> 4) Clicar no ícone em forma de "olho" <br> **RECEITAS** <br> 1) Visualizar a página principal <br> 2) Clicar no ícone "receitas" <br> 3) Clicar no ícone em forma de "olho" <br> **DESPESAS** <br> 1) Visualizar a página principal <br> 2) Clicar no ícone "despesas" <br> 3) Clicar no ícone em forma de "olho" <br> **POUPANÇA** <br> 1) Visualizar a página principal <br> 2) Clicar no ícone "poupança" <br> 3) Clicar no ícone em forma de "olho" <br> **CADASTRO TRANSAÇÕES** <br> 1) Visualizar a página principal <br> 2) Clicar no ícone "+" <br> 3) Clicar no ícone em forma de "olho" |
 |  Critérios de Êxito | Ao clicar com os valores exibidos, eles se ocultam, enquanto ocultos, os mesmos exibem. |
-|  Responsável | Rodolfo Almeida |
+|  Responsável | Pedro Louzadas |
 
 ---
 
@@ -94,7 +94,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | Objetivo do Teste   | Na tentativa de cadastrar uma transação de receita, despesa ou poupança, não seja permitido informar valores iguais a zero ou negativos. |
 | Passos | 1) Acesse o navegador <br> 2) Informe a URL da aplicação Finanfy <br> 3) logue na plataforma com seu usuário e senha previamente cadastrados <br> 4) Visualizar a página inicial <br> 5) Clicar no ícone "+" <br> 6) tentar cadastrar 6 transações distintas, sendo duas da categoria receita, duas da categoria despesa e duas da categoria poupança, informando em cada transação algum valor numérico negativo e tambem o valor igual a zero. |
 |  Critérios de Êxito | Ao tentar cadastrar todos os tipos de movimentações citados anteriormente, a aplicação deverá exibir uma mensagem de alerta com o seguinte dizer "Não é possivel inserir um valor igual a zero ou negativo". |
-|  Responsável | Pedro Louzada |
+|  Responsável | Rodolfo Almeida |
 
 ---
 
@@ -104,7 +104,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | Objetivo do Teste   | Na tentativa de cadastrar uma transação de receita ou despesa, seja selecionado automaticamente o tipo "entrada" no caso de receita e o tipo "saida" no caso de despesa . |
 | Passos | 1) Acesse o navegador <br> 2) Informe a URL da aplicação Finanfy <br> 3) logue na plataforma com seu usuário e senha previamente cadastrados <br> 4) Visualizar a página inicial <br> 5) Clicar no ícone "+" <br> 6) tentar cadastrar 2 transações distintas, sendo uma da categoria receita e uma da categoria despesa. |
 |  Critérios de Êxito | Ao tentar cadastrar as movimentações citados anteriormente, a aplicação deverá selecionar automaticamente o tipo entrada quando a categoria for receita e o tipo saída quando a categoria for despesa |
-|  Responsável | Welbert Soares |
+|  Responsável | Rodolfo Almeida |
 
 ---
 
@@ -114,4 +114,4 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | Objetivo do Teste   | Testar a funcionalidade de recuperação de senha de acesso ao sistema. |
 | Passos | 1) Acessar o navegador <br> 2) Informar a URL https://icei-puc-minas-pmv-ads.github.io/finanfy/ <br> 3) Clicar em "Entrar na conta" <br> 4) Clicar em "Esqueceu sua senha? Recupere aqui." <br>
 |  Critérios de Êxito | Ao enviar o formulário de recuperação de senha preenchido, o usuário deverá conseguir acessar o sistema com sua nova senha cadastrada. |
-|  Responsável | Rodolfo Almeida |
+|  Responsável | Leandro Borth |
