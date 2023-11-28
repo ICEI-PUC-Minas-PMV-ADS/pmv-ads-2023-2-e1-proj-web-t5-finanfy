@@ -43,7 +43,7 @@
 |-------|---------------------------------|----|
 | RF-01 | A aplicação deve permitir ao usuário cadastrar uma nova conta de acesso ao sistema. | ALTA | 
 | RF-02 | A aplicação deve permitir ao usuário entrar e sair de sua conta (login e logout). | ALTA | 
-| RF-03 | A aplicação deve permitir ao usuário alterar sua senha cadastrada. | MÉDIA | 
+| RF-03 | A aplicação deve permitir ao usuário alterar seus dados cadastrados (nome, sobrenome, e-mail e senha). | MÉDIA | 
 | RF-04 | A aplicação deve permitir ao usuário recuperar sua senha de acesso ao sistema. | MÉDIA | 
 | RF-05 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir receitas com data, hora, valor e descrição. | ALTA | 
 | RF-06 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir sub-categorias de receitas. | BAIXA | 
@@ -58,6 +58,7 @@
 | RF-15 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir limites para gastos por categoria. | BAIXA | 
 | RF-16 | A aplicação deve permitir ao usuário cadastrar, editar, visualizar e excluir valores em sua seção de poupança. | MÉDIA | 
 | RF-17 | A aplicação deve permitir ao usuário visualizar seu saldo acumulado em poupança. | BAIXA | 
+| RF-18 | A aplicação deve permitir ao usuário ocultar todos os valores de transações e totais visíveis na tela. | BAIXA |
 
 ** Prioridade: Alta / Média / Baixa. 
 
