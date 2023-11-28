@@ -101,6 +101,7 @@ body {
   color: #fff;
   font-size: 25px;
   font-weight: 700;
+  text-align: center;
 }
 .profileButtons {
   display: flex;
