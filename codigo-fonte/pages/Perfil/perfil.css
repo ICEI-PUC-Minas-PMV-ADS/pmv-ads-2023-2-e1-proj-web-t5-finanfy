@@ -41,7 +41,7 @@ html, body {
   .profileHeader {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 240px;
     height: auto;
     justify-content: center;
     align-items: center;
@@ -52,8 +52,8 @@ html, body {
     display: flex;
     justify-content: left;
     align-items: center;
-    width: 500px;
-    height: 115px
+    width: 240px;
+    height: 50px
   }
   .iconBtnBack {
     display: flex;
@@ -70,15 +70,15 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 116px;
-    height: 116px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     background-color: #000040;
     border: 4px solid #fff;
   }
   .iconProfilePhoto {
-    width: 116px;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
     border-radius: 50%;
     background-color: lightgray;
@@ -88,6 +88,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
+    width: 240px;
   }
   .pInfo {
     display: flex;
@@ -100,13 +101,14 @@ html, body {
   }
   .spanInfo {
     color: #fff;
-    font-size: 32px;
+    font-size: 25px;
     font-weight: 700;
   }
   .profileButtons {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    align-items: center;
+    margin-top: 10px;
     gap: 10px;
   }
   .buttonKey {
@@ -115,8 +117,8 @@ html, body {
     background-color: #20204D;
     border-radius: 30px;
     border: 2px solid #383467;
-    width: 388px;
-    height: 66px;
+    width: 240px;
+    height: 46px;
     cursor: pointer;
   }
   .buttonLogOut {
@@ -125,8 +127,8 @@ html, body {
     background-color: #982626;
     border-radius: 30px;
     border: 2px solid #383467;
-    width: 388px;
-    height: 66px;
+    width: 240px;
+    height: 46px;
     cursor: pointer;
   }
   #alterardados {
@@ -142,5 +144,197 @@ html, body {
     font-weight: bold;
     color:#fff;
     align-items: center;
+  }
+
+  @media (min-width: 350px) {
+    .profileHeader{
+      width: 300px;
+    }
+    .divIconBack{
+      width: 300px;
+    }
+    .divIconProfile {
+      width: 130px;
+      height: 130px;
+    }
+    .profileInfo {
+      width: 300px;
+    }
+    .iconProfilePhoto {
+      width: 130px;
+      height: 130px;
+    }
+    .profileButtons {
+      width: 300px;
+    }
+    .spanInfo {
+      font-size: 25px;
+    }
+  }
+
+  @media (min-width: 450px) {
+    .profileHeader{
+      width: 350px;
+    }
+    .divIconBack{
+      width: 350px;
+    }
+    .divIconProfile {
+      width: 150px;
+      height: 150px;
+    }
+    .profileInfo {
+      width: 350px;
+    }
+    .iconProfilePhoto {
+      width: 150px;
+      height: 150px;
+    }
+    .profileButtons {
+      width: 350px;
+    }
+    .spanInfo {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .divPage {
+      min-width: 0px;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 600px) {
+    .profileHeader{
+      width: 500px;
+    }
+    .divIconBack{
+      width: 500px;
+    }
+    .divIconProfile {
+      width: 200px;
+      height: 200px;
+    }
+    .profileInfo {
+      width: 500px;
+    }
+    .iconProfilePhoto {
+      width: 200px;
+      height: 200px;
+    }
+    .profileButtons {
+      width: 500px;
+    }
+    .spanInfo {
+      font-size: 35px;
+    }
+  }
+
+  @media (min-width: 700px) {
+    .profileHeader{
+      width: 600px;
+    }
+    .divIconBack{
+      width: 600px;
+    }
+    .divIconProfile {
+      width: 250px;
+      height: 250px;
+    }
+    .profileInfo {
+      width: 600px;
+    }
+    .iconProfilePhoto {
+      width: 250px;
+      height: 250px;
+    }
+    .profileButtons {
+      width: 600px;
+    }
+    .spanInfo {
+      font-size: 40px;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .profileHeader{
+      width: 600px;
+    }
+    .divIconBack{
+      width: 600px;
+    }
+    .divIconProfile {
+      width: 300px;
+      height: 300px;
+    }
+    .profileInfo {
+      width: 600px;
+    }
+    .iconProfilePhoto {
+      width: 300px;
+      height: 300px;
+    }
+    .profileButtons {
+      width: 600px;
+    }
+    .spanInfo {
+      font-size: 45px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .profileHeader{
+      width: 600px;
+    }
+    .divIconBack{
+      width: 600px;
+    }
+    .divIconProfile {
+      width: 350px;
+      height: 350px;
+    }
+    .profileInfo {
+      width: 600px;
+    }
+    .iconProfilePhoto {
+      width: 350px;
+      height: 350px;
+    }
+    .profileButtons {
+      width: 600px;
+    }
+    .spanInfo {
+      font-size: 50px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .profileHeader{
+      width: 600px;
+    }
+    .divIconBack{
+      width: 600px;
+    }
+    .divIconProfile {
+      width: 300px;
+      height: 300px;
+    }
+    .profileInfo {
+      width: 600px;
+    }
+    .iconProfilePhoto {
+      width: 300px;
+      height: 300px;
+    }
+    .profileButtons {
+      width: 600px;
+    }
+    .spanInfo {
+      font-size: 30px;
+    }
+    .pInfo {
+      font-size: 20px;
+    }
   }
   
