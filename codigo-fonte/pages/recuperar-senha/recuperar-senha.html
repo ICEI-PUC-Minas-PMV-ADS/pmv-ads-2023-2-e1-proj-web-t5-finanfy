@@ -18,50 +18,45 @@
         <div class="divTitle">
           <h1>Recuperar senha</h1>
         </div>
-        <div class="divNone">
-          <p></p>
-        </div>
+        <div class="divNone"></div>
       </div>
 
-      <!-- <form id="recoveryForm"></form> -->
-      <p>
+      <div id="form">
         <input placeholder="Email" class="areaText" id="email" />
-      </p>
-      <select class="areaText" id="perguntaSeguranca">
-        <option value="Pergunta de segurança" id="0">
-          Pergunta de segurança
-        </option>
-        <option value="nomeMae" id="1">Qual o nome de sua mãe?</option>
-        <option value="nomePai" id="2">Qual o nome de seu pai?</option>
-        <option value="timeQueTorce" id="3">Para qual time você torce?</option>
-        <option value="dataNascimento" id="4">
-          Qual a sua data de nascimento?
-        </option>
-      </select>
 
-      <p>
+        <select class="areaText" id="perguntaSeguranca">
+          <option value="Pergunta de segurança" id="0">
+            Pergunta de segurança
+          </option>
+          <option value="nomeMae" id="1">Qual o nome de sua mãe?</option>
+          <option value="nomePai" id="2">Qual o nome de seu pai?</option>
+          <option value="timeQueTorce" id="3">
+            Para qual time você torce?
+          </option>
+          <option value="dataNascimento" id="4">
+            Qual a sua data de nascimento?
+          </option>
+        </select>
+
         <input
           placeholder="Resposta de segurança"
           class="areaText"
           id="securityAnswer"
         />
-      </p>
-      <p>
+
         <input placeholder="Nova senha" class="areaText" id="newPassword" />
-      </p>
-      <p>
+
         <input
           placeholder="Confirme sua nova senha"
           id="confirmNewPassword"
           class="areaText"
         />
-      </p>
+      </div>
       <div class="btnSubmit">
         <button type="button" onclick="changePassword()">
           <img src="../../assets/icon-send.png" />
         </button>
       </div>
-      <!-- </form> -->
     </div>
     <script>
       function changePassword() {

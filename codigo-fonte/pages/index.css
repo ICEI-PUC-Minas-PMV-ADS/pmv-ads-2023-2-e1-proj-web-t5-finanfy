@@ -59,3 +59,50 @@ body {
 a {
   color: #fff;
 }
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+  }
+  .divSubTitle {
+    max-width: 75%;
+    font-size: 40px;
+  }
+  .divButtons {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+  .divSubTitle {
+    max-width: 75%;
+    font-size: 40px;
+  }
+
+  .divButtons {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 100%;
+  }
+}

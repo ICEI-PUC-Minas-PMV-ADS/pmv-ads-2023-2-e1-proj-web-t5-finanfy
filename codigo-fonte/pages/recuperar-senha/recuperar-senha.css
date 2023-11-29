@@ -54,6 +54,13 @@ h1 {
   color: #ffffff;
 }
 
+#form {
+  display: grid;
+  justify-items: center;
+  row-gap: 10px;
+  padding-bottom: 10px;
+}
+
 .btnSubmit {
   width: 100%;
   display: flex;
@@ -80,4 +87,15 @@ button {
   font-weight: 400;
   color: #fff;
   text-align: center;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 25px;
+  }
+
+  #form {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

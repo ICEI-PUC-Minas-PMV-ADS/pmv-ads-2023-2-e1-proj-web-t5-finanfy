@@ -55,8 +55,8 @@ h1 {
 }
 
 .divText {
-  width: 60%;
-  font-size: 18px;
+  width: 100%;
+  font-size: 14px;
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -80,6 +80,13 @@ button {
   overflow: hidden;
 }
 
+#form {
+  display: grid;
+  justify-items: center;
+  row-gap: 10px;
+  padding-bottom: 10px;
+}
+
 .areaText {
   width: 350px;
   height: 66px;
@@ -91,4 +98,15 @@ button {
   font-weight: 400;
   color: #fff;
   text-align: center;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 25px;
+  }
+
+  #form {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

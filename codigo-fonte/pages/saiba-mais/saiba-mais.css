@@ -18,12 +18,13 @@ body {
   width: 100%;
   display: grid;
   justify-items: center;
-  row-gap: 40px;
+  /* row-gap: 40px; */
   padding-bottom: 20px;
 }
 
 .divPageHeader {
   padding-top: 40px;
+  padding-bottom: 40px;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -56,6 +57,7 @@ h1 {
 
 .divText {
   width: 60%;
+  padding-bottom: 40px;
   font-size: 18px;
   display: flex;
   text-align: center;
@@ -63,10 +65,8 @@ h1 {
   align-items: center;
 }
 
-.divRegistrar {
-  text-align: center;
-  color: #fff;
-  font-size: 16px;
+.divBtnLogin {
+  padding-bottom: 10px;
 }
 
 .botao {
@@ -81,6 +81,50 @@ h1 {
   color: #fff;
 }
 
+.divRegistrar {
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+}
+
 #aqui {
   color: white;
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+  }
+  .divSubTitle {
+    max-width: 75%;
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+  .divSubTitle {
+    max-width: 75%;
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 100%;
+  }
 }

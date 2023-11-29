@@ -25,77 +25,81 @@
 
       <!-- <form name="Cadastrar" action="do_login.html" method="POST"></form> -->
 
-      <input
-        placeholder="Nome"
-        type="text"
-        name="txt_nome"
-        id="txt_nome"
-        class="areaText"
-      />
-      <input
-        placeholder="Sobrenome"
-        type="text"
-        name="txt_sobrenome"
-        id="txt_sobrenome"
-        class="areaText"
-      />
-      <input
-        placeholder="E-mail"
-        type="email"
-        name="txt_email"
-        id="txt_email"
-        class="areaText"
-      />
-      <input
-        placeholder="Senha"
-        type="password"
-        name="txt_senha"
-        id="txt_senha"
-        class="areaText"
-      />
-      <input
-        placeholder="Confirme sua senha"
-        type="password"
-        name="txt_senha2"
-        id="txt_senha2"
-        class="areaText"
-      />
-
-      <div class="divText">
-        <p>
-          Em caso de você esquecer sua senha, cadastre <br />
-          uma pergunta e uma resposta de segurança para <br />liberar a
-          recuperação de sua senha.
-        </p>
-      </div>
-
-      <select class="areaText" id="perguntaSeguranca">
-        <option value="Pergunta de segurança" id="0">
-          Pergunta de segurança
-        </option>
-        <option value="nomeMae" id="1">Qual o nome de sua mãe?</option>
-        <option value="nomePai" id="2">Qual o nome de seu pai?</option>
-        <option value="timeQueTorce" id="3">Para qual time você torce?</option>
-        <option value="dataNascimento" id="4">
-          Qual a sua data de nascimento?
-        </option>
-      </select>
-      <p>
+      <div id="form">
         <input
-          placeholder="Resposta de segurança"
+          placeholder="Nome"
           type="text"
-          name="txt_respsecurity"
-          id="txt_respsecurity"
+          name="txt_nome"
+          id="txt_nome"
           class="areaText"
         />
-      </p>
-      <input
-        placeholder="Url de Imagem de Perfil"
-        type="text"
-        name="txt_urlperfil"
-        id="txt_urlperfil"
-        class="areaText"
-      />
+        <input
+          placeholder="Sobrenome"
+          type="text"
+          name="txt_sobrenome"
+          id="txt_sobrenome"
+          class="areaText"
+        />
+        <input
+          placeholder="E-mail"
+          type="email"
+          name="txt_email"
+          id="txt_email"
+          class="areaText"
+        />
+        <input
+          placeholder="Senha"
+          type="password"
+          name="txt_senha"
+          id="txt_senha"
+          class="areaText"
+        />
+        <input
+          placeholder="Confirme sua senha"
+          type="password"
+          name="txt_senha2"
+          id="txt_senha2"
+          class="areaText"
+        />
+
+        <div class="divText">
+          <p>
+            Em caso de você esquecer sua senha, cadastre <br />
+            uma pergunta e uma resposta de segurança para <br />liberar a
+            recuperação de sua senha.
+          </p>
+        </div>
+
+        <select class="areaText" id="perguntaSeguranca">
+          <option value="Pergunta de segurança" id="0">
+            Pergunta de segurança
+          </option>
+          <option value="nomeMae" id="1">Qual o nome de sua mãe?</option>
+          <option value="nomePai" id="2">Qual o nome de seu pai?</option>
+          <option value="timeQueTorce" id="3">
+            Para qual time você torce?
+          </option>
+          <option value="dataNascimento" id="4">
+            Qual a sua data de nascimento?
+          </option>
+        </select>
+        <p>
+          <input
+            placeholder="Resposta de segurança"
+            type="text"
+            name="txt_respsecurity"
+            id="txt_respsecurity"
+            class="areaText"
+          />
+        </p>
+        <input
+          placeholder="Url de Imagem de Perfil"
+          type="text"
+          name="txt_urlperfil"
+          id="txt_urlperfil"
+          class="areaText"
+        />
+      </div>
       <div class="btnSubmit">
         <button type="button" id="btn_salvar">
           <a href="../Login/login.html">
