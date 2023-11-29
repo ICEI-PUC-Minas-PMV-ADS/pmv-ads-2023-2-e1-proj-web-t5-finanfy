@@ -114,20 +114,20 @@ body {
   display: flex;
   justify-content: center;
   background-color: #20204d;
-  border-radius: 30px;
+  border-radius: 50px;
   border: 2px solid #383467;
-  width: 240px;
-  height: 46px;
+  width: 388px;
+  height: 66px;
   cursor: pointer;
 }
 .buttonLogOut {
   display: flex;
   justify-content: center;
   background-color: #982626;
-  border-radius: 30px;
+  border-radius: 50px;
   border: 2px solid #383467;
-  width: 240px;
-  height: 46px;
+  width: 388px;
+  height: 66px;
   cursor: pointer;
 }
 #alterardados {
