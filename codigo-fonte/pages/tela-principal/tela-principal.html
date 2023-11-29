@@ -31,6 +31,7 @@
         </div>
         <div class="divIconHomeProfile" id="profileLink">
           <img
+            id="profileImage"
             src="https://cdn.icon-icons.com/icons2/1769/PNG/512/4092564-about-mobile-ui-profile-ui-user-website_114033.png"
             alt="Icon Home Profile Photo"
             class="iconHomeProfilePhoto"
@@ -181,6 +182,18 @@
       verTudo.addEventListener("click", function () {
         window.location.href = "../Transacoes/transacoes.html";
       });
+
+      let userCurrentObjeto = JSON.parse(
+        sessionStorage.getItem("usuarioCorrente")
+      );
+
+      let urlPerfil = userCurrentObjeto.urlPerfil;
+
+      const profileImage = document.getElementById("profileImage");
+
+      console.log("URL PERFIL: ", urlPerfil)
+
+      profileImage.src = urlPerfil;
     </script>
   </body>
 </html>
