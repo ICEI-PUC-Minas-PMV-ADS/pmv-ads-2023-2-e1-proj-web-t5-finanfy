@@ -27,7 +27,7 @@
           </div>
           <div class="divCategoria">
             <h2>Categoria</h2>
-            <select class="entrada" id="categoriaEntrada">
+            <select class="entrada" id="categoriaEntrada" onchange="mudaTipo(this)">
               <option > </option>    
               <option value="despesas" id="despesas">Despesas</option>               
               <option value="receitas" id="receitas">Receitas</option>              
@@ -117,6 +117,31 @@
     <script src="../Login/login.js"></script>
     <script src="../movimentar/movimentar.js"></script>
     <script>
+
+      function mudaTipo(obj){
+        
+        
+        let categoria = obj.value;
+        let tipo = document.getElementById("tipoEntrada");
+
+        if( categoria == "despesas" ){
+          tipo.value = "saida";
+          tipo.disabled = true;
+
+        }
+        else if( categoria == "receitas" ){
+          tipo.value = "entrada";
+          tipo.disabled = true;
+        }
+        else if( tipo.disabled == true ){
+          tipo.disabled = false;
+          tipo.value = "";
+        }
+
+
+      }
+      // travar receita ou despesa
+
       function salvarTransacao(event) {
         event.preventDefault();
 
