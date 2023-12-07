@@ -17,7 +17,7 @@ Os resultados dos testes funcionais realizados na aplicação são descritos a s
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Welbert Soares |
 
-(https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/139129269/bc1f7d99-3239-4102-b2c4-2a3705ceb2b1)
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/139129269/bc1f7d99-3239-4102-b2c4-2a3705ceb2b1
 
 
 
