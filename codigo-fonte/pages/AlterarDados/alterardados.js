@@ -55,6 +55,10 @@ function putUser(nome, sobrenome, email, senha, urlPerfil, usuarioCorrente) {
     );
 
     alert("Usuário atualizado com sucesso!");
+    window.location.href = "../Perfil/perfil.html";
+
+    //Redireciona para a tela principal
+
   } else {
     alert("Usuário não encontrado");
   }
