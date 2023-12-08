@@ -79,7 +79,9 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Welbert Soares |
 
----
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/139129269/9314396c-0cb2-48e2-81d2-6c028423a258
+
+
 
 |Caso de Teste | `CT-09 – NÃO ACEITAR VALORES NEGATIVOS OU ZERADOS AO CADASTRAR TRANSAÇÕES` |
 |:---|:---|
