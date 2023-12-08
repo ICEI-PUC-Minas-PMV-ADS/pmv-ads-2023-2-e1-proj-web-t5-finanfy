@@ -1,5 +1,4 @@
 
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/139129269/9a813f8c-8a7a-49dc-ad7f-d1272f95c549
 # Registro de Testes de Software
 
 Relatório com as evidências dos testes de software realizados na aplicação pela equipe, baseado no plano de testes pré-definido.
