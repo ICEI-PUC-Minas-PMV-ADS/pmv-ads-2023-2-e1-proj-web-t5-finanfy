@@ -61,7 +61,9 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Pedro Louzada |
 
----
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/139129269/77b2e385-5523-4bf2-9783-7c50f2584b25
+
+
 
 |Caso de Teste | `CT-07 – OCULTAR E EXIBIR TODAS AS TRANSAÇÕES E TOTAIS` |
 |:---|:---|
