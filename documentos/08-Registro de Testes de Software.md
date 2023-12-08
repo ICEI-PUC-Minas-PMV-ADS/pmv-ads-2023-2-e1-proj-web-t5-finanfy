@@ -70,7 +70,9 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Pedro Louzada |
 
----
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/139129269/1eaa8848-d08f-412f-b315-7d7045f45fe8
+
+
 
 |Caso de Teste | `CT-08 – FECHAR PAGINA APÓS CADASTRAR TRANSAÇÕES E RETORNAR AUTOMATICAMENTE PARA A TELA PRINCIPAL` |
 |:---|:---|
