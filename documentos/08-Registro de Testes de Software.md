@@ -26,7 +26,9 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/
 | Resultados obtidos | Funcionalidade OK. |
 | Responsável pela execução do caso de Teste | Welbert Soares |
 
----
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/assets/139129269/0a1c6bc4-be5d-401d-81ba-17aaf0f2a5c3
+
+
 
 |Caso de Teste | `CT-04 – CADASTRAR / EDITAR / VISUALIZAR / EXCLUIR TRANSAÇÃO` |
 |:---|:---|
