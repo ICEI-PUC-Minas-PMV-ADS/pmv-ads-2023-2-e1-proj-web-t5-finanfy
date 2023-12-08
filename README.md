@@ -37,7 +37,7 @@ O objetivo geral deste projeto é a criação de uma aplicação web de fácil a
 
 # Hospedagem
 
-* Insira o endereço eletrônico público de acesso ao conteúdo publicado.
+* <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2023-2-e1-proj-web-t5-finanfy/codigo-fonte/pages/">Acessar Finanfy</a>
 
 # Código-Fonte
 
