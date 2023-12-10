@@ -2,11 +2,11 @@
 
 ## Conjunto de Slides
 
-[Finanfy - Apresentação em Slides](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/files/13625195/Finanfy.-.Apresentacao.pdf)
+[Finanfy - Apresentação (Slides)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy/files/13625195/Finanfy.-.Apresentacao.pdf)
 
 ## Vídeo de apresentação
 
-[Finanfy - Apresentação em Vídeo](https://vimeo.com/893038906?share=copy)
+[Finanfy - Apresentação (Vídeo)](https://youtu.be/pbNBisjWMaU)
 
 ## Hospedagem
 
