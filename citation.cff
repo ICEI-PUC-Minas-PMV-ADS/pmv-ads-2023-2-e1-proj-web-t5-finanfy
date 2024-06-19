@@ -1,0 +1,22 @@
+message: Please cite this software using these metadata.
+title: Finanfy
+authors:
+  - family-names: Borth
+    given-names: Leandro
+  - family-names: Louzada
+    given-names: Pedro
+  - family-names: Almeida
+    given-names: Rodolfo
+  - family-names: Soares
+    given-names: Welbert
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Alves Nogueira
+    given-names: Simone
+keywords:
+  - Gestão
+  - Finanças
+  - Dinheiro
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e1-proj-web-t5-finanfy
+version: 1.0.0
+date-released: 2023-09-12
